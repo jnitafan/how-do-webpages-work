@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<title>Title</title>
+<style>
+  body {
+    width: 500px;
+  }
+</style>
+<body>
+  <p checked class="title" id="title">Title</p>
+  <!-- here goes the rest of the page -->
+  <p id="banana"></p>
+</body>
+<script type="application/javascript">
+  let all = document.getElementsByTagName("*");
+  let banana = document.getElementById("banana");
+  let allBanana = [];
+  for (let i = 0, max = all.length; i < max; i++) {
+    let elementData = {};
+    Object.defineProperties(elementData, {
+      tagName: { value: all[i].tagName, enumerable: true },
+      attributes: { value: all[i].attributes, enumerable: true },
+      className: { value: all[i].className, enumerable: true },
+      id: { value: all[i].id, enumerable: true },
+      textContent: { value: all[i].textContent, enumerable: true },
+      childNodes: { value: all[i].childNodes, enumerable: true },
+      children: { value: all[i].children, enumerable: true },
+    });
+    allBanana.push(elementData);
+  }
+  banana.textContent = JSON.stringify(allBanana, null, 4);
+</script>

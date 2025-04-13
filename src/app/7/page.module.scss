@@ -1,0 +1,20 @@
+// BrowserRenderingFlow.module.scss
+
+// Define some color and spacing variables
+$bg-color: #101010;
+$border-color: #ddd;
+$node-bg: #4b4b4b;
+$node-border: #ccc;
+$text-color: #2e2e2e;
+$border-radius: 8px;
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-color: $bg-color;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  position: relative;
+  overflow: hidden;
+  padding: 1rem;
+}
