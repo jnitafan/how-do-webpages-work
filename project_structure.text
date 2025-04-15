@@ -1,0 +1,87 @@
+- .gitignore
+- eslint.config.mjs
+- next-env.d.ts
+- next.config.ts
+- package-lock.json
+- package.json
+- public
+  - animated.svg
+  - cable-geo.json
+  - fac.json
+  - headers.json
+  - images
+    - base.png
+    - cloud.svg
+    - computer-solid.svg
+    - mobile-solid.svg
+    - network-switch-solid.svg
+    - placeholder.png
+    - rack-server-solid.svg
+    - router-solid.svg
+    - tablet-solid.svg
+    - wifi-solid.svg
+  - lottietest.json
+  - routing.json
+  - static.svg
+  - timeline-data.json
+  - world-110m.json
+- raw
+  - Adobe After Effects Auto-Save
+    - Routing auto-save 1.aep
+  - Headers.aep
+  - Headers.ai
+  - headers.json
+  - index.html
+  - itemData.json
+  - OSI_Model.ai
+  - Routing.aep
+  - Routing.ai
+  - routing.json
+- README.md
+- references.md
+- src
+  - app
+    - 1
+      - page.module.scss
+      - page.tsx
+    - 10
+      - page.tsx
+    - 11
+      - page.tsx
+    - 12
+      - page.tsx
+    - 2
+      - page.module.scss
+      - page.tsx
+    - 3
+      - page.module.scss
+      - page.tsx
+    - 4
+      - page.module.scss
+      - page.tsx
+    - 5
+      - page.module.scss
+      - page.tsx
+    - 6
+      - page.tsx
+    - 7
+      - page.module.scss
+      - page.tsx
+    - 8
+      - page.tsx
+    - 9
+      - page.tsx
+    - favicon.ico
+    - globals.scss
+    - layout.tsx
+    - page.module.scss
+    - page.tsx
+  - components
+    - navigation.module.scss
+    - navigation.tsx
+  - utils
+    - highlight.styling.scss
+    - reactflow.styling.scss
+    - reactflow.utils.tsx
+    - variables.module.scss
+- tsconfig.json

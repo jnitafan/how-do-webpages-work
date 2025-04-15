@@ -1,3 +1,4 @@
+// src/app/layout.tsx
 import type { Metadata } from "next";
 import { Inter, Roboto_Mono, DM_Serif_Display } from "next/font/google";
 import { NextFontWithVariable } from "next/dist/compiled/@next/font";

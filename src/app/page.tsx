@@ -1,6 +1,7 @@
 "use client";
 
-import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useRef, useMemo, useState, Suspense } from "react";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
 import { useLoader, Canvas, useFrame, useThree } from "@react-three/fiber";
@@ -175,7 +176,7 @@ function DummyAsset() {
   return null;
 }
 
-function LoadingOverlay() {
+function LoadingOverlay(props) {
   const { loaded, total } = useProgress();
   // Manage spinner opacity and visibility
   const [spinnerOpacity, setSpinnerOpacity] = useState(1);
@@ -213,51 +214,89 @@ function LoadingOverlay() {
         </div>
       )}
       {showButton && (
-        <Link href="/1">
-          <button
-            className={styles.startButton}
-            style={{
-              opacity: 1,
-            }}
-            onClick={() => console.log("Button clicked!")}
-          >
-            Click to start.
-          </button>
-        </Link>
+        <button
+          className={styles.startButton}
+          onClick={props.handleStartClick} // This triggers the exit animation via state update.
+        >
+          Click to start.
+        </button>
       )}
     </>
   );
 }
 
+const exitVariant = {
+  exit: {
+    opacity: 0,
+    transition: { duration: 0.5 },
+  },
+};
+
 export default function Web1() {
+  const router = useRouter();
+  // Control whether the homepage content is visible.
+  const [showContent, setShowContent] = useState(true);
+
+  // When the exit animation completes, navigate to the next page.
+  const handleExitComplete = () => {
+    router.push("/1");
+  };
+
+  // When the button is clicked, trigger the exit animation.
+  const handleStartClick = () => {
+    setShowContent(false);
+  };
+
   return (
-    <div>
-      <div className={styles.introLayout}>
-        <div className={styles.introButton}>
-          <h1>How do webpages work?</h1>
-          <LoadingOverlay />
-        </div>
-      </div>
-      <div className={styles.introBackground}>
-        <Canvas
-          camera={{ position: [0, 0, 100] }}
-          gl={{ logarithmicDepthBuffer: true }}
+    <AnimatePresence mode="wait" onExitComplete={handleExitComplete}>
+      {showContent && (
+        <motion.div
+          key="home"
+          className={styles.homeContainer}
+          exit="exit"
+          variants={exitVariant}
         >
-          <Suspense fallback={null}>
-            <fog attach="fog" args={["#141415", 0, 40]} />
-            <AnimatedCamera />
-            <Starfield />
-            <EffectComposer>
-              <Bloom
-                intensity={1.5}
-                luminanceThreshold={0.1}
-                luminanceSmoothing={0.9}
-              />
-            </EffectComposer>
-            <DummyAsset />
-          </Suspense>
-        </Canvas>
-      </div>
-    </div>
+          <div>
+            <div className={styles.introLayout}>
+              <div className={styles.introButton}>
+                <h1>How do webpages work?</h1>
+                <LoadingOverlay handleStartClick={handleStartClick} />
+              </div>
+            </div>
+            <div className={styles.introBackground}>
+              <Canvas
+                camera={{ position: [0, 0, 100] }}
+                gl={{ logarithmicDepthBuffer: true }}
+              >
+                <Suspense fallback={null}>
+                  <fog attach="fog" args={["#141415", 0, 40]} />
+                  <AnimatedCamera />
+                  <Starfield />
+                  <EffectComposer>
+                    <Bloom
+                      intensity={1.5}
+                      luminanceThreshold={0.1}
+                      luminanceSmoothing={0.9}
+                    />
+                  </EffectComposer>
+                  <DummyAsset />
+                </Suspense>
+              </Canvas>
+            </div>
+            {/* 
+              Instead of wrapping your button with a Next.js Link,
+              we use an onClick handler to trigger the exit animation.
+            */}
+            <button
+              className={styles.startButton}
+              onClick={handleStartClick}
+              style={{ opacity: 1 }}
+            >
+              Click to start.
+            </button>
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 }
