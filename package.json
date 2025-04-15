@@ -9,9 +9,18 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "15.2.3",
+    "@react-three/drei": "^10.0.6",
+    "@react-three/fiber": "^9.1.2",
+    "@react-three/postprocessing": "^3.0.4",
+    "framer-motion": "^12.7.2",
+    "highlight.js": "^11.11.1",
+    "lottie-react": "^2.4.1",
+    "motion": "^12.7.2",
+    "next": "^15.3.0",
+    "next-transition-router": "^0.2.9",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-map-gl": "^8.0.3",
     "sass": "^1.86.0"
   },
   "devDependencies": {
