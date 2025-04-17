@@ -89,7 +89,7 @@ const Page = forwardRef<PageHandle>((props, ref) => {
 
   return (
     <div>
-      <h1>Page 1</h1>
+      <h1>Page 4</h1>
       <div
         ref={animatedRef1}
         style={{
@@ -98,7 +98,7 @@ const Page = forwardRef<PageHandle>((props, ref) => {
           marginBottom: "10px",
         }}
       >
-        Page 1 - Animated Div 1
+        Page 4 - Animated Div 1
       </div>
       <div
         ref={animatedRef2}
@@ -107,7 +107,7 @@ const Page = forwardRef<PageHandle>((props, ref) => {
           padding: "20px",
         }}
       >
-        Page 1 - Animated Div 2
+        Page 4 - Animated Div 2
       </div>
     </div>
   );

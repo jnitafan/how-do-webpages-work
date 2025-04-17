@@ -4,8 +4,6 @@ import { Inter, Roboto_Mono, DM_Serif_Display } from "next/font/google";
 import { NextFontWithVariable } from "next/dist/compiled/@next/font";
 import Provider from "@/components/provider";
 import Navigation from "@/components/navigation";
-// import "@/utils/reactflow.styling.scss";
-// import "@/utils/highlight.styling.scss";
 import "./globals.scss";
 
 const inter: NextFontWithVariable = Inter({
