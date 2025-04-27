@@ -1,0 +1,120 @@
+/* carousel.module.scss */
+
+.carousel {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+
+  &__slide {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__control {
+    z-index: 100;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #03cbf8;
+    border: none;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+    user-select: none;
+    font-family: monospace;
+
+    &:hover {
+      background: #0079ca;
+    }
+
+    &--prev {
+      left: 1rem;
+    }
+
+    &--next {
+      right: 1rem;
+    }
+  }
+
+  &__indicators {
+    z-index: 100;
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  &__indicator {
+    z-index: 100;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s ease;
+
+    &.active {
+      background: #03cbf8;
+    }
+  }
+
+  &__backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 115;
+    pointer-events: none;
+  }
+
+  &__backdrop--active {
+    opacity: 1;
+    pointer-events: none;
+  }
+
+  &__spinnerOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    z-index: 120;
+  }
+
+  &__spinner {
+    width: 50vmin;
+    height: 50vmin;
+    box-sizing: border-box;
+    border: 16px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #03cbf8;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    z-index: 125;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

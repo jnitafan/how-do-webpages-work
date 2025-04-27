@@ -1,0 +1,338 @@
+{
+  "data": {
+    "events": [
+      {
+        "year": "1962",
+        "text": "J.C.R. Licklider of MIT envisions a globally interconnected set of computers through which everyone could quickly access data and programs from any site."
+      },
+      {
+        "year": "1965",
+        "text": "Leonard Kleinrock, Thomas Merrill and Lawrence G. Roberts connected two computers: The TX-2 in Massachusetts to the Q-32 in California. Creating the first wide-area computer link."
+      },
+      {
+        "year": "1967",
+        "text": "MIT (1961-1967), RAND (1962-1965) & NPL (1964-1967) all independently proceeded on works about packet switching networks at the same time."
+      },
+      {
+        "year": "1969",
+        "text": "ARPA awards contracts for the development of ARPANET, directed by Robert Taylor and Lawrence G. Roberts, adopting packet switching technology."
+      },
+      {
+        "year": "1969",
+        "text": "A network of Interface Message Processors designed by Bob Kahn and built by Bolt, Beranek and Newman is created. An early version of a router."
+      },
+      {
+        "year": "1970",
+        "text": "Several packet-switched networks emerge such as the NPL network in the UK and the CYCLADES in France."
+      },
+      {
+        "year": "1971",
+        "text": "Ray Tomlinson sends the first mail message between two computers on the ARPANET, introducing the '@' address syntax designating the user's system address."
+      },
+      {
+        "year": "1972",
+        "text": "Initiatives start to develop the internetwork, in which separate networks could be joined into a network of networks."
+      },
+      {
+        "year": "1972",
+        "text": "The first public packing switch networks such as the RETD in Spain, and the RCP network in France based on the X.25 protocol designed by Rémi Després."
+      },
+      {
+        "year": "1974",
+        "text": "Vint Cerf and Bob Kahn develop the TCP (Transmission Control Protocol) and Internet Protocol (IP) in the Internet protocol suite."
+      },
+      {
+        "year": "1975",
+        "text": "Developed by John Vittal, the first modern email program was developed that allowed for the function to reply and forward emails."
+      },
+      {
+        "year": "1978",
+        "text": "The first BBS (Bulletin Board System) was developed by Ward Christensen and Randy Suess during a blizzard."
+      },
+      {
+        "year": "1979",
+        "text": "USENET is created to host news and discussions."
+      },
+      {
+        "year": "1983",
+        "text": "ARPANET computers switch over to TCP/IP and the Domain Name System (DNS) is established with familiar .com, .net and .edu naming system for websites."
+      },
+      {
+        "year": "1988",
+        "text": "IRC or Internet Relay Chat was first developed, being the first real-time chat and instant messaging service."
+      },
+      {
+        "year": "1989",
+        "text": "Commercial entities start emerging to provide internet, called internet service providers (ISPs)"
+      },
+      {
+        "year": "1990",
+        "text": "Tim Berners-Lee proposes the World Wide Web, originally called Mesh that links hypertext documents to an information system, accessible from any node to the network."
+      },
+      {
+        "year": "1991",
+        "text": "The first web page is created."
+      },
+      {
+        "year": "1993",
+        "text": "Mosaic, developed by Marc Andreeset and Eric Bina at NCSA was created. Mosaic was the first widely downloaded internet browser."
+      },
+      {
+        "year": "1994",
+        "text": "Netscape Navigator the first dominant web browser in terms of usage share was created."
+      },
+      {
+        "year": "1995",
+        "text": "The internet becomes commercialized following the first internet transactions. SSL, a transport layer security protocl was released to authenticate and encrypt messages."
+      },
+      {
+        "year": "1996",
+        "text": "HoTMaiL, the first webmail service launches."
+      },
+      {
+        "year": "1997",
+        "text": "A team at CSIRO invents the Wireless Local Area Network (WLAN) that allowed devices to connect to a network through radio waves."
+      },
+      {
+        "year": "1998",
+        "text": "Google"
+      },
+      {
+        "year": "2000",
+        "text": "the dotcom bubble collapses, resulting in huge losses for investors."
+      },
+      {
+        "year": "2001",
+        "text": "Wikipedia launches it's collective web content distribution that is maintained by a communitiy of volunteers."
+      },
+      {
+        "year": "2003",
+        "text": "VoIP (Voice over IP) service Skype is released to the public, giving a user-friendly service for individuals to contact others through the internetwork."
+      },
+      {
+        "year": "2004",
+        "text": "Web 2.0, referring to highly interactive and user-driven websites becomes popular. At this time, Facebook launches."
+      },
+      {
+        "year": "2005",
+        "text": "Youtube launches, bringing online video hosting avaliable to the public for free."
+      },
+      {
+        "year": "2006",
+        "text": "Twitter launches, allowing users to air out their thoughts to the public for free."
+      },
+      {
+        "year": "2007",
+        "text": "The iPhone releases, leading towards interest in mobile web applications and responsive content."
+      },
+      {
+        "year": "2008",
+        "text": "The first cryptocurrency Bitcoin launches as open source software."
+      },
+      {
+        "year": "2009",
+        "text": "ICANN, the official naming body of the internet, who manages domain name regulation relaxes their control."
+      },
+      {
+        "year": "2010",
+        "text": "The first commercial transaction using Bitcoin is made for two Papa John's pizzas."
+      },
+      {
+        "year": "2011",
+        "text": "Adobe Creative Cloud is launched, introducing a subscription service to their applications."
+      },
+      {
+        "year": "2012",
+        "text": "Iconic video 'Gangnam style' released by PSY is put on Youtube."
+      },
+      {
+        "year": "2013",
+        "text": "Internet banking becomes mainstream, allowing users to easily manage their funds."
+      },
+      {
+        "year": "2015",
+        "text": "The FCC rules in favour in net neutrality to keep the internet open and free for everyone."
+      },
+      {
+        "year": "2016",
+        "text": "TikTok, a hub for sharing video content releases."
+      },
+      {
+        "year": "2019",
+        "text": "5G, a cellular network technology releases as a successor to 4G networks."
+      },
+      {
+        "year": "2020",
+        "text": "The shift towards remote working due to a pandemic results in increased internet usage."
+      },
+      {
+        "year": "2021",
+        "text": "NFTs"
+      },
+      {
+        "year": "2022",
+        "text": "ChatGPT launches, allowing for a publicly available artificial intelligence that allows for people to generate text, images and gather information and more."
+      },
+      {
+        "year": "2025",
+        "text": "???"
+      }
+    ],
+    "images": [
+      {
+        "src": "images/placeholder.png",
+        "alt": "",
+        "width": 250,
+        "layer": 0,
+        "item": 15,
+        "offset": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "src": "images/placeholder.png",
+        "alt": "",
+        "width": 250,
+        "layer": 1,
+        "item": 3,
+        "offset": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "src": "images/placeholder.png",
+        "alt": "",
+        "width": 250,
+        "layer": 2,
+        "item": 4,
+        "offset": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "src": "images/placeholder.png",
+        "alt": "",
+        "width": 250,
+        "layer": 3,
+        "item": 5,
+        "offset": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "src": "images/placeholder.png",
+        "alt": "",
+        "width": 250,
+        "layer": 0,
+        "item": 6,
+        "offset": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "src": "images/placeholder.png",
+        "alt": "",
+        "width": 250,
+        "layer": 1,
+        "item": 7,
+        "offset": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "src": "images/placeholder.png",
+        "alt": "",
+        "width": 250,
+        "layer": 2,
+        "item": 8,
+        "offset": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "src": "images/placeholder.png",
+        "alt": "",
+        "width": 250,
+        "layer": 3,
+        "item": 9,
+        "offset": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "src": "images/placeholder.png",
+        "alt": "",
+        "width": 250,
+        "layer": 0,
+        "item": 10,
+        "offset": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "src": "images/placeholder.png",
+        "alt": "",
+        "width": 250,
+        "layer": 3,
+        "item": 11,
+        "offset": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "src": "images/placeholder.png",
+        "alt": "",
+        "width": 250,
+        "layer": 2,
+        "item": 12,
+        "offset": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "src": "images/placeholder.png",
+        "alt": "",
+        "width": 250,
+        "layer": 1,
+        "item": 13,
+        "offset": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "src": "images/placeholder.png",
+        "alt": "",
+        "width": 250,
+        "layer": 3,
+        "item": 14,
+        "offset": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "src": "images/placeholder.png",
+        "alt": "",
+        "width": 250,
+        "layer": 0,
+        "item": 2,
+        "offset": {
+          "x": 0,
+          "y": 0
+        }
+      }
+    ]
+  }
+}

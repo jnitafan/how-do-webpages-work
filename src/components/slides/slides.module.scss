@@ -1,0 +1,190 @@
+/* components/slides/slides.module.scss */
+
+.slide {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.s2 {
+  &__layer {
+    position: absolute;
+    inset: 0;
+    overflow-y: auto;
+    scrollbar-width: none;
+    /* no min-height/height here — it’s set dynamically in JS */
+  }
+  &__layerContent {
+    position: relative;
+  }
+
+  &__line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    background-color: #ccc;
+    transform: translateX(-50%);
+  }
+
+  &__timeline {
+    position: relative;
+    height: 100%;
+    overflow-y: auto;
+    padding: 2rem 0;
+    width: 100%;
+    margin: 0 auto;
+    z-index: 10;
+
+    .item {
+      position: relative;
+      margin: 2rem 0;
+      max-width: 400px;
+      margin-bottom: 500px;
+
+      &.left {
+        margin-left: calc(45% - 400px);
+        margin-right: auto;
+        text-align: right;
+      }
+
+      &.right {
+        margin-right: calc(45% - 400px);
+        margin-left: auto;
+        text-align: left;
+      }
+
+      .content {
+        background: #fff;
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        position: relative;
+      }
+
+      .year {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        color: black;
+      }
+
+      .text {
+        margin: 0;
+        color: black;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .item {
+        max-width: 100%;
+        width: 100% !important;
+        left: 0 !important;
+        text-align: left !important;
+        padding: 1rem;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+      }
+    }
+  }
+}
+
+.s1 {
+  &__starfield {
+    height: 100vh;
+    width: 100vw;
+  }
+  &__titleContainer {
+    position: absolute;
+    top: 25%;
+    left: 25%;
+  }
+  &__title {
+    font-size: 3rem;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    transform: translate(-25%, -30%);
+    animation: flicker 1s steps(20, end) forwards,
+      fadeIn 0.2s ease-in-out 1s forwards, fadeIn 1s ease-in-out 1.2s forwards;
+
+    h1 {
+      position: relative;
+      display: inline-block;
+      color: #fff;
+
+      /* init our glitch offsets */
+      --glitch-x: 0px;
+      --glitch-y: 0px;
+
+      &::before {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        color: transparent;
+        -webkit-text-stroke: 1px #ffffff;
+        opacity: 0.8;
+        pointer-events: none;
+
+        /* use the variables for the glitch offset */
+        transform: translate(var(--glitch-x), var(--glitch-y));
+      }
+    }
+  }
+}
+
+@keyframes flicker {
+  /* start completely off */
+  0% {
+    opacity: 0;
+  }
+  /* quick on/off bursts */
+  2% {
+    opacity: 1;
+  }
+  6% {
+    opacity: 0;
+  }
+  9% {
+    opacity: 0.9;
+  }
+  12% {
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  18% {
+    opacity: 0.2;
+  }
+  22% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.8;
+  }
+  83% {
+    opacity: 0.95;
+  }
+  95% {
+    opacity: 0.6;
+  }
+  /* end at a low “last flicker” level */
+  100% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
