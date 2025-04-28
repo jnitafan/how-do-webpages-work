@@ -180,44 +180,52 @@
     ],
     "images": [
       {
-        "src": "images/placeholder.png",
-        "alt": "",
-        "width": 250,
+        "src": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Portrait_of_J._C._R._Licklider.jpg",
+        "alt": "Portrait photograph of Joseph Carl Robnett Licklider wearing glasses. Label on verso reads \"Mrs. J. C. R. Licklider, 40 Pleasant View Road, Arlington, MA 02174\". Original Caption: \"#6 DARPA ca 1963\".",
+        "attribution": "Unknown author, Portrait of J. C. R. Licklider, marked as public domain, more details on Wikimedia Commons",
+        "width": 30,
         "layer": 0,
         "item": 15,
+        "left": 13,
         "offset": {
           "x": 0,
           "y": 0
         }
       },
       {
-        "src": "images/placeholder.png",
-        "alt": "",
-        "width": 250,
+        "src": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Massachusetts_Institute_of_Technology_%28NBY_9507%29.jpg",
+        "alt": "Massachusetts Institute of Technology",
+        "attribution": "Unknown author, Massachusetts Institute of Technology (NBY 9507), marked as public domain, more details on Wikimedia Commons",
+        "width": 30,
         "layer": 1,
         "item": 3,
+        "left": 24,
         "offset": {
           "x": 0,
           "y": 0
         }
       },
       {
-        "src": "images/placeholder.png",
-        "alt": "",
-        "width": 250,
+        "src": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Arpanet_logical_map%2C_march_1977.png",
+        "alt": "ARPANET Map",
+        "attribution": "ARPANET, Arpanet logical map, march 1977, marked as public domain, more details on Wikimedia Commons",
+        "width": 30,
         "layer": 2,
         "item": 4,
+        "left": 30,
         "offset": {
           "x": 0,
           "y": 0
         }
       },
       {
-        "src": "images/placeholder.png",
-        "alt": "",
-        "width": 250,
+        "src": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Arpanet_in_the_1970s.png",
+        "alt": "ARPANET Points in the 70s",
+        "attribution": "Semaforo GMS, Arpanet in the 1970s, CC BY-SA 4.0",
+        "width": 30,
         "layer": 3,
         "item": 5,
+        "left": 47,
         "offset": {
           "x": 0,
           "y": 0
@@ -226,9 +234,11 @@
       {
         "src": "images/placeholder.png",
         "alt": "",
-        "width": 250,
+        "attribution": "",
+        "width": 30,
         "layer": 0,
         "item": 6,
+        "left": 55,
         "offset": {
           "x": 0,
           "y": 0
@@ -237,9 +247,11 @@
       {
         "src": "images/placeholder.png",
         "alt": "",
-        "width": 250,
+        "attribution": "",
+        "width": 30,
         "layer": 1,
         "item": 7,
+        "left": 69,
         "offset": {
           "x": 0,
           "y": 0
@@ -248,9 +260,11 @@
       {
         "src": "images/placeholder.png",
         "alt": "",
-        "width": 250,
+        "attribution": "",
+        "width": 30,
         "layer": 2,
         "item": 8,
+        "left": 75,
         "offset": {
           "x": 0,
           "y": 0
@@ -259,9 +273,11 @@
       {
         "src": "images/placeholder.png",
         "alt": "",
-        "width": 250,
+        "attribution": "",
+        "width": 30,
         "layer": 3,
         "item": 9,
+        "left": 50,
         "offset": {
           "x": 0,
           "y": 0
@@ -270,9 +286,11 @@
       {
         "src": "images/placeholder.png",
         "alt": "",
-        "width": 250,
+        "attribution": "",
+        "width": 30,
         "layer": 0,
         "item": 10,
+        "left": 82,
         "offset": {
           "x": 0,
           "y": 0
@@ -281,9 +299,11 @@
       {
         "src": "images/placeholder.png",
         "alt": "",
-        "width": 250,
+        "attribution": "",
+        "width": 30,
         "layer": 3,
         "item": 11,
+        "left": 93,
         "offset": {
           "x": 0,
           "y": 0
@@ -292,9 +312,11 @@
       {
         "src": "images/placeholder.png",
         "alt": "",
-        "width": 250,
+        "attribution": "",
+        "width": 30,
         "layer": 2,
         "item": 12,
+        "left": 2,
         "offset": {
           "x": 0,
           "y": 0
@@ -303,9 +325,11 @@
       {
         "src": "images/placeholder.png",
         "alt": "",
-        "width": 250,
+        "attribution": "",
+        "width": 30,
         "layer": 1,
         "item": 13,
+        "left": 13,
         "offset": {
           "x": 0,
           "y": 0
@@ -314,9 +338,11 @@
       {
         "src": "images/placeholder.png",
         "alt": "",
-        "width": 250,
+        "attribution": "",
+        "width": 30,
         "layer": 3,
         "item": 14,
+        "left": 24,
         "offset": {
           "x": 0,
           "y": 0
@@ -325,9 +351,11 @@
       {
         "src": "images/placeholder.png",
         "alt": "",
-        "width": 250,
+        "attribution": "",
+        "width": 30,
         "layer": 0,
         "item": 2,
+        "left": 34,
         "offset": {
           "x": 0,
           "y": 0

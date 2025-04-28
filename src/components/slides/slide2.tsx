@@ -89,20 +89,27 @@ const Slide2 = forwardRef((_, ref) => {
               {timelineData.data.images
                 .filter((img: ImageData) => img.layer === i)
                 .map((img, idx) => (
+                  <div
+                  key={idx}
+                  style={{
+                    position: "absolute",
+                    top: `${
+                      (img.item / timelineData.data.events.length) * 100
+                    }%`,
+                    left: `${img.left}%`,
+                    transform: `translate(${img.offset.x}px, ${img.offset.y}px)`,
+                    width: `${img.width}%`,
+                  }}>
                   <motion.img
-                    key={idx}
                     src={img.src}
                     alt={img.alt}
                     style={{
-                      position: "absolute",
-                      top: `${
-                        (img.item / timelineData.data.events.length) * 100
-                      }%`,
-                      left: `${img.offset.x}px`,
-                      transform: `translateY(${img.offset.y}px)`,
-                      width: `${img.width}px`,
+                      width: `100%`
                     }}
                   />
+                  <p className={styles.alt}>{img.alt}</p>
+                  <p className={styles.attr}>{img.attribution}</p>
+                  </div>
                 ))}
             </div>
           </div>
