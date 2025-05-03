@@ -54,3 +54,9 @@ button,
 p {
   font-family: "Roboto-mono", monospace;
 }
+
+.react-flow__node-group {
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}

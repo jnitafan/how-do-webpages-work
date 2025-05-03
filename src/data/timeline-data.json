@@ -175,191 +175,585 @@
       },
       {
         "year": "2025",
-        "text": "???"
+        "text": "to be continuned...?"
       }
     ],
     "images": [
       {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Portrait_of_J._C._R._Licklider.jpg",
+        "src": "/images/Portrait_of_J-_C-_R-_Licklider.jpg",
         "alt": "Portrait photograph of Joseph Carl Robnett Licklider wearing glasses. Label on verso reads \"Mrs. J. C. R. Licklider, 40 Pleasant View Road, Arlington, MA 02174\". Original Caption: \"#6 DARPA ca 1963\".",
-        "attribution": "Unknown author, Portrait of J. C. R. Licklider, marked as public domain, more details on Wikimedia Commons",
-        "width": 30,
+        "attribution": "Unknown author, <a href=\"https://commons.wikimedia.org/wiki/File:Portrait_of_J._C._R._Licklider.jpg\">Portrait of J. C. R. Licklider</a>, marked as public domain, more details on <a href=\"https://commons.wikimedia.org/wiki/Template:PD-US\">Wikimedia Commons</a>",
+        "width": 15,
         "layer": 0,
-        "item": 15,
-        "left": 13,
-        "offset": {
-          "x": 0,
-          "y": 0
-        }
+        "top": 4.6,
+        "left": 60
       },
       {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Massachusetts_Institute_of_Technology_%28NBY_9507%29.jpg",
+        "src": "/images/Massachusetts_Institute_of_Technology_-NBY_9507-.jpg",
         "alt": "Massachusetts Institute of Technology",
-        "attribution": "Unknown author, Massachusetts Institute of Technology (NBY 9507), marked as public domain, more details on Wikimedia Commons",
+        "attribution": "Unknown author, <a href=\"https://commons.wikimedia.org/wiki/File:Massachusetts_Institute_of_Technology_(NBY_9507).jpg\">Massachusetts Institute of Technology (NBY 9507)</a>, marked as public domain, more details on <a href=\"https://commons.wikimedia.org/wiki/Template:PD-old\">Wikimedia Commons</a>",
         "width": 30,
         "layer": 1,
-        "item": 3,
-        "left": 24,
-        "offset": {
-          "x": 0,
-          "y": 0
-        }
+        "top": 4,
+        "left": 33
       },
       {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Arpanet_logical_map%2C_march_1977.png",
+        "src": "/images/TX-2_mod_top.jpg",
+        "alt": "Circuit module from the TX-2",
+        "attribution": "<a href=\"https://commons.wikimedia.org/wiki/User:Jnc\">User:Jnc</a>, <a href=\"https://commons.wikimedia.org/wiki/File:TX-2_mod_top.jpg\">TX-2 mod top</a>, <a href=\"https://creativecommons.org/licenses/by-sa/2.5/legalcode\" rel=\"license\">CC BY-SA 2.5</a>",
+        "width": 30,
+        "layer": 0,
+        "top": 8,
+        "left": 15
+      },
+      {
+        "src": "/images/Randcorporationsantamonica.JPG",
+        "alt": "RAND Corporation headquarters in Santa Monica, California. Photographed on March 28, 2015 by user Coolcaesar.",
+        "attribution": "<a href=\"https://commons.wikimedia.org/wiki/User:Coolcaesar\">Coolcaesar</a>, <a href=\"https://commons.wikimedia.org/wiki/File:Randcorporationsantamonica.JPG\">Randcorporationsantamonica</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0/legalcode\" rel=\"license\">CC BY-SA 4.0</a>",
+        "width": 25,
+        "layer": 1,
+        "top": 9,
+        "left": 52
+      },
+      {
+        "src": "/images/Arpanet_logical_map-_march_1977.png",
         "alt": "ARPANET Map",
-        "attribution": "ARPANET, Arpanet logical map, march 1977, marked as public domain, more details on Wikimedia Commons",
+        "attribution": "ARPANET, <a href=\"https://commons.wikimedia.org/wiki/File:Arpanet_logical_map,_march_1977.png\">Arpanet logical map, march 1977</a>, marked as public domain, more details on <a href=\"https://commons.wikimedia.org/wiki/Template:PD-US\">Wikimedia Commons</a>",
         "width": 30,
         "layer": 2,
-        "item": 4,
-        "left": 30,
-        "offset": {
-          "x": 0,
-          "y": 0
-        }
+        "top": 10,
+        "left": 14
       },
       {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Arpanet_in_the_1970s.png",
+        "src": "/images/Arpanet_in_the_1970s.png",
         "alt": "ARPANET Points in the 70s",
-        "attribution": "Semaforo GMS, Arpanet in the 1970s, CC BY-SA 4.0",
-        "width": 30,
-        "layer": 3,
-        "item": 5,
-        "left": 47,
-        "offset": {
-          "x": 0,
-          "y": 0
-        }
-      },
-      {
-        "src": "images/placeholder.png",
-        "alt": "",
-        "attribution": "",
-        "width": 30,
+        "attribution": "<a href=\"https://commons.wikimedia.org/wiki/User:Semaforo_GMS\">Semaforo GMS</a>, <a href=\"https://commons.wikimedia.org/wiki/File:Arpanet_in_the_1970s.png\">Arpanet in the 1970s</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0/legalcode\" rel=\"license\">CC BY-SA 4.0</a>",
+        "width": 25,
         "layer": 0,
-        "item": 6,
-        "left": 55,
-        "offset": {
-          "x": 0,
-          "y": 0
-        }
+        "top": 14,
+        "left": 25
       },
       {
-        "src": "images/placeholder.png",
-        "alt": "",
-        "attribution": "",
-        "width": 30,
-        "layer": 1,
-        "item": 7,
-        "left": 69,
-        "offset": {
-          "x": 0,
-          "y": 0
-        }
-      },
-      {
-        "src": "images/placeholder.png",
-        "alt": "",
-        "attribution": "",
+        "src": "/images/Arpanet_map_1973.jpg",
+        "alt": "Map of the ARPANET 1973",
+        "attribution": "Bolt Beranek and Newman Inc., <a href=\"https://commons.wikimedia.org/wiki/File:ARPA_Network,_Logical_Map,_September_1973.jpg\">ARPA Network, Logical Map, September 1973</a>, marked as public domain, more details on <a href=\"https://commons.wikimedia.org/wiki/Template:PD-US\">Wikimedia Commons</a>",
         "width": 30,
         "layer": 2,
-        "item": 8,
-        "left": 75,
-        "offset": {
-          "x": 0,
-          "y": 0
-        }
+        "top": 20,
+        "left": 18
       },
       {
-        "src": "images/placeholder.png",
-        "alt": "",
-        "attribution": "",
-        "width": 30,
+        "src": "/images/Interface_Message_Processor_Front_Panel.jpg",
+        "alt": "This is a photo of the front panel of the very first Interface Message Processor (IMP). This one was used at the UCLA Boelter 3420 lab to transmit the first message on the Internet. I took this photo at the grand opening of the Kleinrock Internet Heritage Site and Archive, which is a restoration of the original Boelter 3420 lab and equipment as a museum dedicated to preserving the birthplace of the Internet and its history.",
+        "attribution": "<a href=\"https://commons.wikimedia.org/wiki/User:FastLizard4\">FastLizard4</a>, <a href=\"https://commons.wikimedia.org/wiki/File:Interface_Message_Processor_Front_Panel.jpg\">Interface Message Processor Front Panel</a>, <a href=\"https://creativecommons.org/licenses/by-sa/3.0/legalcode\" rel=\"license\">CC BY-SA 3.0</a>",
+        "width": 20,
+        "layer": 0,
+        "top": 17,
+        "left": 55
+      },
+      {
+        "src": "/images/Bob_Kahn.jpg",
+        "alt": "American Internet pioneer Bob Kahn",
+        "attribution": "<a href=\"https://commons.wikimedia.org/wiki/User:%D0%92%D0%B5%D0%BD%D0%B8_%D0%9C%D0%B0%D1%80%D0%BA%D0%BE%D0%B2%D1%81%D0%BA%D0%B8\">Вени Марковски | Veni Markovski</a>, <a href=\"https://commons.wikimedia.org/wiki/File:Bob_Kahn.jpg\">Bob Kahn</a>, <a href=\"https://creativecommons.org/licenses/by-sa/3.0/legalcode\" rel=\"license\">CC BY-SA 3.0</a>",
+        "width": 15,
         "layer": 3,
-        "item": 9,
-        "left": 50,
-        "offset": {
-          "x": 0,
-          "y": 0
-        }
+        "top": 16,
+        "left": 60
       },
       {
-        "src": "images/placeholder.png",
-        "alt": "",
-        "attribution": "",
+        "src": "/images/Bolt_Beranek_and_Newman_Inc-_logo.svg",
+        "alt": "Logo of Bolt Beranek and Newman Inc.",
+        "attribution": "Bolt Beranek and Newman Inc., <a href=\"https://commons.wikimedia.org/wiki/File:Bolt_Beranek_and_Newman_Inc._logo.svg\">Bolt Beranek and Newman Inc. logo</a>, marked as public domain, more details on <a href=\"https://commons.wikimedia.org/wiki/Template:PD-text\">Wikimedia Commons</a>",
+        "width": 25,
+        "layer": 2,
+        "top": 25,
+        "left": 53
+      },
+      {
+        "src": "/images/CYCLADES-en.png",
+        "alt": "The CYCLADES Network, the first packet-switched network",
+        "attribution": "<a href=\"https://www.wikidata.org/wiki/Q81411358\">Michel Bakni</a> creator QS:P170,Q81411358, <a href=\"https://commons.wikimedia.org/wiki/File:CYCLADES-en.png\">CYCLADES-en</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0/legalcode\" rel=\"license\">CC BY-SA 4.0</a>",
         "width": 30,
         "layer": 0,
-        "item": 10,
-        "left": 82,
-        "offset": {
-          "x": 0,
-          "y": 0
-        }
+        "top": 19,
+        "left": 24
       },
       {
-        "src": "images/placeholder.png",
-        "alt": "",
-        "attribution": "",
-        "width": 30,
-        "layer": 3,
-        "item": 11,
-        "left": 93,
-        "offset": {
-          "x": 0,
-          "y": 0
-        }
+        "src": "/images/Ray_Tomlinson.jpg",
+        "alt": "Ray Tomlinson",
+        "attribution": "<a href=\"https://commons.wikimedia.org/wiki/User:Comocreamosinternet\">Andreu Veà, WiWiW.org</a>, <a href=\"https://commons.wikimedia.org/wiki/File:Ray_Tomlinson.jpg\">Ray Tomlinson</a>, <a href=\"https://creativecommons.org/licenses/by-sa/3.0/legalcode\" rel=\"license\">CC BY-SA 3.0</a>",
+        "width": 15,
+        "layer": 0,
+        "top": 22,
+        "left": 55
       },
       {
-        "src": "images/placeholder.png",
-        "alt": "",
-        "attribution": "",
+        "src": "/images/Android_Email_8-1_Icon.png",
+        "alt": "The Android Email app icon as it appears in Android 8.1",
+        "attribution": "The Android Open Source Project, <a href=\"https://commons.wikimedia.org/wiki/File:Android_Email_8.1_Icon.png\">Android Email 8.1 Icon</a>, marked as public domain, more details on <a href=\"https://commons.wikimedia.org/wiki/Template:PD-text\">Wikimedia Commons</a>",
+        "width": 15,
+        "layer": 0,
+        "top": 25,
+        "left": 65
+      },
+      {
+        "src": "/images/X25-network-diagram-0a.svg",
+        "alt": "Diagram of an X.25 network. All graphics were imported from the Open Clipart Library",
+        "attribution": "<a href=\"https://commons.wikimedia.org/wiki/User:Adamantios\">Adamantios</a>, <a href=\"https://commons.wikimedia.org/wiki/File:X25-network-diagram-0a.svg\">X25-network-diagram-0a</a>, marked as public domain, more details on <a href=\"https://commons.wikimedia.org/wiki/Template:PD-self\">Wikimedia Commons</a>",
         "width": 30,
+        "layer": 0,
+        "top": 28,
+        "left": 52
+      },
+      {
+        "src": "/images/Televideo925Terminal.jpg",
+        "alt": "A TeleVideo 925 computer terminal. This was a text-only smart terminal, with uppercase and lowercase letters, cursor postioning, and a unique set of escape sequences for a command set. The terminal used ASCII character codes and connected to a host computer through an RS-232 port at speeds up to 19,200 bits per second. The processor was a MOS Technology 6502. The terminal has 4 kilobytes of RAM, two 4 kilobyte ROM chips, and uses TTL for interconnecting the VLSI integrated circuits. Though this device is plainly a DTE, its RS-232 ports use female DB-25 connectors, probably because these put the fragile male pin connectors on an easily changed cable. This particular 925 appears to have been manufactured in late 1982. In this picture it is displaying a self-test.",
+        "attribution": "Wtshymanski, <a href=\"https://commons.wikimedia.org/wiki/File:Televideo925Terminal.jpg#file\">Televideo925Terminal</a>, marked as public domain, more details on <a href=\"https://commons.wikimedia.org/wiki/Template:PD-user\">Wikimedia Commons</a>",
+        "width": 27,
+        "layer": 1,
+        "top": 24,
+        "left": 20
+      },
+      {
+        "src": "/images/Siemens-DAG-64_front.jpg",
+        "alt": "Siemens DAG 64, a device used to connect to the german Datex-P X.25 network.",
+        "attribution": "Casandro, <a href=\"https://commons.wikimedia.org/wiki/File:Siemens-DAG-64_front.jpg\">Siemens-DAG-64 front</a>, marked as public domain",
+        "width": 30,
+        "layer": 0,
+        "top": 26,
+        "left": 34
+      },
+      {
+        "src": "/images/R%C3%A9mi_Despr%C3%A9s_2021-05-01.png",
+        "alt": "Rémi Després, chez lui à Levallois en 2020",
+        "attribution": "<a href=\"https://commons.wikimedia.org/wiki/User:RD2017\">RD2017</a>, <a href=\"https://commons.wikimedia.org/wiki/File:Rémi_Després_2021-05-01.png\">Rémi Després 2021-05-01</a>, <a href=\"https://creativecommons.org/publicdomain/zero/1.0/legalcode\" rel=\"license\">CC0 1.0</a>",
+        "width": 15,
         "layer": 2,
-        "item": 12,
-        "left": 2,
-        "offset": {
-          "x": 0,
-          "y": 0
-        }
+        "top": 30,
+        "left": 62
       },
       {
-        "src": "images/placeholder.png",
-        "alt": "",
-        "attribution": "",
+        "src": "/images/Dr_Vint_Cerf_ForMemRS.jpg",
+        "alt": "Vinton Gray Cerf (born June 23, 1943) is an American Internet pioneer, who is recognized as one of \"the fathers of the Internet\", with TCP/IP co-inventor Bob Kahn",
+        "attribution": "The Royal Society, <a href=\"https://commons.wikimedia.org/wiki/File:Dr_Vint_Cerf_ForMemRS.jpg\">Dr Vint Cerf ForMemRS</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0/legalcode\" rel=\"license\">CC BY-SA 4.0</a>",
+        "width": 20,
+        "layer": 3,
+        "top": 40,
+        "left": 14
+      },
+      {
+        "src": "/images/Data_Flow_of_the_Internet_Protocol_Suite.PNG",
+        "alt": "Data Flow of the Internet Protocol Suite",
+        "attribution": "<a href=\"https://commons.wikimedia.org/wiki/User:Tosaka\">Tosaka</a>, <a href=\"https://commons.wikimedia.org/wiki/File:TCP・IPの階層構造（ルーター）.PNG\">TCP・IPの階層構造（ルーター）</a>, <a href=\"https://creativecommons.org/licenses/by-sa/3.0/legalcode\" rel=\"license\">CC BY-SA 3.0</a>",
+        "width": 30,
+        "layer": 0,
+        "top": 32,
+        "left": 24
+      },
+      {
+        "src": "/images/Bbs-finbox-purkkikoneet.jpg",
+        "alt": "Hardware for running a two-node PCBoard BBS.",
+        "attribution": "<a href=\"https://fi.wikipedia.org/wiki/User:APz\">APz</a>, <a href=\"https://commons.wikimedia.org/wiki/File:Bbs-finbox-purkkikoneet.jpg\">Bbs-finbox-purkkikoneet</a>, <a href=\"https://creativecommons.org/licenses/by-sa/3.0/legalcode\" rel=\"license\">CC BY-SA 3.0</a>",
+        "width": 20,
+        "layer": 0,
+        "top": 28,
+        "left": 34
+      },
+      {
+        "src": "/images/Usenet_Provider_Tree_2.svg",
+        "alt": "Usenet Providers and Backbones",
+        "attribution": "<a href=\"https://commons.wikimedia.org/wiki/User:Nerosbb\">Nerosbb</a>, <a href=\"https://commons.wikimedia.org/wiki/File:Usenet_Provider_Tree_2.svg\">Usenet Provider Tree 2</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0/legalcode\" rel=\"license\">CC BY-SA 4.0</a>",
+        "width": 30,
+        "layer": 0,
+        "top": 30,
+        "left": 51
+      },
+      {
+        "src": "/images/DNS_Architecture.svg",
+        "alt": "Diagram of the domain name resolution process",
+        "attribution": "<a href=\"https://commons.wikimedia.org/wiki/User:EVhotrodder\">Aaron Filbert</a>, <a href=\"https://commons.wikimedia.org/wiki/File:DNS_Architecture.svg\">DNS Architecture</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0/legalcode\" rel=\"license\">CC BY-SA 4.0</a>",
+        "width": 30,
+        "layer": 0,
+        "top": 34,
+        "left": 24
+      },
+      {
+        "src": "/images/Tolsun_2.jpg",
+        "alt": "The first IRC server, a Sun-3 system.",
+        "attribution": "Please attribute author as Urpo Lankinen, <a href=\"https://commons.wikimedia.org/wiki/User:Wwwwolf\">User:Wwwwolf</a> at Wikimedia Commons, or Umbraroze., <a href=\"https://commons.wikimedia.org/wiki/File:Tolsun_2.jpg\">Tolsun 2</a>, <a href=\"https://creativecommons.org/licenses/by/2.5/legalcode\" rel=\"license\">CC BY 2.5</a>",
+        "width": 20,
+        "layer": 0,
+        "top": 33,
+        "left": 15
+      },
+      {
+        "src": "/images/Stealth_Fiber_Crew_installing_fiber_cable_underneath_the_streets_of_Manhattan.jpg",
+        "alt": "Stealth Fiber Crew installing a 1728-count fiber cable underneath the streets of Midtown Manhattan, New York City.",
+        "attribution": "<a href=\"https://commons.wikimedia.org/wiki/User:Spandit\">Stealth Communications</a>, <a href=\"https://commons.wikimedia.org/wiki/File:Stealth_Fiber_Crew_installing_fiber_cable_underneath_the_streets_of_Manhattan.jpg\">Stealth Fiber Crew installing fiber cable underneath the streets of Manhattan</a>, <a href=\"https://creativecommons.org/licenses/by-sa/3.0/legalcode\" rel=\"license\">CC BY-SA 3.0</a>",
+        "width": 30,
+        "layer": 0,
+        "top": 36,
+        "left": 34
+      },
+      {
+        "src": "/images/Arris_TM_1602_cable_modem-_branded_with_US_internet_service_.jpg",
+        "alt": " An Arris TM 1602 cable modem, connected and working, branded with Optimum the cable broadband provider.",
+        "attribution": "<a href=\"https://commons.wikimedia.org/wiki/User:Jonathan_Schilling\">Jonathan Schilling</a>, <a href=\"https://commons.wikimedia.org/wiki/File:Arris_TM_1602_cable_modem,_branded_with_US_internet_service_provider_'Optimum'_(cropped).jpg\">Arris TM 1602 cable modem, branded with US internet service provider 'Optimum' (cropped)</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0/legalcode\" rel=\"license\">CC BY-SA 4.0</a>",
         "width": 30,
         "layer": 1,
-        "item": 13,
-        "left": 13,
-        "offset": {
-          "x": 0,
-          "y": 0
-        }
+        "top": 36,
+        "left": 17
       },
       {
-        "src": "images/placeholder.png",
-        "alt": "",
-        "attribution": "",
-        "width": 30,
-        "layer": 3,
-        "item": 14,
-        "left": 24,
-        "offset": {
-          "x": 0,
-          "y": 0
-        }
-      },
-      {
-        "src": "images/placeholder.png",
-        "alt": "",
-        "attribution": "",
+        "src": "/images/Sir_Tim_Berners-Lee.jpg",
+        "alt": "Sir Tim Berners-Lee arriving at the Guildhall to receive the Honorary Freedom of the City of London",
+        "attribution": "<a href=\"https://www.wikidata.org/wiki/Q20202034\">Paul Clarke</a> creator QS:P170,Q20202034, <a href=\"https://commons.wikimedia.org/wiki/File:Sir_Tim_Berners-Lee.jpg\">Sir Tim Berners-Lee</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0/legalcode\" rel=\"license\">CC BY-SA 4.0</a>",
         "width": 30,
         "layer": 0,
-        "item": 2,
-        "left": 34,
-        "offset": {
-          "x": 0,
-          "y": 0
-        }
+        "top": 38,
+        "left": 52
+      },
+      {
+        "src": "/images/First_Web_Server.jpg",
+        "alt": "This NeXT workstation (a NeXTcube, monitor Cern 57503) was used by Tim Berners-Lee as the first Web server on the World Wide Web. It is shown here as displayed in 2005 at Microcosm, the public science museum at CERN where Berners-Lee was working in 1991 when he invented the Web.",
+        "attribution": "<a href=\"https://en.wikipedia.org/wiki/User:Coolcaesar\">Coolcaesar</a>, <a href=\"https://commons.wikimedia.org/wiki/File:First_Web_Server.jpg\">First Web Server</a>, <a href=\"https://creativecommons.org/licenses/by-sa/3.0/legalcode\" rel=\"license\">CC BY-SA 3.0</a>",
+        "width": 30,
+        "layer": 0,
+        "top": 40,
+        "left": 15
+      },
+      {
+        "src": "/images/Select_your_web_browser-s-.jpg",
+        "alt": "A web browser page",
+        "attribution": "Pietro Zanarini, <a href=\"https://commons.wikimedia.org/wiki/File:Select_your_web_browser(s).jpg\">Select your web browser(s)</a>, <a href=\"https://creativecommons.org/licenses/by/2.0/legalcode\" rel=\"license\">CC BY 2.0</a>",
+        "width": 30,
+        "layer": 1,
+        "top": 44,
+        "left": 52
+      },
+      {
+        "src": "/images/NCSA_Mosaic_Browser_Screenshot.png",
+        "alt": "NCSA Mosaic for X Screenshot",
+        "attribution": "Charles Severance, <a href=\"https://commons.wikimedia.org/wiki/File:NCSA_Mosaic_Browser_Screenshot.png\">NCSA Mosaic Browser Screenshot</a>, <a href=\"https://creativecommons.org/publicdomain/zero/1.0/legalcode\" rel=\"license\">CC0 1.0</a>",
+        "width": 30,
+        "layer": 0,
+        "top": 42,
+        "left": 52
+      },
+      {
+        "src": "/images/Netscape_Navigator_1-1_for_Macintosh_Install_Disk.jpg",
+        "alt": "When Netscape Navigator was released strong encryption algorithms were considered munitions and could not be exported, special export restricted installers were produced for the US and Canada.",
+        "attribution": "<a href=\"https://commons.wikimedia.org/wiki/User:Nmtgxnku\">Kevin van Haaren</a>, <a href=\"https://commons.wikimedia.org/wiki/File:Netscape_Navigator_1.1_for_Macintosh_Install_Disk.jpg\">Netscape Navigator 1.1 for Macintosh Install Disk</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0/legalcode\" rel=\"license\">CC BY-SA 4.0</a>",
+        "width": 25,
+        "layer": 0,
+        "top": 44,
+        "left": 15
+      },
+      {
+        "src": "/images/EV-SSL-example.png",
+        "alt": "Пример EV SSL сертификата.",
+        "attribution": "<a href=\"https://commons.wikimedia.org/wiki/User:%D0%90%D0%BC%D0%B5%D1%80%D0%B8%D0%BA%D0%B0%D0%BD_%D0%91%D0%BE%D0%B9\">Американ Бой</a>, <a href=\"https://commons.wikimedia.org/wiki/File:EV-SSL-example.png\">EV-SSL-example</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0/legalcode\" rel=\"license\">CC BY-SA 4.0</a>",
+        "width": 30,
+        "layer": 0,
+        "top": 47,
+        "left": 48
+      },
+      {
+        "src": "/images/What_is_https.jpg",
+        "alt": "To make your website secure, what you need to do it install an SSL certificate. This SSL certificate contains encryption keys called public key and private key.",
+        "attribution": "mohan C, <a href=\"https://commons.wikimedia.org/wiki/File:What_is_https.jpg\">What is https</a>, marked as public domain, more details on <a href=\"https://commons.wikimedia.org/wiki/Template:PD-author\">Wikimedia Commons</a>",
+        "width": 30,
+        "layer": 1,
+        "top": 68,
+        "left": 24
+      },
+      {
+        "src": "/images/MSN_Hotmail_logo.svg",
+        "alt": "Logo of MSN Hotmail",
+        "attribution": "Microsoft, <a href=\"https://commons.wikimedia.org/wiki/File:MSN_Hotmail_logo.svg\">MSN Hotmail logo</a>, marked as public domain, more details on <a href=\"https://commons.wikimedia.org/wiki/Template:PD-text\">Wikimedia Commons</a>",
+        "width": 30,
+        "layer": 1,
+        "top": 48,
+        "left": 18
+      },
+      {
+        "src": "/images/Home_LAN_local_area_network_example_diagram.png",
+        "alt": "Example of a LAN setup at a residential house; the router in this case is assumed to also function as a wireless access point. Also shown in this example (shaded in yellow) is the network's connection to the Internet. The diagram has been designed to take into account a contemporary setup that is commonplace at home for the average person.",
+        "attribution": "Sceeegt, <a href=\"https://commons.wikimedia.org/wiki/File:Home_LAN_local_area_network_example_diagram.png\">Home LAN local area network example diagram</a>, <a href=\"https://creativecommons.org/publicdomain/zero/1.0/legalcode\" rel=\"license\">CC0 1.0</a>",
+        "width": 30,
+        "layer": 0,
+        "top": 51,
+        "left": 53
+      },
+      {
+        "src": "/images/CSIRO_ScienceImage_1400_CSIRO_building.jpg",
+        "alt": "CSIRO headquarters, Limestone Avenue, Canberra.",
+        "attribution": "CSIRO, <a href=\"https://commons.wikimedia.org/wiki/File:CSIRO_ScienceImage_1400_CSIRO_building.jpg\">CSIRO ScienceImage 1400 CSIRO building</a>, <a href=\"https://creativecommons.org/licenses/by/3.0/legalcode\" rel=\"license\">CC BY 3.0</a>",
+        "width": 30,
+        "layer": 2,
+        "top": 46,
+        "left": 52
+      },
+      {
+        "src": "/images/Googleplex_HQ_-cropped-.jpg",
+        "alt": "The Googleplex, Google's Headquarters in Mountain View, California.",
+        "attribution": "<a href=\"https://commons.wikimedia.org/wiki/User:The_Pancake_of_Heaven!\">The Pancake of Heaven!</a>, <a href=\"https://commons.wikimedia.org/wiki/File:Googleplex_HQ_(cropped).jpg\">Googleplex HQ (cropped)</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0/legalcode\" rel=\"license\">CC BY-SA 4.0</a>",
+        "width": 30,
+        "layer": 0,
+        "top": 53,
+        "left": 15
+      },
+      {
+        "src": "/images/US_VC_funding.png",
+        "alt": "Quarterly U.S. Venture Capital Investments 1995-2017",
+        "attribution": "<a href=\"https://commons.wikimedia.org/wiki/User:Wikideas1\">Wikideas1</a>, <a href=\"https://commons.wikimedia.org/wiki/File:US_VC_funding.png\">US VC funding</a>, <a href=\"https://creativecommons.org/publicdomain/zero/1.0/legalcode\" rel=\"license\">CC0 1.0</a>",
+        "width": 30,
+        "layer": 0,
+        "top": 54,
+        "left": 54
+      },
+      {
+        "src": "/images/Wikipedia_Portal_Screenshot_-2022-.svg",
+        "alt": "Screenshot from https://www.wikipedia.org/",
+        "attribution": "<a href=\"https://commons.wikimedia.org/wiki/User:%E6%9C%80%E7%B5%82%E7%B7%A8%E9%9B%86\">最終編集</a>, <a href=\"https://commons.wikimedia.org/wiki/File:Wikipedia_Portal_Screenshot_(2022).svg\">Wikipedia Portal Screenshot (2022)</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0/legalcode\" rel=\"license\">CC BY-SA 4.0</a>",
+        "width": 30,
+        "layer": 0,
+        "top": 56,
+        "left": 34
+      },
+      {
+        "src": "/images/Voip-typical.gif",
+        "alt": "Typical VoIP Setup",
+        "attribution": "BroadVoice, <a href=\"https://commons.wikimedia.org/wiki/File:Voip-typical.gif\">Voip-typical</a>, <a href=\"https://creativecommons.org/licenses/by/1.0/legalcode\" rel=\"license\">CC BY 1.0</a>",
+        "width": 15,
+        "layer": 1,
+        "top": 56,
+        "left": 65
+      },
+      {
+        "src": "/images/Web_2-0_Map.svg",
+        "alt": "A tag cloud (a typical Web 2.0 phenomenon in itself) presenting Web 2.0 themes.",
+        "attribution": "Original by Markus Angermeier Vectorised and linked version by Luca Cremonini, <a href=\"https://commons.wikimedia.org/wiki/File:Web_2.0_Map.svg\">Web 2.0 Map</a>, <a href=\"https://creativecommons.org/licenses/by-sa/2.5/legalcode\" rel=\"license\">CC BY-SA 2.5</a>",
+        "width": 30,
+        "layer": 0,
+        "top": 61,
+        "left": 34
+      },
+      {
+        "src": "/images/YouTube_results_screenshot.jpg",
+        "alt": "YouTube search results showing video thumbnails",
+        "attribution": "Smile and Learn - English, Rockin Robin Cooks, Nicky's Kitchen, <a href=\"https://commons.wikimedia.org/wiki/File:YouTube_results_screenshot.jpg\">YouTube results screenshot</a>, <a href=\"https://creativecommons.org/licenses/by/3.0/legalcode\" rel=\"license\">CC BY 3.0</a>",
+        "width": 30,
+        "layer": 1,
+        "top": 60,
+        "left": 52
+      },
+      {
+        "src": "/images/Logo_Youtube_app_-IPhone_OS-.jpg",
+        "alt": "Youtube app (iPhone OS)",
+        "attribution": "<a href=\"https://commons.wikimedia.org/wiki/User:Thanhhoat237\">Thanhhoat237</a>, <a href=\"https://commons.wikimedia.org/wiki/File:Logo_Youtube_app_(IPhone_OS).jpg\">Logo Youtube app (IPhone OS)</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0/legalcode\" rel=\"license\">CC BY-SA 4.0</a>",
+        "width": 15,
+        "layer": 0,
+        "top": 63,
+        "left": 60
+      },
+      {
+        "src": "/images/Twitter_Homepage.jpg",
+        "alt": "Twitter Homepage in March 2024 with Freebird",
+        "attribution": "<a href=\"https://commons.wikimedia.org/wiki/User:TheMasterMind321\">TheMasterMind321</a>, <a href=\"https://commons.wikimedia.org/wiki/File:Twitter_Homepage.jpg\">Twitter Homepage</a>, <a href=\"https://creativecommons.org/licenses/by/4.0/legalcode\" rel=\"license\">CC BY 4.0</a>",
+        "width": 30,
+        "layer": 1,
+        "top": 62,
+        "left": 14
+      },
+      {
+        "src": "/images/Logo_of_Twitter.svg",
+        "alt": "The former logo of X (then Twitter) – American social networking service",
+        "attribution": "Twitter logo © X Corp. Used for informational purposes under fair use.",
+        "width": 15,
+        "layer": 0,
+        "top": 66,
+        "left": 34
+      },
+      {
+        "src": "/images/YouTube_full-color_icon_(2017).svg",
+        "alt": "YouTube icon",
+        "attribution": "YouTube logo © Google LLC. Used for informational purposes under fair use.",
+        "width": 30,
+        "layer": 1,
+        "top": 61,
+        "left": 34
+      },
+      {
+        "src": "/images/Bitcoin_BTC_golden_coin_with_the_symbol.jpg",
+        "alt": "Blockchain based peer to peer decentralized crypto currency Bitcoin",
+        "attribution": "Satheesh Sankaran, <a href=\"https://commons.wikimedia.org/wiki/File:Bitcoin_BTC_golden_coin_with_the_symbol.jpg\">Bitcoin BTC golden coin with the symbol</a>, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/legalcode\" rel=\"license\">CC BY-SA 2.0</a>",
+        "width": 30,
+        "layer": 0,
+        "top": 69,
+        "left": 16
+      },
+      {
+        "src": "/images/IPhone_models.jpg",
+        "alt": "iPhone models",
+        "attribution": "<a href=\"https://commons.wikimedia.org/wiki/User:Ka_Kit_Pang\">Ka Kit Pang</a>, <a href=\"https://commons.wikimedia.org/wiki/File:IPhone_models.jpg\">IPhone models</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0/legalcode\" rel=\"license\">CC BY-SA 4.0</a>",
+        "width": 25,
+        "layer": 0,
+        "top": 67,
+        "left": 51
+      },
+      {
+        "src": "/images/IPhone_disassembled.jpg",
+        "alt": "Removing dust from an iPhone",
+        "attribution": "<a href=\"https://www.flickr.com/photos/ivyfield/\">Yutaka Tsutano</a>, <a href=\"https://commons.wikimedia.org/wiki/File:IPhone_disassembled.jpg\">IPhone disassembled</a>, <a href=\"https://creativecommons.org/licenses/by/2.0/legalcode\" rel=\"license\">CC BY 2.0</a>",
+        "width": 13,
+        "layer": 2,
+        "top": 66,
+        "left": 34
+      },
+      {
+        "src": "/images/Icann_logo.svg",
+        "alt": "ICANN logo",
+        "attribution": "ICANN, <a href=\"https://commons.wikimedia.org/wiki/File:Icann_logo.svg\">Icann logo</a>, marked as public domain, more details on <a href=\"https://commons.wikimedia.org/wiki/Template:PD-text\">Wikimedia Commons</a>",
+        "width": 20,
+        "layer": 0,
+        "top": 71,
+        "left": 53
+      },
+      {
+        "src": "/images/Argo_Blockchain_Mirabel_Facility.jpg",
+        "alt": "Argo Blockchain Mirabel Bitcoin Mining Facility",
+        "attribution": "<a href=\"https://commons.wikimedia.org/wiki/User:MikeBogosian\">MikeBogosian</a>, <a href=\"https://commons.wikimedia.org/wiki/File:Argo_Blockchain_Mirabel_Facility.jpg\">Argo Blockchain Mirabel Facility</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0/legalcode\" rel=\"license\">CC BY-SA 4.0</a>",
+        "width": 30,
+        "layer": 0,
+        "top": 73,
+        "left": 16
+      },
+      {
+        "src": "/images/Adobe_Creative_Cloud_rainbow_icon.png",
+        "alt": "The logo of Adobe Creative Cloud – software as a service offering from Adobe Inc.",
+        "attribution": "Adobe Creative Cloud © Adobe. Used for informational purposes under fair use.",
+        "width": 20,
+        "layer": 0,
+        "top": 74,
+        "left": 61
+      },
+      {
+        "src": "/images/Gangnam_Style_Official_Cover.png",
+        "alt": "This is the cover art for the single Gangnam Style by the artist Psy. The cover art copyright is believed to belong to the label, YG / Universal Republic / School Boy, or the graphic artist(s).",
+        "attribution": "Cover art for the single Gangnam Style by Psy. Copyright held by YG Entertainment, Universal Republic Records, and/or School Boy Records, or the graphic artist(s). Used here under the doctrine of fair use for the purpose of descriptive commentary and critical analysis.",
+        "width": 15,
+        "layer": 0,
+        "top": 77,
+        "left": 22
+      },
+      {
+        "src": "/images/Screenshot_eBanking_bei_der_Frankfurter_Volksbank.png",
+        "alt": " Der Screenshot zeigt die Onlinebanking-GUI der Frankfurter Volksbank (Fiducia) beim Tätigen einer regulären Überweisung (exemplarische Spende an Wikimedia Deutschland e.V.). Alle persönlichen Felder wurden unkenntlich gemacht (Verpixelte Stellen).",
+        "attribution": "<a href=\"https://de.wikipedia.org/wiki/Benutzer:Benji\">de:Benutzer:Benji</a>, <a href=\"https://commons.wikimedia.org/wiki/File:Screenshot_eBanking_bei_der_Frankfurter_Volksbank.png\">Screenshot eBanking bei der Frankfurter Volksbank</a>, marked as public domain, more details on <a href=\"https://commons.wikimedia.org/wiki/Template:PD-ineligible\">Wikimedia Commons</a>",
+        "width": 25,
+        "layer": 0,
+        "top": 79,
+        "left": 56
+      },
+      {
+        "src": "/images/FCC_New_Logo.svg",
+        "alt": " New logo of the US Federal Communications Commission",
+        "attribution": "Original: Federal Communications Commission Vector: <a href=\"https://commons.wikimedia.org/wiki/User:Rehua\">Rehua</a>, <a href=\"https://commons.wikimedia.org/wiki/File:FCC_New_Logo.svg\">FCC New Logo</a>, marked as public domain, more details on <a href=\"https://commons.wikimedia.org/wiki/Template:PD-US\">Wikimedia Commons</a>",
+        "width": 20,
+        "layer": 0,
+        "top": 82,
+        "left": 15
+      },
+      {
+        "src": "/images/26c3_Jérémie_Zimmermann_-_Why_Net_Neutrality_Matters-.jpg",
+        "alt": "26c3 Jérémie Zimmermann - Why Net Neutrality Matters?",
+        "attribution": "<a href=\"https://www.flickr.com/people/8132250@N02\">Andreas Gaufer</a>, <a href=\"https://commons.wikimedia.org/wiki/File:26c3_Jérémie_Zimmermann_-_Why_Net_Neutrality_Matters?.jpg\">26c3 Jérémie Zimmermann - Why Net Neutrality Matters?</a>, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/legalcode\" rel=\"license\">CC BY-SA 2.0</a>",
+        "width": 40,
+        "layer": 1,
+        "top": 77,
+        "left": 34
+      },
+      {
+        "src": "/images/TikTok_app.jpg",
+        "alt": " TikTok app icon on a mobile phone",
+        "attribution": "Solen Feyissa, <a href=\"https://commons.wikimedia.org/wiki/File:TikTok_app.jpg\">TikTok app</a>, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/legalcode\" rel=\"license\">CC BY-SA 2.0</a>",
+        "width": 30,
+        "layer": 1,
+        "top": 80,
+        "left": 52
+      },
+      {
+        "src": "/images/Tiktok_icon.svg",
+        "alt": "TikTok Logo",
+        "attribution": "TikTok Icon © ByteDance. Used for informational purposes under fair use.",
+        "width": 10,
+        "layer": 0,
+        "top": 84,
+        "left": 55
+      },
+      {
+        "src": "/images/5G_mobile_network_diagram.jpg",
+        "alt": "4G - 5G mobile network design diagram",
+        "attribution": "<a href=\"https://commons.wikimedia.org/wiki/User:Goodtiming8871\">Goodtiming8871</a>, <a href=\"https://commons.wikimedia.org/wiki/File:5G_mobile_network_diagram.jpg\">5G mobile network diagram</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0/legalcode\" rel=\"license\">CC BY-SA 4.0</a>",
+        "width": 30,
+        "layer": 1,
+        "top": 81,
+        "left": 14
+      },
+      {
+        "src": "/images/2019-07-21_-_Vodafone_5G_Standort_Hattstedt_-_5G_Sektor0.jpg",
+        "alt": "Vodafone-5G-Standort in Hattstedt in der Nähe von Husum (Nordsee).",
+        "attribution": "<a href=\"https://commons.wikimedia.org/wiki/User:FabianHorst\">Fabian Horst</a>, <a href=\"https://commons.wikimedia.org/wiki/File:2019-07-21_-_Vodafone_5G_Standort_Hattstedt_-_5G_Sektor0.jpg\">2019-07-21 - Vodafone 5G Standort Hattstedt - 5G Sektor0</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0/legalcode\" rel=\"license\">CC BY-SA 4.0</a>",
+        "width": 30,
+        "layer": 0,
+        "top": 84,
+        "left": 17
+      },
+      {
+        "src": "/images/PIA23881-MarsPerseveranceRover-PortraitsInPerseverance-20200.jpg",
+        "alt": "Mars Perseverance Rover - Portraits In Perseverance - April 21, 2020",
+        "attribution": "NASA/JPL-Caltech, <a href=\"https://commons.wikimedia.org/wiki/File:PIA23881-MarsPerseveranceRover-PortraitsInPerseverance-20200421.jpg\">PIA23881-MarsPerseveranceRover-PortraitsInPerseverance-20200421</a>, marked as public domain, more details on <a href=\"https://commons.wikimedia.org/wiki/Template:PD-US\">Wikimedia Commons</a>",
+        "width": 30,
+        "layer": 2,
+        "top": 80,
+        "left": 52
+      },
+      {
+        "src": "/images/Supermarket_social_distancing_signs.jpg",
+        "alt": "Supermarket social distancing signs in Ireland - August 2020",
+        "attribution": "<a href=\"https://commons.wikimedia.org/wiki/User:Ear-phone\">Ear-phone</a>, <a href=\"https://commons.wikimedia.org/wiki/File:Supermarket_social_distancing_signs.jpg\">Supermarket social distancing signs</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0/legalcode\" rel=\"license\">CC BY-SA 4.0</a>",
+        "width": 15,
+        "layer": 0,
+        "top": 87,
+        "left": 56
+      },
+      {
+        "src": "/images/VeKings.png",
+        "alt": "The image shows Four out of 10000 unique VeKings. VeKings are a collection of 9,999 unique non-fungible tokens (NFT) stored on VeChains digital ledger (blockchain).",
+        "attribution": "<a href=\"https://commons.wikimedia.org/wiki/User:RingrEven\">RingrEven</a>, <a href=\"https://commons.wikimedia.org/wiki/File:VeKings.png\">VeKings</a>, <a href=\"https://creativecommons.org/publicdomain/zero/1.0/legalcode\" rel=\"license\">CC0 1.0</a>",
+        "width": 25,
+        "layer": 0,
+        "top": 88,
+        "left": 14
+      },
+      {
+        "src": "/images/ChatGPT_logo.svg",
+        "alt": "ChatGPT Logo",
+        "attribution": "ChatGPT Icon © OpenAI. Used for informational purposes under fair use.",
+        "width": 15,
+        "layer": 0,
+        "top": 91,
+        "left": 56
+      },
+      {
+        "src": "/images/Detalle_de_ensayo_sobre_plagio_generado_por_chatbot_de_IA.jpg",
+        "alt": "Detalle de ensayo sobre plagio generado por chatbot de IA",
+        "attribution": "<a href=\"https://commons.wikimedia.org/wiki/User:Ehecatl-c\">Ehécatl Cabrera</a>, <a href=\"https://commons.wikimedia.org/wiki/File:Detalle_de_ensayo_sobre_plagio_generado_por_chatbot_de_IA.jpg\">Detalle de ensayo sobre plagio generado por chatbot de IA</a>, <a href=\"https://creativecommons.org/licenses/by-sa/4.0/legalcode\" rel=\"license\">CC BY-SA 4.0</a>",
+        "width": 30,
+        "layer": 1,
+        "top": 93,
+        "left": 18
       }
     ]
   }

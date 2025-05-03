@@ -7,12 +7,140 @@
   overflow: hidden;
 }
 
+.s6 {
+  height: 100vh;
+  width: 100vw;
+
+  /* Container for the entire diagram */
+  .diagramContainer {
+    width: 100vw;
+    height: 100vh;
+    background-color: #1e1e1e; /* Dark background */
+    position: relative;
+    overflow: hidden;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+
+  /* Generic node box styling */
+  .nodeBox {
+    border: 1px solid #555;
+    border-radius: 4px;
+    padding: 8px;
+    color: #fff;
+    text-align: center;
+  }
+
+  /* Example color-coded node styles */
+  .protocolNode {
+    background-color: #666;
+  }
+
+  .messageFormatsNode {
+    background-color: #0eb8a7; /* Teal */
+  }
+
+  .orderingNode {
+    background-color: #f9bf3b; /* Orange-gold */
+    color: #000; /* If you prefer black text on gold */
+  }
+
+  .expectedResponsesNode {
+    background-color: #4b98f7; /* Blue */
+  }
+
+  .deviceNode {
+    background-color: #333;
+  }
+
+  .responseNode {
+    background-color: #444;
+  }
+
+  /* TCP header node styling (table-like) */
+  .tcpHeaderNode {
+    background-color: #2c2c2c;
+    border: 1px solid #666;
+    border-radius: 4px;
+    color: #fff;
+    width: 240px;
+    padding: 8px;
+
+    .tcpHeaderTop {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+
+      .headerLabel {
+        background-color: #0eb8a7;
+        color: #fff;
+        padding: 2px 6px;
+        border-radius: 4px;
+        margin-right: 8px;
+      }
+
+      .dataLabel {
+        background-color: #fff;
+        color: #000;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+    }
+
+    .tcpHeaderFields {
+      /* Example grid layout for fields */
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 4px;
+      font-size: 0.85rem;
+
+      .field {
+        background-color: #444;
+        padding: 4px;
+        border-radius: 4px;
+      }
+      .fieldImportant {
+        background-color: #c0392b; /* Red for flags, etc. */
+        color: #fff;
+        text-align: center;
+      }
+    }
+  }
+
+  /* Make edges dotted and white-ish */
+  .reactflow__edge path {
+    stroke-dasharray: 4 4;
+    stroke: #fff;
+    stroke-width: 2px;
+  }
+
+  /* React Flow built-in components styling */
+  .reactflow__minimap {
+    background-color: #333;
+    border: 1px solid #555;
+  }
+  .reactflow__controls {
+    background-color: #333;
+    border: 1px solid #555;
+  }
+  .reactflow__background {
+    background-color: transparent;
+  }
+}
+
+.s3 {
+  &__info {
+    color: black;
+  }
+}
+
 .s2 {
   &__layer {
+    pointer-events: none;
     position: absolute;
     inset: 0;
     overflow-y: auto;
-    scrollbar-width: none; 
+    scrollbar-width: none;
   }
 
   &__layer::-webkit-scrollbar {
@@ -22,6 +150,19 @@
   &__layerContent {
     position: relative;
 
+    .img {
+      width: 100%;
+      background-color: #fff;
+      padding: 0.5rem;
+    }
+
+    .imgContent {
+      margin-top: -5px;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 0.5rem;
+      backdrop-filter: blur(10px);
+    }
+
     .alt {
       font-size: 1rem;
       line-height: normal;
@@ -29,9 +170,16 @@
     }
 
     .attr {
+      pointer-events: all;
+      cursor: pointer;
       font-size: 0.5rem;
       line-height: 0.5rem;
-      color: #7d7d7d
+      color: #aaaaaa;
+
+      a {
+        color: #15557a;
+        text-decoration: underline;
+      }
     }
   }
 
@@ -76,7 +224,7 @@
         background: #fff;
         padding: 1rem;
         border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 1);
         position: relative;
       }
 
@@ -85,11 +233,13 @@
         font-weight: bold;
         margin-bottom: 0.5rem;
         color: black;
+        font-size: 2rem;
       }
 
       .text {
         margin: 0;
         color: black;
+        font-size: 1.5rem;
       }
     }
 

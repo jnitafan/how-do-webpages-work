@@ -2,14 +2,22 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import { animate } from "framer-motion/dom";
-import { Slide1, Slide2, Slide3 } from "@/components/slides/slides";
+import {
+  Slide1,
+  Slide2,
+  Slide3,
+  Slide4,
+  Slide5,
+  Slide6,
+  Slide7,
+} from "@/components/slides/slides";
 import styles from "./carousel.module.scss";
 
-const DEBUG_START = 1; // For debugging, start on this slide.
-const slides = [Slide1, Slide2, Slide3];
+const START = 5; // For debugging, start on this slide.
+const SLIDES = [Slide1, Slide2, Slide3, Slide4, Slide5, Slide6, Slide7];
 
 const Carousel: React.FC = () => {
-  const [idx, setIdx] = useState(DEBUG_START);
+  const [idx, setIdx] = useState(START);
   const [loading, setLoading] = useState(false);
   const slideRef = useRef<any>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);
@@ -39,7 +47,7 @@ const Carousel: React.FC = () => {
     );
 
   const goTo = async (newIdx: number, mode: "next" | "fade") => {
-    if (newIdx < 0 || newIdx >= slides.length || newIdx === idx) return;
+    if (newIdx < 0 || newIdx >= SLIDES.length || newIdx === idx) return;
 
     setLoading(true);
     try {
@@ -64,7 +72,7 @@ const Carousel: React.FC = () => {
   // center button opacity
   useEffect(() => {
     if (!centerRef.current) return;
-    const isEdge = idx === 0 || idx === slides.length - 1;
+    const isEdge = idx === 0 || idx === SLIDES.length - 1;
     animate(
       centerRef.current,
       { opacity: isEdge ? [0, 1] : [1, 0] },
@@ -75,7 +83,7 @@ const Carousel: React.FC = () => {
   // Prev/Next slide in/out
   useEffect(() => {
     if (!prevRef.current || !nextRef.current) return;
-    const inMiddle = idx > 0 && idx < slides.length - 1;
+    const inMiddle = idx > 0 && idx < SLIDES.length - 1;
 
     if (inMiddle) {
       prevRef.current.style.display = "block";
@@ -114,9 +122,9 @@ const Carousel: React.FC = () => {
     }
   }, [idx]);
 
-  const Current = slides[idx];
+  const Current = SLIDES[idx];
   const isFirst = idx === 0;
-  const isLast = idx === slides.length - 1;
+  const isLast = idx === SLIDES.length - 1;
   const onCenter = () =>
     isFirst ? goTo(1, "next") : isLast ? goTo(0, "fade") : null;
 
@@ -188,7 +196,7 @@ const Carousel: React.FC = () => {
       </button>
 
       <div className={styles.carousel__indicators}>
-        {slides.map((_, i) => (
+        {SLIDES.map((_, i) => (
           <button
             key={i}
             className={`${styles.carousel__indicator} ${

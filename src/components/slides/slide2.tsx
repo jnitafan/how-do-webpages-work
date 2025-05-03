@@ -4,20 +4,30 @@ import timelineData from "@/data/timeline-data.json";
 import styles from "./slides.module.scss";
 import { forwardRef, useEffect, useImperativeHandle, useRef } from "react";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
+import DOMPurify from "isomorphic-dompurify";
 
 interface ImageData {
   src: string;
   alt: string;
   width: number;
   layer: number;
-  item: number;
-  offset: { x: number; y: number };
+  top: number;
 }
 
 type Layer = {
   ratio: number;
   layerRef: React.RefObject<HTMLDivElement>;
   contentRef: React.RefObject<HTMLDivElement>;
+};
+
+const SafeAttr = ({ htmlString }: { htmlString: string }) => {
+  const cleanHtml = DOMPurify.sanitize(htmlString);
+  return (
+    <p
+      className={styles.attr}
+      dangerouslySetInnerHTML={{ __html: cleanHtml }}
+    ></p>
+  );
 };
 
 const Slide2 = forwardRef((_, ref) => {
@@ -38,6 +48,10 @@ const Slide2 = forwardRef((_, ref) => {
     container: timeline,
     offset: ["start end", "end start"],
   });
+
+  useEffect(() => {
+    timeline.current.scrollTo(0, 0);
+  }, []);
 
   useEffect(() => {
     const updateSizes = () => {
@@ -74,6 +88,62 @@ const Slide2 = forwardRef((_, ref) => {
     });
   });
 
+  const handleClickForward = (e: React.MouseEvent<HTMLDivElement>) => {
+    const el = timeline.current;
+    if (!el) return;
+
+    const { clientX, clientY } = e;
+    // 2) “hide” the timeline from hit-testing
+    el.style.pointerEvents = "none";
+    const underneath = document.elementFromPoint(
+      clientX,
+      clientY
+    ) as HTMLElement | null;
+    // 3) restore
+    el.style.pointerEvents = "auto";
+
+    // 4) if it’s a link (or has an onClick), invoke it
+    if (underneath) {
+      if (underneath.tagName.toLowerCase() === "a") {
+        (underneath as HTMLAnchorElement).click();
+      } else {
+        // optionally dispatch a click event if you want to catch React handlers
+        underneath.dispatchEvent(
+          new MouseEvent("click", {
+            bubbles: true,
+            cancelable: true,
+            view: window,
+          })
+        );
+      }
+    }
+  };
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const el = timeline.current;
+    if (!el) return;
+
+    // temporarily “hide” the overlay from hit-testing
+    el.style.pointerEvents = "none";
+    const underneath = document.elementFromPoint(
+      e.clientX,
+      e.clientY
+    ) as HTMLElement | null;
+    // restore
+    el.style.pointerEvents = "auto";
+
+    // if it (or an ancestor) is an <a>, show pointer
+    if (underneath?.closest("a")) {
+      el.style.cursor = "pointer";
+    } else {
+      el.style.cursor = "";
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (timeline.current) timeline.current.style.cursor = "";
+  };
+
   return (
     <div className={styles.slide}>
       {layers.map(({ ratio, layerRef, contentRef }, i) => {
@@ -90,25 +160,23 @@ const Slide2 = forwardRef((_, ref) => {
                 .filter((img: ImageData) => img.layer === i)
                 .map((img, idx) => (
                   <div
-                  key={idx}
-                  style={{
-                    position: "absolute",
-                    top: `${
-                      (img.item / timelineData.data.events.length) * 100
-                    }%`,
-                    left: `${img.left}%`,
-                    transform: `translate(${img.offset.x}px, ${img.offset.y}px)`,
-                    width: `${img.width}%`,
-                  }}>
-                  <motion.img
-                    src={img.src}
-                    alt={img.alt}
+                    key={idx}
                     style={{
-                      width: `100%`
+                      position: "absolute",
+                      top: `${img.top}%`,
+                      left: `${img.left}%`,
+                      width: `${img.width}%`,
                     }}
-                  />
-                  <p className={styles.alt}>{img.alt}</p>
-                  <p className={styles.attr}>{img.attribution}</p>
+                  >
+                    <motion.img
+                      src={img.src}
+                      alt={img.alt}
+                      className={styles.img}
+                    />
+                    <div className={styles.imgContent}>
+                      <p className={styles.alt}>"{img.alt}"</p>
+                      <SafeAttr htmlString={img.attribution} />
+                    </div>
                   </div>
                 ))}
             </div>
@@ -118,7 +186,13 @@ const Slide2 = forwardRef((_, ref) => {
 
       <div className={styles.s2__line} />
 
-      <div className={styles.s2__timeline} ref={timeline}>
+      <div
+        className={styles.s2__timeline}
+        ref={timeline}
+        onClick={handleClickForward}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+      >
         {timelineData.data.events.map((item, idx) => (
           <div
             key={idx}

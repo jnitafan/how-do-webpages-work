@@ -173,7 +173,7 @@ const AnimatedCamera: React.FC = () => {
 };
 
 function DummyAsset() {
-  const texture = useLoader(THREE.TextureLoader, "images/base.png");
+  const texture = useLoader(THREE.TextureLoader, "images/placeholder.png");
   return null;
 }
 
