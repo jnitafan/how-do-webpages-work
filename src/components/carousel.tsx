@@ -11,6 +11,7 @@ import {
   Slide6,
   Slide7,
   Slide8,
+  Slide9,
 } from "@/components/slides/slides";
 import styles from "./carousel.module.scss";
 
@@ -24,6 +25,7 @@ const SLIDES = [
   Slide6,
   Slide7,
   Slide8,
+  Slide9,
 ];
 
 // Hook to capture the previous value of any prop/state
@@ -118,10 +120,18 @@ const Carousel: React.FC = () => {
       prevRef.current.style.display = "block";
       nextRef.current.style.display = "block";
 
-      animate(prevRef.current, { x: [-100, 0], opacity: [0, 1] }, { duration: 1 });
-      animate(nextRef.current, { x: [100, 0], opacity: [0, 1] }, { duration: 1 });
+      animate(
+        prevRef.current,
+        { x: [-100, 0], opacity: [0, 1] },
+        { duration: 1 }
+      );
+      animate(
+        nextRef.current,
+        { x: [100, 0], opacity: [0, 1] },
+        { duration: 1 }
+      );
 
-    // 2) Crossing OUT TO an edge slide
+      // 2) Crossing OUT TO an edge slide
     } else if (wasInMiddle && !nowInMiddle) {
       animate(
         prevRef.current,
