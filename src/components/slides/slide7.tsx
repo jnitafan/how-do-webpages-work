@@ -8,8 +8,10 @@ import React, {
   useState,
 } from "react";
 import dynamic from "next/dynamic";
-const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
+import headersLottie from "@/data/headers.json"
+import routingLottie from "@/data/routing.json"
 import styles from "./slides.module.scss";
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
 const Slide7 = forwardRef((_, ref) => {
   useImperativeHandle(ref, () => ({
@@ -17,30 +19,32 @@ const Slide7 = forwardRef((_, ref) => {
     exitAnimation: () => Promise.resolve(),
   }));
 
-  const [routingAnim, setRoutingAnim] = useState(null);
-  const [headersAnim, setHeadersAnim] = useState(null);
-
-  useEffect(() => {
-    // Fetch the animation JSON file from the public folder
-    fetch("/routing.json")
-      .then((response) => response.json())
-      .then((data) => setRoutingAnim(data))
-      .catch((error) =>
-        console.error("Error loading the Lottie animation:", error)
-      );
-    fetch("/headers.json")
-      .then((response) => response.json())
-      .then((data) => setHeadersAnim(data))
-      .catch((error) =>
-        console.error("Error loading the Lottie animation:", error)
-      );
-  }, []);
-
   return (
     <div className={styles.slide}>
-      <div>
-        <Lottie animationData={routingAnim} loop={true} />
-        <Lottie animationData={headersAnim} loop={false} />
+      <div className={styles.s7}>
+        <Lottie className={styles.s7__routingLottie} animationData={routingLottie} loop={true} />
+        <div className={styles.s7__stackTitles}>
+          <div className={styles.titles}>OSI Model</div>
+          <div className={styles.titles}>TCP / IP Model</div>
+        </div>
+        <div className={styles.s7__headers}>
+          <div className={styles.stack}>
+            <div className={`${styles.stackItem} ${styles.stack__1}`}>Application Layer</div>
+            <div className={`${styles.stackItem} ${styles.stack__2}`}>Transport Layer</div>
+            <div className={`${styles.stackItem} ${styles.stack__3}`}>Network Layer</div>
+            <div className={`${styles.stackItem} ${styles.stack__4}`}>Link Layer</div>
+          </div>
+          <Lottie className={styles.s7__headerLottie} animationData={headersLottie} loop={false} />
+          <div className={styles.stack}>
+            <div className={`${styles.stackItem} ${styles.stack__1}`}>Application Layer</div>
+            <div className={`${styles.stackItem} ${styles.stack__1}`}>Presentation Layer</div>
+            <div className={`${styles.stackItem} ${styles.stack__1}`}>Session Layer</div>
+            <div className={`${styles.stackItem} ${styles.stack__2}`}>Transport Layer</div>
+            <div className={`${styles.stackItem} ${styles.stack__3}`}>Network Layer</div>
+            <div className={`${styles.stackItem} ${styles.stack__4}`}>Link Layer</div>
+            <div className={`${styles.stackItem} ${styles.stack__4}`}>Physical</div>
+          </div>
+        </div>
       </div>
     </div>
   );

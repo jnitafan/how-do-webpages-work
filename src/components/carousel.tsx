@@ -12,6 +12,7 @@ import {
   Slide7,
   Slide8,
   Slide9,
+  Slide10,
 } from "@/components/slides/slides";
 import styles from "./carousel.module.scss";
 
@@ -26,6 +27,7 @@ const SLIDES = [
   Slide7,
   Slide8,
   Slide9,
+  Slide10,
 ];
 
 // Hook to capture the previous value of any prop/state
