@@ -1,40 +1,20 @@
-// components/slides/Slide6.tsx
+// components/slides/Slide7.tsx
 "use client";
 
-import React, { forwardRef, useImperativeHandle, useRef } from "react";
-import { animate } from "framer-motion/dom";
+import React, { forwardRef, useImperativeHandle } from "react";
 import styles from "./slides.module.scss";
 
-const Slide6 = forwardRef((_, ref) => {
-  const a = useRef<HTMLDivElement>(null);
-  const b = useRef<HTMLDivElement>(null);
-
+const Slide7 = forwardRef((_, ref) => {
   useImperativeHandle(ref, () => ({
-    entryAnimation: () => {
-      animate(a.current, { x: [-100, 0], opacity: [0, 1] }, { duration: 0.5 });
-      animate(b.current, { x: [100, 0], opacity: [0, 1] }, { duration: 0.5 });
-    },
-    exitAnimation: () =>
-      new Promise<void>((res) => {
-        animate(
-          a.current,
-          { x: [0, -100], opacity: [1, 0] },
-          { duration: 0.5 }
-        );
-        animate(
-          b.current,
-          { x: [0, 100], opacity: [1, 0] },
-          { duration: 0.5, onComplete: res }
-        );
-      }),
+    entryAnimation: () => {},
+    exitAnimation: () => Promise.resolve(),
   }));
 
   return (
     <div className={styles.slide}>
-      <div ref={b}>Slide6 – Part B</div>
-      <div ref={a}>Slide6 – Part A</div>
+      <div></div>
     </div>
   );
 });
 
-export default Slide6;
+export default Slide7;

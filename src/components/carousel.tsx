@@ -10,21 +10,42 @@ import {
   Slide5,
   Slide6,
   Slide7,
+  Slide8,
 } from "@/components/slides/slides";
 import styles from "./carousel.module.scss";
 
-const START = 5; // For debugging, start on this slide.
-const SLIDES = [Slide1, Slide2, Slide3, Slide4, Slide5, Slide6, Slide7];
+const START = 6; // For debugging, start on this slide.
+const SLIDES = [
+  Slide1,
+  Slide2,
+  Slide3,
+  Slide4,
+  Slide5,
+  Slide6,
+  Slide7,
+  Slide8,
+];
+
+// Hook to capture the previous value of any prop/state
+function usePrevious<T>(value: T): T | undefined {
+  const ref = useRef<T>(null);
+  useEffect(() => {
+    ref.current = value;
+  }, [value]);
+  return ref.current;
+}
 
 const Carousel: React.FC = () => {
   const [idx, setIdx] = useState(START);
   const [loading, setLoading] = useState(false);
+
   const slideRef = useRef<any>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);
   const prevRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
   const centerRef = useRef<HTMLButtonElement>(null);
 
+  // Fade helpers
   const fadeOut = () =>
     new Promise<void>((res) =>
       wrapperRef.current
@@ -46,6 +67,7 @@ const Carousel: React.FC = () => {
         : res()
     );
 
+  // Navigate
   const goTo = async (newIdx: number, mode: "next" | "fade") => {
     if (newIdx < 0 || newIdx >= SLIDES.length || newIdx === idx) return;
 
@@ -64,12 +86,12 @@ const Carousel: React.FC = () => {
     }
   };
 
-  // play slide entry animation
+  // Play entry animation on every slide change
   useEffect(() => {
     slideRef.current?.entryAnimation?.();
   }, [idx]);
 
-  // center button opacity
+  // Center button fade in/out at edges
   useEffect(() => {
     if (!centerRef.current) return;
     const isEdge = idx === 0 || idx === SLIDES.length - 1;
@@ -80,30 +102,32 @@ const Carousel: React.FC = () => {
     );
   }, [idx]);
 
-  // Prev/Next slide in/out
+  //
+  //  ←— ARROW LOGIC START —→
+  //
+  const prevIdx = usePrevious(idx);
+  const wasInMiddle =
+    prevIdx !== undefined && prevIdx > 0 && prevIdx < SLIDES.length - 1;
+  const nowInMiddle = idx > 0 && idx < SLIDES.length - 1;
+
   useEffect(() => {
     if (!prevRef.current || !nextRef.current) return;
-    const inMiddle = idx > 0 && idx < SLIDES.length - 1;
 
-    if (inMiddle) {
+    // 1) Crossing INTO the middle slides
+    if (!wasInMiddle && nowInMiddle) {
       prevRef.current.style.display = "block";
       nextRef.current.style.display = "block";
-      animate(
-        prevRef.current,
-        { x: [-100, 0], opacity: [0, 1] },
-        { duration: 1.0 }
-      );
-      animate(
-        nextRef.current,
-        { x: [100, 0], opacity: [0, 1] },
-        { duration: 1.0 }
-      );
-    } else {
+
+      animate(prevRef.current, { x: [-100, 0], opacity: [0, 1] }, { duration: 1 });
+      animate(nextRef.current, { x: [100, 0], opacity: [0, 1] }, { duration: 1 });
+
+    // 2) Crossing OUT TO an edge slide
+    } else if (wasInMiddle && !nowInMiddle) {
       animate(
         prevRef.current,
         { x: [0, -100], opacity: [1, 0] },
         {
-          duration: 1.0,
+          duration: 1,
           onComplete: () => {
             prevRef.current!.style.display = "none";
           },
@@ -113,14 +137,18 @@ const Carousel: React.FC = () => {
         nextRef.current,
         { x: [0, 100], opacity: [1, 0] },
         {
-          duration: 1.0,
+          duration: 1,
           onComplete: () => {
             nextRef.current!.style.display = "none";
           },
         }
       );
     }
-  }, [idx]);
+    // If wasInMiddle && nowInMiddle (middle→middle), do nothing
+  }, [wasInMiddle, nowInMiddle]);
+  //
+  //  ←— ARROW LOGIC END —→
+  //
 
   const Current = SLIDES[idx];
   const isFirst = idx === 0;
@@ -134,14 +162,12 @@ const Carousel: React.FC = () => {
         <Current ref={slideRef} />
       </div>
 
-      {/* spinner */}
       {loading && (
         <div className={styles.carousel__spinnerOverlay}>
           <div className={styles.carousel__spinner} />
         </div>
       )}
 
-      {/* backdrop blur */}
       <div
         className={`${styles.carousel__backdrop} ${
           loading ? styles["carousel__backdrop--active"] : ""
