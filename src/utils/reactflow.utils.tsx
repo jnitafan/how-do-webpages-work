@@ -226,7 +226,7 @@ const AnimatedCircle = ({ delay = 0, reverse = false, pathRef }) => {
   );
 };
 
-export function FloatingEdge({ source, target }: EdgeProps) {
+export function ThrobbingEdge({ source, target }: EdgeProps) {
   let sourceNode = useInternalNode(source);
   let targetNode = useInternalNode(target);
 

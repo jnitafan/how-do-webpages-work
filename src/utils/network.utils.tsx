@@ -16,7 +16,7 @@ import {
   ImageNode,
   LabelNode,
   GroupNode,
-  FloatingEdge,
+  ThrobbingEdge,
   NetworkConnectionLine,
 } from "@/utils/reactflow.utils";
 
@@ -32,7 +32,7 @@ const nodeTypes = {
 };
 
 const edgeTypes = {
-  floating: FloatingEdge,
+  floating: ThrobbingEdge,
 };
 
 const defaultEdgeOptions = {
@@ -59,10 +59,6 @@ const NetworkGraph = ({ nodes: initialNodes, edges: initialEdges }) => {
       setEdges((eds) => addEdge(params, eds));
     }
   };
-
-  useEffect(() => {
-    console.log("Current edges:", edges);
-  }, [edges]);
 
   return (
     <ReactFlow

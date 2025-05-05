@@ -2,7 +2,7 @@
 "use client";
 
 import React, { forwardRef, useImperativeHandle } from "react";
-import NetworkCoreData from "@/data/network-core-data.json";
+import NetworkEdgeData from "@/data/network-edge-data.json";
 import NetworkGraph from "@/utils/network.utils";
 import styles from "./slides.module.scss";
 
@@ -15,8 +15,8 @@ const Slide4 = forwardRef((_, ref) => {
   return (
     <div className={styles.slide}>
       <NetworkGraph
-        nodes={NetworkCoreData.nodes}
-        edges={NetworkCoreData.edges}
+        nodes={NetworkEdgeData.nodes}
+        edges={NetworkEdgeData.edges}
       />
     </div>
   );
