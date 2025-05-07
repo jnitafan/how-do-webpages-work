@@ -85,9 +85,6 @@
 
 /* Generic node box styling */
 .diagramNode {
-  border: 1px solid #555;
-  background-color: #1e1e1e;
-  border-radius: 4px;
   padding: 8px;
   color: #fff;
   text-align: center;
@@ -147,26 +144,26 @@
 .trackNumber {
   margin-top: 1px;
   padding: 0 5px;
-  background-color: red;
+  background-color: #f05572;
   aspect-ratio: 1;
   border-radius: 2.5px;
   line-height: 1.125;
 }
 
 .trackNumber:nth-child(1) {
-  background-color: #0eb8a7;
+  background-color: #4ccaf5;
 }
 
 .trackNumber:nth-child(2) {
-  background-color: #9ded1d;
+  background-color: #79c35b;
 }
 
 .trackNumber:nth-child(3) {
-  background-color: #ded40a;
+  background-color: #fce054;
 }
 
 .trackNumber:nth-child(4) {
-  background-color: #e3610b;
+  background-color: #f68f43;
 }
 
 .trackResponse {

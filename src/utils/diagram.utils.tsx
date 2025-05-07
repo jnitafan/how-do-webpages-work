@@ -1,102 +1,21 @@
 "use client";
 
-import React, { useCallback, useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import {
   ReactFlow,
-  addEdge,
   Background,
   ReactFlowProvider,
   useNodesState,
   useEdgesState,
-  Connection,
-  Edge,
-  Node,
   Handle,
   Position,
   StraightEdge,
   BackgroundVariant,
+  MarkerType,
 } from "@xyflow/react";
 import { ThrobbingEdge, NetworkNode } from "./reactflow.utils";
 import "@xyflow/react/dist/style.css";
 import styles from "./reactflow.module.scss";
-
-const initialNodes: Node[] = [
-  {
-    id: "protocols",
-    type: "diagram",
-    data: { label: "Protocols" },
-    position: { x: 300, y: 50 },
-  },
-  {
-    id: "tcpHeader",
-    type: "tcpHeaderNode",
-    data: { label: "TCP Header" },
-    position: { x: -125, y: 250 },
-  },
-  {
-    id: "response",
-    type: "marquee",
-    data: { speed: 40, status: "response" },
-    position: { x: 490, y: 418 },
-  },
-  {
-    id: "1234",
-    type: "marquee",
-    data: { speed: 40, status: "1234" },
-    position: { x: 490, y: 377 },
-  },
-  {
-    id: "deviceA",
-    type: "network",
-    data: { label: "Device A", icon: "computer" },
-    position: { x: 425, y: 375 },
-  },
-  {
-    id: "deviceB",
-    type: "network",
-    data: { label: "Device B", icon: "computer" },
-    position: { x: 700, y: 375 },
-  },
-  {
-    id: "point1",
-    type: "point",
-    data: {},
-    position: { x: 690, y: 375 },
-  },
-  {
-    id: "point2",
-    type: "point",
-    data: {},
-    position: { x: 525, y: 440 },
-  },
-];
-
-const initialEdges: Edge[] = [
-  {
-    id: "edge-protocols-point1",
-    label: "Ordering of message exchanges",
-    source: "protocols",
-    target: "point1",
-  },
-  {
-    id: "edge-protocols-point2",
-    label: "Expected responses",
-    source: "protocols",
-    target: "point2",
-  },
-  {
-    id: "edge-protocols-tcpHeader",
-    label: "Message Formats",
-    source: "protocols",
-    target: "tcpHeader",
-  },
-  {
-    id: "edge-deviceA-deviceB",
-    type: "throbbing",
-    source: "deviceA",
-    target: "deviceB",
-  },
-];
 
 export const PointNode = () => {
   return (
@@ -311,7 +230,7 @@ const edgeTypes = {
   straight: StraightEdge,
 };
 
-const DiagramGraph = () => {
+const DiagramGraph = ({ nodes: initialNodes, edges: initialEdges }) => {
   // 4. Set up state hooks for nodes and edges
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
@@ -329,7 +248,9 @@ const DiagramGraph = () => {
             edgeTypes={edgeTypes}
             defaultEdgeOptions={{
               type: "straight",
-              style: { strokeDasharray: "3 3" },
+              markerEnd: {
+                type: MarkerType.ArrowClosed,
+              },
             }}
             minZoom={0.001}
             maxZoom={1.5}

@@ -7,6 +7,19 @@
   overflow: hidden;
 }
 
+.s9 {
+  &__highlight {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    width: 80%;
+  }
+
+  &__html {
+    width: 40%;
+  }
+}
+
 .s7 {
   &__desktop {
     display: flex;

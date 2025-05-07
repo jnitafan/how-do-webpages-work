@@ -4,6 +4,7 @@
 import React, { forwardRef, useImperativeHandle } from "react";
 import styles from "./slides.module.scss";
 import DiagramGraph from "@/utils/diagram.utils";
+import protocolData from "@/data/protocol-data.json";
 
 const Slide6 = forwardRef((_, ref) => {
   useImperativeHandle(ref, () => ({
@@ -13,7 +14,7 @@ const Slide6 = forwardRef((_, ref) => {
 
   return (
     <div className={styles.slide}>
-      <DiagramGraph />
+      <DiagramGraph nodes={protocolData.nodes} edges={protocolData.edges} />
     </div>
   );
 });

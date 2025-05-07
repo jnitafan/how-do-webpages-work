@@ -1,0 +1,123 @@
+{
+  "nodes": [
+    {
+      "id": "protocols",
+      "type": "diagram",
+      "data": {
+        "label": "Protocols"
+      },
+      "position": {
+        "x": 300,
+        "y": 50
+      },
+      "style": { "background": " #444", "color": "#222222" }
+    },
+    {
+      "id": "tcpHeader",
+      "type": "tcpHeaderNode",
+      "data": {
+        "label": "TCP Header"
+      },
+      "position": {
+        "x": -125,
+        "y": 250
+      }
+    },
+    {
+      "id": "response",
+      "type": "marquee",
+      "data": {
+        "speed": 40,
+        "status": "response"
+      },
+      "position": {
+        "x": 490,
+        "y": 418
+      }
+    },
+    {
+      "id": "1234",
+      "type": "marquee",
+      "data": {
+        "speed": 40,
+        "status": "1234"
+      },
+      "position": {
+        "x": 490,
+        "y": 377
+      }
+    },
+    {
+      "id": "deviceA",
+      "type": "network",
+      "data": {
+        "label": "Device A",
+        "icon": "computer"
+      },
+      "position": {
+        "x": 425,
+        "y": 375
+      }
+    },
+    {
+      "id": "deviceB",
+      "type": "network",
+      "data": {
+        "label": "Device B",
+        "icon": "computer"
+      },
+      "position": {
+        "x": 700,
+        "y": 375
+      }
+    },
+    {
+      "id": "point1",
+      "type": "point",
+      "data": {},
+      "position": {
+        "x": 690,
+        "y": 375
+      }
+    },
+    {
+      "id": "point2",
+      "type": "point",
+      "data": {},
+      "position": {
+        "x": 525,
+        "y": 440
+      }
+    }
+  ],
+
+  "edges": [
+    {
+      "id": "edge-protocols-point1",
+      "label": "Ordering of message exchanges",
+      "source": "protocols",
+      "style": { "strokeDasharray": "3 3" },
+      "target": "point1"
+    },
+    {
+      "id": "edge-protocols-point2",
+      "label": "Expected responses",
+      "source": "protocols",
+      "style": { "strokeDasharray": "3 3" },
+      "target": "point2"
+    },
+    {
+      "id": "edge-protocols-tcpHeader",
+      "label": "Message Formats",
+      "source": "protocols",
+      "style": { "strokeDasharray": "3 3" },
+      "target": "tcpHeader"
+    },
+    {
+      "id": "edge-deviceA-deviceB",
+      "type": "throbbing",
+      "source": "deviceA",
+      "target": "deviceB"
+    }
+  ]
+}

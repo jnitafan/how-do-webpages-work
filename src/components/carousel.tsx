@@ -13,10 +13,11 @@ import {
   Slide8,
   Slide9,
   Slide10,
+  Slide11,
 } from "@/components/slides/slides";
 import styles from "./carousel.module.scss";
 
-const START = 6; // For debugging, start on this slide.
+const START = 8; // For debugging, start on this slide.
 const SLIDES = [
   Slide1,
   Slide2,
@@ -28,6 +29,7 @@ const SLIDES = [
   Slide8,
   Slide9,
   Slide10,
+  Slide11,
 ];
 
 // Hook to capture the previous value of any prop/state
