@@ -13,8 +13,6 @@ const Slide7 = forwardRef((_, ref) => {
     exitAnimation: () => Promise.resolve(),
   }));
 
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
     <div className={styles.slide}>
       <div className={styles.s7}>

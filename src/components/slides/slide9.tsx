@@ -10,185 +10,8 @@ import React, {
 } from "react";
 import { motion } from "framer-motion";
 import { animate } from "framer-motion/dom";
+import { treeData } from "@/data/html-tree-data";
 import styles from "./slides.module.scss";
-
-const treeData = [
-  {
-    id: 1,
-    html: (
-      <span className="hljs-meta">
-        &lt;!DOCTYPE <span className="hljs-keyword">html</span>&gt;
-      </span>
-    ),
-    relatedDom: {
-      tagName: "HTML",
-      attributes: {},
-      className: "",
-      id: "",
-      textContent:
-        'Title\n\n body {\n width: 500px;\n }\n\n\n Title\n \n \n\n\n let all = document.getElementsByTagName("*");\n let banana = document.getElementById("banana");\n let allBanana = [];\n for (let i = 0, max = all.length; i < max; i++) {\n let elementData = {};\n Object.defineProperties(elementData, {\n tagName: { value: all[i].tagName, enumerable: true },\n attributes: { value: all[i].attributes, enumerable: true },\n className: { value: all[i].className, enumerable: true },\n id: { value: all[i].id, enumerable: true },\n textContent: { value: all[i].textContent, enumerable: true },\n childNodes: { value: all[i].childNodes, enumerable: true },\n children: { value: all[i].children, enumerable: true },\n });\n allBanana.push(elementData);\n }\n banana.textContent = JSON.stringify(allBanana, null, 4);\n',
-      childNodes: { "0": {}, "1": {} },
-      children: { "0": {}, "1": {} },
-    },
-    children: [],
-  },
-  {
-    id: 2,
-    html: (
-      <>
-        <span className="hljs-tag">
-          &lt;<span className="hljs-name">title</span>&gt;
-        </span>
-        Title
-        <span className="hljs-tag">
-          &lt;/<span className="hljs-name">title</span>&gt;
-        </span>
-      </>
-    ),
-    relatedDom: {
-      tagName: "TITLE",
-      attributes: {},
-      className: "",
-      id: "",
-      textContent: "Title",
-      childNodes: { "0": {} },
-      children: {},
-    },
-    children: [],
-  },
-  {
-    id: 3,
-    html: (
-      <>
-        <span className="hljs-tag">
-          &lt;<span className="hljs-name">script</span>{" "}
-          <span className="hljs-attr">type</span>=
-          <span className="hljs-string">"application/javascript"</span>&gt;
-        </span>
-        <span className="language-javascript">
-          <span className="hljs-keyword">function</span>{" "}
-          <span className="hljs-title function_">$init</span>(
-          <span className="hljs-params"></span>) {"{"}{" "}
-          <span className="hljs-keyword">return</span>{" "}
-          <span className="hljs-literal">true</span>; {"}"}
-        </span>
-        <span className="hljs-tag">
-          &lt;/<span className="hljs-name">script</span>&gt;
-        </span>
-      </>
-    ),
-    relatedDom: {
-      tagName: "STYLE",
-      attributes: {},
-      className: "",
-      id: "",
-      textContent: "\n body {\n width: 500px;\n }\n",
-      childNodes: { "0": {} },
-      children: {},
-    },
-    children: [],
-  },
-  {
-    id: 4,
-    html: (
-      <>
-        <span className="hljs-tag">
-          &lt;script type="application/javascript"&gt;
-        </span>
-        <span className="language-javascript">
-          <span className="hljs-keyword">function</span> $init() {"{"} return
-          true; {"}"}
-        </span>
-        <span className="hljs-tag">&lt;/script&gt;</span>
-      </>
-    ),
-    relatedDom: {
-      tagName: "SCRIPT",
-      attributes: { "0": {} },
-      className: "",
-      id: "",
-      textContent:
-        '\n let all = document.getElementsByTagName("*");\n let banana = document.getElementById("banana");\n let allBanana = [];\n for (let i = 0, max = all.length; i < max; i++) {\n let elementData = {};\n Object.defineProperties(elementData, {\n tagName: { value: all[i].tagName, enumerable: true },\n attributes: { value: all[i].attributes, enumerable: true },\n className: { value: all[i].className, enumerable: true },\n id: { value: all[i].id, enumerable: true },\n textContent: { value: all[i].textContent, enumerable: true },\n childNodes: { value: all[i].childNodes, enumerable: true },\n children: { value: all[i].children, enumerable: true },\n });\n allBanana.push(elementData);\n }\n banana.textContent = JSON.stringify(allBanana, null, 4);\n',
-      childNodes: { "0": {} },
-      children: {},
-    },
-    children: [],
-  },
-  {
-    // The <body> element: opening tag in "html" and closing tag in "closer"
-    id: 5,
-    html: (
-      <>
-        <span className="hljs-tag">&lt;body&gt;</span>
-      </>
-    ),
-    closer: (
-      <>
-        <span className="hljs-tag">&lt;/body&gt;</span>
-      </>
-    ),
-    relatedDom: {
-      tagName: "BODY",
-      attributes: {},
-      className: "",
-      id: "",
-      textContent:
-        '\n Title\n \n \n\n\n let all = document.getElementsByTagName("*");\n let banana = document.getElementById("banana");\n let allBanana = [];\n for (let i = 0, max = all.length; i < max; i++) {\n let elementData = {};\n Object.defineProperties(elementData, {\n tagName: { value: all[i].tagName, enumerable: true },\n attributes: { value: all[i].attributes, enumerable: true },\n className: { value: all[i].className, enumerable: true },\n id: { value: all[i].id, enumerable: true },\n textContent: { value: all[i].textContent, enumerable: true },\n childNodes: { value: all[i].childNodes, enumerable: true },\n children: { value: all[i].children, enumerable: true },\n });\n allBanana.push(elementData);\n }\n banana.textContent = JSON.stringify(allBanana, null, 4);\n',
-      childNodes: {
-        "0": {},
-        "1": {},
-        "2": {},
-        "3": {},
-        "4": {},
-        "5": {},
-        "6": {},
-        "7": {},
-      },
-      children: { "0": {}, "1": {}, "2": {} },
-    },
-    children: [
-      {
-        // <p> element as a self-contained tag.
-        id: 6,
-        html: (
-          <>
-            <span className="hljs-tag">&lt;p</span>{" "}
-            <span className="hljs-attr">checked</span>{" "}
-            <span className="hljs-attr">class</span>=
-            <span className="hljs-string">"title"</span>{" "}
-            <span className="hljs-attr">id</span>=
-            <span className="hljs-string">'title'</span>
-            <span className="hljs-tag">&gt;</span>
-            Title
-            <span className="hljs-tag">&lt;/p&gt;</span>
-          </>
-        ),
-        relatedDom: {
-          tagName: "P",
-          attributes: { "0": {}, "1": {}, "2": {} },
-          className: "title",
-          id: "title",
-          textContent: "Title",
-          childNodes: { "0": {} },
-          children: {},
-        },
-        children: [],
-      },
-      {
-        id: 7,
-        html: (
-          <>
-            <span className="hljs-comment">
-              &lt;!-- here goes the rest of the page --&gt;
-            </span>
-          </>
-        ),
-        relatedDom: "",
-        children: [],
-      },
-    ],
-  },
-];
 
 // --------------------------------------------------------------------
 // Helper functions for traversing the tree
@@ -327,7 +150,7 @@ const RenderRelatedNode = ({ node, activeIds, visibleIds, level = 0 }) => {
           backgroundColor: isActive ? "yellow" : "transparent",
         }}
       >
-        {JSON.stringify(node.relatedDom, null, 4)}
+        {node.relatedDom}
       </div>
       {node.children && node.children.length > 0 && (
         <div>
@@ -419,7 +242,7 @@ const HighlightComponent = () => {
 
 const Slide9 = forwardRef((_, ref) => {
   useImperativeHandle(ref, () => ({
-    entryAnimation: () => {},
+    entryAnimation: () => { },
     exitAnimation: () => Promise.resolve(),
   }));
 
