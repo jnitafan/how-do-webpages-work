@@ -13,7 +13,7 @@ import {
   BackgroundVariant,
   MarkerType,
 } from "@xyflow/react";
-import { ThrobbingEdge, NetworkNode } from "./reactflow.utils";
+import { ThrobbingEdge, NetworkNode, LabelNode } from "./reactflow.utils";
 import "@xyflow/react/dist/style.css";
 import styles from "./reactflow.module.scss";
 
@@ -223,6 +223,7 @@ const nodeTypes = {
   point: PointNode,
   diagram: DiagramNode,
   network: NetworkNode,
+  label: LabelNode,
 };
 
 const edgeTypes = {
