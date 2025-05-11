@@ -8,13 +8,13 @@ const placeholderHTML = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
         <title>HTML Template with Image and Tables and stuff</title>
-    
+
         <link
           href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
           rel="stylesheet"
-        />    
+        />
       </head>
-    
+
       <body>
         <header>
           <h1>Welcome to HTML Example</h1>
@@ -23,12 +23,12 @@ const placeholderHTML = () => {
             structured tables for illustrative purposes.
           </p>
         </header>
-    
+
         <main>
           <section>
             <h2>Example Placeholder Image</h2>
             <img
-              src="https://via.placeholder.com/600x300.png?text=Placeholder+Image"
+              src="https://placehold.co/600x400/EEE/31343C"
               alt="Placeholder showing example content"
             />
             <p>
@@ -36,7 +36,7 @@ const placeholderHTML = () => {
               purposes.
             </p>
           </section>
-    
+
           <section>
             <h2>Simple Data Table</h2>
             <table>
@@ -66,7 +66,7 @@ const placeholderHTML = () => {
               </tbody>
             </table>
           </section>
-    
+
           <section>
             <h2>Product Inventory Table</h2>
             <table>
@@ -108,7 +108,7 @@ const placeholderHTML = () => {
             </table>
           </section>
         </main>
-    
+
         <footer>
           <p>&copy; 2025 Generic Company. All rights reserved.</p>
         </footer>

@@ -20,7 +20,7 @@ import {
 } from "@/components/slides/slides";
 import styles from "./carousel.module.scss";
 
-const START = 9; // For debugging, start on this slide.
+const START = 12; // For debugging, start on this slide.
 const SLIDES = [
   Slide1,
   Slide2,
@@ -62,20 +62,20 @@ const Carousel: React.FC = () => {
     new Promise<void>((res) =>
       wrapperRef.current
         ? animate(
-            wrapperRef.current,
-            { opacity: [1, 0] },
-            { duration: 1.0, onComplete: res }
-          )
+          wrapperRef.current,
+          { opacity: [1, 0] },
+          { duration: 1.0, onComplete: res }
+        )
         : res()
     );
   const fadeIn = () =>
     new Promise<void>((res) =>
       wrapperRef.current
         ? animate(
-            wrapperRef.current,
-            { opacity: [0, 1] },
-            { duration: 1.0, onComplete: res }
-          )
+          wrapperRef.current,
+          { opacity: [0, 1] },
+          { duration: 1.0, onComplete: res }
+        )
         : res()
     );
 
@@ -189,9 +189,8 @@ const Carousel: React.FC = () => {
       )}
 
       <div
-        className={`${styles.carousel__backdrop} ${
-          loading ? styles["carousel__backdrop--active"] : ""
-        }`}
+        className={`${styles.carousel__backdrop} ${loading ? styles["carousel__backdrop--active"] : ""
+          }`}
       />
 
       {/* Prev */}
@@ -245,9 +244,8 @@ const Carousel: React.FC = () => {
         {SLIDES.map((_, i) => (
           <button
             key={i}
-            className={`${styles.carousel__indicator} ${
-              i === idx ? styles.active : ""
-            }`}
+            className={`${styles.carousel__indicator} ${i === idx ? styles.active : ""
+              }`}
             onClick={() => goTo(i, "fade")}
           />
         ))}
