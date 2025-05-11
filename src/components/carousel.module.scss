@@ -112,6 +112,60 @@
     animation: spin 1s linear infinite;
     z-index: 125;
   }
+
+  /* Modal Styles */
+  &__modal {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s ease-in-out;
+    z-index: 130;
+  }
+
+  &__modal--closed {
+    transform: translateY(-100%);
+  }
+
+  &__modalContent {
+    text-align: center;
+    padding: 2rem;
+    font-size: 2rem;
+    max-width: 80%;
+    max-height: 80%;
+    overflow: auto;
+  }
+
+  /* Button Positioning */
+  &__upButton {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    background-color: #03cbf8;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    z-index: 140;
+  }
+
+  &__upButton--closed {
+    top: 1rem;
+    /* Top of the viewport when closed */
+  }
+
+  &__upButton--open {
+    top: calc(100vh - 5rem);
+    /* Bottom of the viewport when open */
+  }
 }
 
 @keyframes spin {
