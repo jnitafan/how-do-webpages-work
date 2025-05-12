@@ -2,7 +2,6 @@
 import type { Metadata } from "next";
 import { Inter, Roboto_Mono } from "next/font/google";
 import { NextFontWithVariable } from "next/dist/compiled/@next/font";
-import "@/utils/highlight.styling.scss";
 import "./globals.scss";
 
 const inter: NextFontWithVariable = Inter({
