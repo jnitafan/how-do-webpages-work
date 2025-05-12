@@ -41,3 +41,24 @@ a {
     color-scheme: dark;
   }
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Inter", sans-serif;
+}
+
+button,
+p,
+span {
+  font-family: "Roboto-mono", monospace;
+}
+
+.react-flow__node-group {
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}

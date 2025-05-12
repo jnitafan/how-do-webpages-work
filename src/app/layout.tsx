@@ -1,9 +1,7 @@
 // src/app/layout.tsx
 import type { Metadata } from "next";
-import { Inter, Roboto_Mono, DM_Serif_Display } from "next/font/google";
+import { Inter, Roboto_Mono } from "next/font/google";
 import { NextFontWithVariable } from "next/dist/compiled/@next/font";
-import Navigation from "@/components/navigation";
-import "@/utils/reactflow.styling.scss";
 import "@/utils/highlight.styling.scss";
 import "./globals.scss";
 
@@ -14,12 +12,6 @@ const inter: NextFontWithVariable = Inter({
 
 const robotoMono: NextFontWithVariable = Roboto_Mono({
   variable: "--font-roboto-mono",
-  subsets: ["latin"],
-});
-
-const DMSerif: NextFontWithVariable = DM_Serif_Display({
-  variable: "--font-DM-serif",
-  weight: "400",
   subsets: ["latin"],
 });
 
@@ -35,13 +27,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      className={`${inter.variable} ${robotoMono.variable} ${DMSerif.variable}`}
-    >
-      <body>
-        <Navigation>{children}</Navigation>
-      </body>
+    <html lang="en" className={`${inter.variable} ${robotoMono.variable}`}>
+      <body>{children}</body>
     </html>
   );
 }

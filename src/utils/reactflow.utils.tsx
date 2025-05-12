@@ -9,18 +9,20 @@ import {
   EdgeProps,
   getBezierPath,
   BaseEdge,
+  getStraightPath,
 } from "@xyflow/react";
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import Image from "next/image";
+import styles from "./reactflow.module.scss";
 
 export const ComputerIcon = () => {
   return (
     <Image
-      src="/images/computer-solid.svg"
+      src="/icons/computer-solid.svg"
       alt="Switch Icon"
       width="64"
       height="64"
-      style={{ fill: "#4c8ed4", width: "85%", height: "85%" }}
+      className={styles.icon}
     />
   );
 };
@@ -28,11 +30,11 @@ export const ComputerIcon = () => {
 export const TabletIcon = () => {
   return (
     <Image
-      src="/images/tablet-solid.svg"
+      src="/icons/tablet-solid.svg"
       alt="Switch Icon"
       width="64"
       height="64"
-      style={{ fill: "#4c8ed4", width: "85%", height: "85%" }}
+      className={styles.icon}
     />
   );
 };
@@ -40,23 +42,11 @@ export const TabletIcon = () => {
 export const MobileIcon = () => {
   return (
     <Image
-      src="/images/mobile-solid.svg"
+      src="/icons/mobile-solid.svg"
       alt="Switch Icon"
       width="64"
       height="64"
-      style={{ fill: "#4c8ed4", width: "85%", height: "85%" }}
-    />
-  );
-};
-
-export const NetworkIcon = () => {
-  return (
-    <Image
-      src="/images/network-switch-solid.svg"
-      alt="Switch Icon"
-      width="64"
-      height="64"
-      style={{ fill: "#4c8ed4", width: "85%", height: "85%" }}
+      className={styles.icon}
     />
   );
 };
@@ -64,11 +54,11 @@ export const NetworkIcon = () => {
 export const ServerIcon = () => {
   return (
     <Image
-      src="/images/rack-server-solid.svg"
+      src="/icons/rack-server-solid.svg"
       alt="Switch Icon"
       width="64"
       height="64"
-      style={{ fill: "#4c8ed4", width: "85%", height: "85%" }}
+      className={styles.icon}
     />
   );
 };
@@ -76,11 +66,11 @@ export const ServerIcon = () => {
 export const WifiIcon = () => {
   return (
     <Image
-      src="/images/wifi-solid.svg"
+      src="/icons/wifi-solid.svg"
       alt="Switch Icon"
       width="64"
       height="64"
-      style={{ fill: "#4c8ed4", width: "85%", height: "85%" }}
+      className={styles.icon}
     />
   );
 };
@@ -88,11 +78,11 @@ export const WifiIcon = () => {
 export const SwitchIcon = () => {
   return (
     <Image
-      src="/images/network-switch-solid.svg"
+      src="/icons/network-switch-solid.svg"
       alt="Switch Icon"
       width="64"
       height="64"
-      style={{ fill: "#4c8ed4", width: "85%", height: "85%" }}
+      className={styles.icon}
     />
   );
 };
@@ -100,11 +90,11 @@ export const SwitchIcon = () => {
 export const RouterIcon = () => {
   return (
     <Image
-      src="/images/router-solid.svg"
+      src="/icons/router-solid.svg"
       alt="Router Icon"
       width="64"
       height="64"
-      style={{ fill: "#4c8ed4", width: "85%", height: "85%" }}
+      className={styles.icon}
     />
   );
 };
@@ -114,53 +104,38 @@ type ComponentKey =
   | "switch"
   | "wifi"
   | "server"
-  | "network"
   | "mobile"
   | "tablet"
   | "computer";
 
-// Create a mapping of keys to elements
 const componentMap: Record<ComponentKey, JSX.Element> = {
   router: <RouterIcon />,
   switch: <SwitchIcon />,
   wifi: <WifiIcon />,
   server: <ServerIcon />,
-  network: <NetworkIcon />,
   mobile: <MobileIcon />,
   tablet: <TabletIcon />,
   computer: <ComputerIcon />,
 };
 
-function Annotation({ data }) {
-  return (
-    <>
-      <div className="annotation-content">
-        <div>{data.label}</div>
-      </div>
-    </>
-  );
-}
-
-export const AnnotationNode = memo(Annotation);
-
-export function CustomNode({ id, data }) {
+export function NetworkNode({ id, data }) {
   const connection = useConnection();
   const isTarget = connection.inProgress && connection.fromNode.id !== id;
 
   return (
-    <div className="customNode">
-      <div className="customNodeBody">
+    <div className={styles.networkNode}>
+      <div className={styles.networkNodeBody}>
         {componentMap[data.icon]}
         {!connection.inProgress && (
           <Handle
-            className="customHandle"
+            className={styles.networkHandle}
             position={Position.Right}
             type="source"
           />
         )}
         {(!connection.inProgress || isTarget) && (
           <Handle
-            className="customHandle"
+            className={styles.networkHandle}
             position={Position.Left}
             type="target"
             isConnectableStart={false}
@@ -169,10 +144,6 @@ export function CustomNode({ id, data }) {
       </div>
     </div>
   );
-}
-
-export function CloudNode() {
-  return <div className="cloudNode"></div>;
 }
 
 const AnimatedCircle = ({ delay = 0, reverse = false, pathRef }) => {
@@ -255,7 +226,7 @@ const AnimatedCircle = ({ delay = 0, reverse = false, pathRef }) => {
   );
 };
 
-export function FloatingEdge({ source, target }: EdgeProps) {
+export function ThrobbingEdge({ source, target }: EdgeProps) {
   let sourceNode = useInternalNode(source);
   let targetNode = useInternalNode(target);
 
@@ -286,13 +257,7 @@ export function FloatingEdge({ source, target }: EdgeProps) {
   );
 }
 
-export const CustomConnectionLine = ({
-  toX,
-  toY,
-  fromPosition,
-  toPosition,
-  fromNode,
-}) => {
+export const NetworkConnectionLine = ({ toX, toY, fromNode }) => {
   if (!fromNode) {
     return null;
   }
@@ -308,16 +273,11 @@ export const CustomConnectionLine = ({
     },
   };
 
-  const { sx, sy, tx, ty, sourcePos, targetPos } = getEdgeParams(
-    fromNode,
-    targetNode
-  );
+  const { sx, sy, tx, ty } = getEdgeParams(fromNode, targetNode);
 
-  const [edgePath] = getBezierPath({
+  const [edgePath] = getStraightPath({
     sourceX: sx,
     sourceY: sy,
-    sourcePosition: sourcePos || fromPosition,
-    targetPosition: targetPos || toPosition,
     targetX: tx || toX,
     targetY: ty || toY,
   });
@@ -326,7 +286,7 @@ export const CustomConnectionLine = ({
     <g>
       <path
         fill="none"
-        stroke="#222"
+        stroke="#fff"
         strokeWidth={1.5}
         className="animated"
         d={edgePath}
@@ -343,7 +303,6 @@ export const CustomConnectionLine = ({
   );
 };
 
-// Helper functions for edge parameter calculations.
 function getNodeIntersection(intersectionNode, targetNode) {
   const { width: intersectionNodeWidth, height: intersectionNodeHeight } =
     intersectionNode.measured;
@@ -407,4 +366,55 @@ export function getEdgeParams(source, target) {
     sourcePos,
     targetPos,
   };
+}
+
+function Label({ data }) {
+  const { fontSize = "2rem" } = data;
+  return (
+    <>
+      <div className={styles.labelContent} style={{ fontSize: fontSize }}>
+        {data.label}
+      </div>
+    </>
+  );
+}
+
+export const LabelNode = memo(Label);
+
+export function ImageNode({ data }) {
+  return (
+    <Image
+      src={data.image}
+      alt=""
+      className={styles.imageNode}
+      width={100}
+      height={100}
+    />
+  );
+}
+
+export function GroupNode({ data }) {
+  const {
+    color = "#888", // fallback border color
+    label, // optional label text
+  } = data;
+
+  // make a 20%-opaque background from the hex color
+  const bgColor = `${color}33`;
+
+  return (
+    <div
+      className={styles.groupNode}
+      style={{
+        backgroundColor: bgColor,
+        border: `2px solid ${color}`,
+      }}
+    >
+      {label && (
+        <div className={styles.groupLabel} style={{ color }}>
+          {label}
+        </div>
+      )}
+    </div>
+  );
 }
