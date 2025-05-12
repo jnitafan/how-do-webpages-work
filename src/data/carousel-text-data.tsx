@@ -2,7 +2,7 @@ import React from "react";
 
 const modalContent = [
   <>
-    <p>This is slide 1's custom content, you shouldn't be able to see this.</p>
+    <p>This is slide 1&apos;s custom content, you shouldn&apos;t be able to see this.</p>
     <h3>1: Banana</h3>
   </>,
   <>
@@ -96,7 +96,7 @@ const modalContent = [
         between any two points on the internet is fast, reliable, and efficient.
       </p>
       <p>
-        The core doesn't directly connect to end-user devices; instead, it links
+        The core doesn&apos;t directly connect to end-user devices; instead, it links
         together various edge networks—from homes and offices to mobile
         towers—through a dense mesh of interconnected paths. These routes are
         optimized for redundancy and performance, allowing data to take the most
@@ -145,7 +145,7 @@ const modalContent = [
   <>
     <div>
       <p>
-        When data is sent across the internet, it doesn't travel as a continuous
+        When data is sent across the internet, it doesn&apos;t travel as a continuous
         stream but is broken into smaller units called packets. These packets
         are routed independently across a network of interconnected devices,
         finding the most efficient path to their destination. Along the way,
@@ -243,7 +243,7 @@ const modalContent = [
         The DOM is not just a passive representation—it is a live interface that
         can be queried, updated, and manipulated by JavaScript in real time.
         When you click a button, open a menu, or animate an element on a
-        webpage, it's often the DOM being directly modified. Its dynamic nature
+        webpage, it&apos;s often the DOM being directly modified. Its dynamic nature
         is a core reason modern web experiences feel responsive and interactive.
       </p>
       <p>

@@ -1,7 +1,7 @@
 // components/slides/Slide7.tsx
 "use client";
 
-import React, { forwardRef, useImperativeHandle, useState } from "react";
+import React, { forwardRef, useImperativeHandle } from "react";
 import dynamic from "next/dynamic";
 import routingLottie from "@/data/routing.json";
 import styles from "./slides.module.scss";

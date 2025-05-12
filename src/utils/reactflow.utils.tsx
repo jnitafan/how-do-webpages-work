@@ -227,8 +227,11 @@ const AnimatedCircle = ({ delay = 0, reverse = false, pathRef }) => {
 };
 
 export function ThrobbingEdge({ source, target }: EdgeProps) {
-  let sourceNode = useInternalNode(source);
-  let targetNode = useInternalNode(target);
+  const sourceNode = useInternalNode(source);
+  const targetNode = useInternalNode(target);
+  // Create a ref for the invisible path element used for measurement.
+  const pathRef = useRef(null);
+
 
   if (!sourceNode || !targetNode) {
     return null;
@@ -242,9 +245,6 @@ export function ThrobbingEdge({ source, target }: EdgeProps) {
     targetX: tx,
     targetY: ty,
   });
-
-  // Create a ref for the invisible path element used for measurement.
-  const pathRef = useRef(null);
 
   return (
     <>

@@ -24,7 +24,7 @@ const itemVariants: Variants = {
   show: { opacity: 1, transition: { duration: 0.5 } },
 };
 
-const Slide11 = forwardRef<unknown, {}>((_, ref) => {
+const Slide11 = forwardRef((_, ref) => {
   useImperativeHandle(ref, () => ({
     entryAnimation: () => {},
     exitAnimation: () => Promise.resolve(),
@@ -50,21 +50,18 @@ const Slide11 = forwardRef<unknown, {}>((_, ref) => {
 
   return (
     <div className={styles.slide}>
-      {/* we turn this into a motion container */}
       <motion.div
         className="skeleton"
         variants={containerVariants}
         initial="hidden"
         animate="show"
       >
-        {/* wrap each direct child in its own motion.div */}
         {React.Children.map(bodyContent, (child, i) => (
           <motion.div key={i} variants={itemVariants}>
             {child}
           </motion.div>
         ))}
 
-        {/* global styled-JSX so it still reaches those external nodes */}
         <style jsx global>{`
           .skeleton * {
             color: transparent !important;

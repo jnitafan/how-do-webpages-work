@@ -146,7 +146,7 @@ const Slide2 = forwardRef((_, ref) => {
 
   return (
     <div className={styles.slide}>
-      {layers.map(({ ratio, layerRef, contentRef }, i) => {
+      {layers.map(({ layerRef, contentRef }, i) => {
         const z = layers.length - 1 - i; // 0→3 becomes 3→0
         return (
           <div
@@ -174,7 +174,7 @@ const Slide2 = forwardRef((_, ref) => {
                       className={styles.img}
                     />
                     <div className={styles.imgContent}>
-                      <p className={styles.alt}>"{img.alt}"</p>
+                      <p className={styles.alt}>&quot;{img.alt}&quot;</p>
                       <SafeAttr htmlString={img.attribution} />
                     </div>
                   </div>

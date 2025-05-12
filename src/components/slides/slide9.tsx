@@ -24,7 +24,7 @@ const HIGHLIGHTCOLOR = "#00a8db";
 // ———————————————————————————————————————————————
 // 1) Helpers to compute paths & descendants
 const findPath = (id, nodes, path = []) => {
-  for (let node of nodes) {
+  for (const node of nodes) {
     const cp = [...path, node.id];
     if (node.id === id) return cp;
     if (node.domChildren) {

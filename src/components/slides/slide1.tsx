@@ -13,7 +13,6 @@ import { animate } from "framer-motion/dom";
 import { animate as animateTHREE, useMotionValue } from "framer-motion";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
 import { useLoader, Canvas, useFrame, useThree } from "@react-three/fiber";
-import { useProgress } from "@react-three/drei";
 import * as THREE from "three";
 import styles from "./slides.module.scss";
 
