@@ -1,7 +1,6 @@
 "use client";
 
 import React, { forwardRef, useImperativeHandle, useEffect, useState } from "react";
-import ReactDOMServer from "react-dom/server"; // Import ReactDOMServer for rendering to static HTML
 import Image from "next/image";
 import styles from "./slides.module.scss";
 
@@ -52,8 +51,7 @@ function Droste({ depth, mouseX, mouseY }) {
           width: '100%',
           height: '100%',
           transform: `translate(${translateX}px, ${translateY}px) scale(${SCALE_FACTOR})`,
-          transformOrigin: 'top left',
-          border: "5px solid black"
+          transformOrigin: 'top left'
         }}
       >
         <Droste depth={depth - 1} mouseX={mouseX} mouseY={mouseY} />

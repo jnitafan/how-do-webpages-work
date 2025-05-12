@@ -1,3 +1,4 @@
+// components/Carousel.tsx
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
@@ -16,9 +17,9 @@ import {
   Slide11,
   Slide12,
   Slide13,
-  Slide14,
 } from "@/components/slides/slides";
 import styles from "./carousel.module.scss";
+import modalContent from "@/data/carousel-text-data";
 
 const START = 11; // For debugging, start on this slide.
 const SLIDES = [
@@ -35,23 +36,24 @@ const SLIDES = [
   Slide11,
   Slide12,
   Slide13,
-  Slide14,
 ];
 
 // Hook to capture the previous value of any prop/state
 function usePrevious<T>(value: T): T | undefined {
-  const ref = useRef<T>(null);
+  const ref = useRef<T>(null as any);
   useEffect(() => {
     ref.current = value;
   }, [value]);
   return ref.current;
 }
 
+type ModalState = "initial" | "open" | "closed";
+
 const Carousel: React.FC = () => {
   const [idx, setIdx] = useState(START);
   const [loading, setLoading] = useState(false);
-  const [modalOpen, setModalOpen] = useState(false);  // For modal state management
-  const [visitedSlides, setVisitedSlides] = useState(new Set<number>()); // Track visited slides
+  const [visitedSlides, setVisitedSlides] = useState(new Set<number>());
+  const [modalState, setModalState] = useState<ModalState>("initial");
 
   const slideRef = useRef<any>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);
@@ -60,49 +62,31 @@ const Carousel: React.FC = () => {
   const centerRef = useRef<HTMLButtonElement>(null);
   const modalRef = useRef<HTMLDivElement>(null);
 
-  const modalContent = [
-    "This is slide 1's custom content",
-    "This is slide 2's custom content",
-    "This is slide 3's custom content",
-    "This is slide 4's custom content",
-    "This is slide 5's custom content",
-    "This is slide 6's custom content",
-    "This is slide 7's custom content",
-    "This is slide 8's custom content",
-    "This is slide 9's custom content",
-    "This is slide 10's custom content",
-    "This is slide 11's custom content",
-    "This is slide 12's custom content",
-    "This is slide 13's custom content",
-    "This is slide 14's custom content",
-  ];
-
   // Fade helpers
   const fadeOut = () =>
     new Promise<void>((res) =>
       wrapperRef.current
         ? animate(
-          wrapperRef.current,
-          { opacity: [1, 0] },
-          { duration: 1.0, onComplete: res }
-        )
+            wrapperRef.current,
+            { opacity: [1, 0] },
+            { duration: 1.0, onComplete: res }
+          )
         : res()
     );
   const fadeIn = () =>
     new Promise<void>((res) =>
       wrapperRef.current
         ? animate(
-          wrapperRef.current,
-          { opacity: [0, 1] },
-          { duration: 1.0, onComplete: res }
-        )
+            wrapperRef.current,
+            { opacity: [0, 1] },
+            { duration: 1.0, onComplete: res }
+          )
         : res()
     );
 
   // Navigate
   const goTo = async (newIdx: number, mode: "next" | "fade") => {
     if (newIdx < 0 || newIdx >= SLIDES.length || newIdx === idx) return;
-
     setLoading(true);
     try {
       if (mode === "next" && slideRef.current?.exitAnimation) {
@@ -113,49 +97,31 @@ const Carousel: React.FC = () => {
         setIdx(newIdx);
         await fadeIn();
       }
-
-      // If it's a new slide that hasn't been visited, open the modal
+      // First visit: reset to “initial” state
       if (!visitedSlides.has(newIdx)) {
-        setVisitedSlides(new Set(visitedSlides.add(newIdx)));
-        setModalOpen(true); // Open the modal for this slide
+        setVisitedSlides((prev) => new Set(prev).add(newIdx));
+        setModalState("initial");
       }
     } finally {
       setLoading(false);
     }
   };
 
-  // Play entry animation on every slide change
+  // Entry animation
   useEffect(() => {
     slideRef.current?.entryAnimation?.();
   }, [idx]);
 
-  // Center button fade in/out at edges
-  useEffect(() => {
-    if (!centerRef.current) return;
-    const isEdge = idx === 0 || idx === SLIDES.length - 1;
-    animate(
-      centerRef.current,
-      { opacity: isEdge ? [0, 1] : [1, 0] },
-      { duration: isEdge ? 1.0 : 0.0 }
-    );
-  }, [idx]);
-
-  //
-  //  ←— ARROW LOGIC START —→
-  //
+  // Arrow controls animation
   const prevIdx = usePrevious(idx);
   const wasInMiddle =
     prevIdx !== undefined && prevIdx > 0 && prevIdx < SLIDES.length - 1;
   const nowInMiddle = idx > 0 && idx < SLIDES.length - 1;
-
   useEffect(() => {
     if (!prevRef.current || !nextRef.current) return;
-
-    // 1) Crossing INTO the middle slides
     if (!wasInMiddle && nowInMiddle) {
       prevRef.current.style.display = "block";
       nextRef.current.style.display = "block";
-
       animate(
         prevRef.current,
         { x: [-100, 0], opacity: [0, 1] },
@@ -166,8 +132,6 @@ const Carousel: React.FC = () => {
         { x: [100, 0], opacity: [0, 1] },
         { duration: 1 }
       );
-
-      // 2) Crossing OUT TO an edge slide
     } else if (wasInMiddle && !nowInMiddle) {
       animate(
         prevRef.current,
@@ -190,11 +154,7 @@ const Carousel: React.FC = () => {
         }
       );
     }
-    // If wasInMiddle && nowInMiddle (middle→middle), do nothing
   }, [wasInMiddle, nowInMiddle]);
-  //
-  //  ←— ARROW LOGIC END —→
-  //
 
   const Current = SLIDES[idx];
   const isFirst = idx === 0;
@@ -202,8 +162,17 @@ const Carousel: React.FC = () => {
   const onCenter = () =>
     isFirst ? goTo(1, "next") : isLast ? goTo(0, "fade") : null;
 
-  const toggleModal = () => {
-    setModalOpen(!modalOpen);
+  // Handle initial‐state clicks
+  const handleModalClick = (e: React.MouseEvent) => {
+    if (modalState !== "initial") return;
+    const rect = wrapperRef.current!.getBoundingClientRect();
+    const clickY = e.clientY - rect.top;
+    console.log(clickY, rect.height / 3);
+    if (clickY <= rect.height / 3) {
+      setModalState("open");
+    } else {
+      setModalState("closed");
+    }
   };
 
   return (
@@ -219,8 +188,9 @@ const Carousel: React.FC = () => {
       )}
 
       <div
-        className={`${styles.carousel__backdrop} ${loading ? styles["carousel__backdrop--active"] : ""
-          }`}
+        className={`${styles.carousel__backdrop} ${
+          loading ? styles["carousel__backdrop--active"] : ""
+        }`}
       />
 
       {/* Prev */}
@@ -263,7 +233,7 @@ const Carousel: React.FC = () => {
           top: "50%",
           left: "50%",
           transform: "translate(-50%, -50%)",
-          opacity: 0,
+          opacity: isFirst || isLast ? 1 : 0,
         }}
         onClick={onCenter}
       >
@@ -273,27 +243,44 @@ const Carousel: React.FC = () => {
       {/* Modal */}
       <div
         ref={modalRef}
-        className={`${styles.carousel__modal} ${modalOpen ? styles["carousel__modal--open"] : styles["carousel__modal--closed"]}`}
+        className={`${styles.carousel__modal} ${
+          styles[`carousel__modal--${modalState}`]
+        }`}
+        onClick={handleModalClick}
       >
-        <div className={styles.carousel__modalContent}>
-          {modalContent[idx]}
-        </div>
+        <div className={styles.carousel__modalContent}>{modalContent[idx]}</div>
       </div>
 
-      {/* Up Button */}
-      <button
-        className={`${styles.carousel__upButton} ${modalOpen ? styles["carousel__upButton--open"] : styles["carousel__upButton--closed"]}`}
-        onClick={toggleModal}
-      >
-        {modalOpen ? "▲" : "▼"}
-      </button>
+      {modalState === "initial" && (
+        <div
+          className={styles.carousel__initialOverlay}
+          onClick={handleModalClick}
+        />
+      )}
+
+      {/* Up/Down toggle button */}
+      {modalState !== "initial" && (
+        <button
+          className={`${styles.carousel__upButton} ${
+            modalState === "open"
+              ? styles["carousel__upButton--open"]
+              : styles["carousel__upButton--closed"]
+          }`}
+          onClick={() =>
+            setModalState((prev) => (prev === "open" ? "closed" : "open"))
+          }
+        >
+          {modalState === "open" ? "▲" : "▼"}
+        </button>
+      )}
 
       <div className={styles.carousel__indicators}>
         {SLIDES.map((_, i) => (
           <button
             key={i}
-            className={`${styles.carousel__indicator} ${i === idx ? styles.active : ""
-              }`}
+            className={`${styles.carousel__indicator} ${
+              i === idx ? styles.active : ""
+            }`}
             onClick={() => goTo(i, "fade")}
           />
         ))}

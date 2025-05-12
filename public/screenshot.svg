@@ -1,148 +1,331 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="100%" height="100%" viewBox="0 0 1456 1006" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-    <g id="html1">
-        <g transform="matrix(1.00308,0,0,1.02042,-4.48716,-20.5166)">
-            <rect x="0.494" y="12.684" width="1458.69" height="992.159" style="fill:rgb(235,235,235);"/>
-        </g>
-        <g id="head1">
-        </g>
-        <g id="body1">
-            <g id="header1">
-                <g transform="matrix(1,0,0,1,8,56.6333)">
-                    <g id="h11">
-                        <g>
-                            <text x="0px" y="0px" style="font-family:'LucidaGrande-Bold', 'Lucida Grande', sans-serif;font-weight:600;font-size:32px;">Welcome to HTML Example</text>
-                        </g>
-                    </g>
-                </g>
-                <g transform="matrix(1,0,0,1,8,98.8667)">
-                    <g id="p1">
-                        <g>
-                            <text x="0px" y="0px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:16px;">This page demonstrates a simple layout with a placeholder image and structured tables for illustrative purposes.</text>
-                        </g>
-                    </g>
-                </g>
+<svg width="1456px" height="1006px" viewBox="0 0 1456 1006" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <rect id="Artboard1" x="0" y="0" width="1456" height="1006" style="fill:none;"/>
+    <clipPath id="_clip1">
+        <rect id="Artboard11" serif:id="Artboard1" x="0" y="0" width="1456" height="1006"/>
+    </clipPath>
+    <g clip-path="url(#_clip1)">
+        <g id="html1">
+            <g transform="matrix(0.998156,0,0,1.01395,-0.493089,-12.8609)">
+                <rect x="0.494" y="12.684" width="1458.69" height="992.159" style="fill:rgb(235,235,235);"/>
             </g>
-            <g id="main1">
-                <g id="section1">
-                    <g transform="matrix(1,0,0,1,8,146.783)">
-                        <g id="h21">
+            <g id="body1">
+                <g id="header1">
+                    <g transform="matrix(1,0,0,1,8,56.6333)">
+                        <g id="h11">
                             <g>
-                                <text x="0px" y="0px" style="font-family:'LucidaGrande-Bold', 'Lucida Grande', sans-serif;font-weight:600;font-size:24px;">Example Placeholder Image</text>
+                                <g>
+                                    <text x="0px" y="0px" style="font-family:'Arial-BoldMT', 'Arial';font-weight:700;font-size:32px;">W</text>
+                                    <g transform="matrix(1,0,0,1,29.625,0)">
+                                        <text x="0px" y="0px" style="font-family:'Arial-BoldMT', 'Arial';font-weight:700;font-size:32px;">elcome to HTML</text>
+                                    </g>
+                                    <g transform="matrix(1,0,0,1,276.172,0)">
+                                        <text x="0px" y="0px" style="font-family:'Arial-BoldMT', 'Arial';font-weight:700;font-size:32px;">E<tspan x="8.891px " y="0px ">x</tspan>ample</text>
+                                    </g>
+                                </g>
                             </g>
                         </g>
                     </g>
-                    <g id="img1">
-                    </g>
-                    <g transform="matrix(1,0,0,1,8,602.7)">
-                        <g id="p2">
+                    <g transform="matrix(1,0,0,1,8,98.8667)">
+                        <g id="p1">
                             <g>
-                                <text x="0px" y="0px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:16px;">The image above is a generic placeholder used for design layout purposes.</text>
+                                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial';font-size:16px;">This page demonstrates a simple layout with a placeholder image and structured tables for illustrative purposes.</text>
                             </g>
                         </g>
                     </g>
                 </g>
-                <g id="section2">
-                    <g transform="matrix(1,0,0,1,8,650.617)">
-                        <g id="h22">
-                            <g>
-                                <text x="0px" y="0px" style="font-family:'LucidaGrande-Bold', 'Lucida Grande', sans-serif;font-weight:600;font-size:24px;">Simple Data Table</text>
+                <g id="main1">
+                    <g id="section1">
+                        <g transform="matrix(1,0,0,1,8,146.783)">
+                            <g id="h21">
+                                <g>
+                                    <text x="0px" y="0px" style="font-family:'Arial-BoldMT', 'Arial';font-weight:700;font-size:24px;">Example Placeholder Image</text>
+                                </g>
+                            </g>
+                        </g>
+                        <g transform="matrix(1,0,0,1,8,602.7)">
+                            <g id="p2">
+                                <g>
+                                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial';font-size:16px;">The image above is a generic placeholder used for design layout purposes.</text>
+                                </g>
                             </g>
                         </g>
                     </g>
-                    <g id="table1">
-                        <g id="thead1">
-                            <g id="tr1">
-                                <g transform="matrix(1,0,0,1,14.1,693.533)">
-                                    <g id="th1">
-                                        <g>
-                                            <text x="0px" y="0px" style="font-family:'LucidaGrande-Bold', 'Lucida Grande', sans-serif;font-weight:600;font-size:16px;">ID</text>
-                                        </g>
-                                    </g>
-                                </g>
-                                <g transform="matrix(1,0,0,1,42.55,693.533)">
-                                    <g id="th2">
-                                        <g>
-                                            <text x="0px" y="0px" style="font-family:'LucidaGrande-Bold', 'Lucida Grande', sans-serif;font-weight:600;font-size:16px;">Name</text>
-                                        </g>
-                                    </g>
-                                </g>
-                                <g transform="matrix(1,0,0,1,94.9667,693.533)">
-                                    <g id="th3">
-                                        <g>
-                                            <text x="0px" y="0px" style="font-family:'LucidaGrande-Bold', 'Lucida Grande', sans-serif;font-weight:600;font-size:16px;">Status</text>
+                    <g id="section2">
+                        <g transform="matrix(1,0,0,1,8,650.617)">
+                            <g id="h22">
+                                <g>
+                                    <g>
+                                        <text x="0px" y="0px" style="font-family:'Arial-BoldMT', 'Arial';font-weight:700;font-size:24px;">Simple Data T</text>
+                                        <g transform="matrix(1,0,0,1,156.926,0)">
+                                            <text x="0px" y="0px" style="font-family:'Arial-BoldMT', 'Arial';font-weight:700;font-size:24px;">able</text>
                                         </g>
                                     </g>
                                 </g>
                             </g>
                         </g>
-                        <g id="tbody1">
-                            <g id="tr2">
-                                <g transform="matrix(1,0,0,1,11,716.733)">
-                                    <g id="td1">
-                                        <g>
-                                            <text x="0px" y="0px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:16px;">001</text>
+                        <g id="table1">
+                            <g id="thead1">
+                                <g id="tr1">
+                                    <g transform="matrix(1,0,0,1,14.1,693.533)">
+                                        <g id="th1">
+                                            <g>
+                                                <text x="0px" y="0px" style="font-family:'Arial-BoldMT', 'Arial';font-weight:700;font-size:16px;">ID</text>
+                                            </g>
                                         </g>
                                     </g>
-                                </g>
-                                <g transform="matrix(1,0,0,1,39,716.733)">
-                                    <g id="td2">
-                                        <g>
-                                            <text x="0px" y="0px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:16px;">Alice</text>
+                                    <g transform="matrix(1,0,0,1,42.55,693.533)">
+                                        <g id="th2">
+                                            <g>
+                                                <text x="0px" y="0px" style="font-family:'Arial-BoldMT', 'Arial';font-weight:700;font-size:16px;">Name</text>
+                                            </g>
                                         </g>
                                     </g>
-                                </g>
-                                <g transform="matrix(1,0,0,1,90.1,716.733)">
-                                    <g id="td3">
-                                        <g>
-                                            <text x="0px" y="0px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:16px;">Active</text>
-                                        </g>
-                                    </g>
-                                </g>
-                            </g>
-                            <g id="tr3">
-                                <g transform="matrix(1,0,0,1,11,739.933)">
-                                    <g id="td4">
-                                        <g>
-                                            <text x="0px" y="0px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:16px;">002</text>
-                                        </g>
-                                    </g>
-                                </g>
-                                <g transform="matrix(1,0,0,1,39,739.933)">
-                                    <g id="td5">
-                                        <g>
-                                            <text x="0px" y="0px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:16px;">Bob</text>
-                                        </g>
-                                    </g>
-                                </g>
-                                <g transform="matrix(1,0,0,1,90.1,739.933)">
-                                    <g id="td6">
-                                        <g>
-                                            <text x="0px" y="0px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:16px;">Inactive</text>
+                                    <g transform="matrix(1,0,0,1,94.9667,693.533)">
+                                        <g id="th3">
+                                            <g>
+                                                <text x="0px" y="0px" style="font-family:'Arial-BoldMT', 'Arial';font-weight:700;font-size:16px;">Status</text>
+                                            </g>
                                         </g>
                                     </g>
                                 </g>
                             </g>
-                            <g id="tr4">
-                                <g transform="matrix(1,0,0,1,11,763.133)">
-                                    <g id="td7">
-                                        <g>
-                                            <text x="0px" y="0px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:16px;">003</text>
+                            <g id="tbody1">
+                                <g id="tr2">
+                                    <g transform="matrix(1,0,0,1,11,716.733)">
+                                        <g id="td1">
+                                            <g>
+                                                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial';font-size:16px;">001</text>
+                                            </g>
+                                        </g>
+                                    </g>
+                                    <g transform="matrix(1,0,0,1,39,716.733)">
+                                        <g id="td2">
+                                            <g>
+                                                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial';font-size:16px;">Alice</text>
+                                            </g>
+                                        </g>
+                                    </g>
+                                    <g transform="matrix(1,0,0,1,90.1,716.733)">
+                                        <g id="td3">
+                                            <g>
+                                                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial';font-size:16px;">Active</text>
+                                            </g>
                                         </g>
                                     </g>
                                 </g>
-                                <g transform="matrix(1,0,0,1,39,763.133)">
-                                    <g id="td8">
-                                        <g>
-                                            <text x="0px" y="0px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:16px;">Charlie</text>
+                                <g id="tr3">
+                                    <g transform="matrix(1,0,0,1,11,739.933)">
+                                        <g id="td4">
+                                            <g>
+                                                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial';font-size:16px;">002</text>
+                                            </g>
+                                        </g>
+                                    </g>
+                                    <g transform="matrix(1,0,0,1,39,739.933)">
+                                        <g id="td5">
+                                            <g>
+                                                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial';font-size:16px;">Bob</text>
+                                            </g>
+                                        </g>
+                                    </g>
+                                    <g transform="matrix(1,0,0,1,90.1,739.933)">
+                                        <g id="td6">
+                                            <g>
+                                                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial';font-size:16px;">Inactive</text>
+                                            </g>
                                         </g>
                                     </g>
                                 </g>
-                                <g transform="matrix(1,0,0,1,90.1,763.133)">
-                                    <g id="td9">
-                                        <g>
-                                            <text x="0px" y="0px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:16px;">Pending</text>
+                                <g id="tr4">
+                                    <g transform="matrix(1,0,0,1,11,763.133)">
+                                        <g id="td7">
+                                            <g>
+                                                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial';font-size:16px;">003</text>
+                                            </g>
+                                        </g>
+                                    </g>
+                                    <g transform="matrix(1,0,0,1,39,763.133)">
+                                        <g id="td8">
+                                            <g>
+                                                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial';font-size:16px;">Charlie</text>
+                                            </g>
+                                        </g>
+                                    </g>
+                                    <g transform="matrix(1,0,0,1,90.1,763.133)">
+                                        <g id="td9">
+                                            <g>
+                                                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial';font-size:16px;">Pending</text>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                    <g id="section3">
+                        <g transform="matrix(1,0,0,1,8,814.05)">
+                            <g id="h23">
+                                <g>
+                                    <g>
+                                        <text x="0px" y="0px" style="font-family:'Arial-BoldMT', 'Arial';font-weight:700;font-size:24px;">Product Inventory T</text>
+                                        <g transform="matrix(1,0,0,1,224.906,0)">
+                                            <text x="0px" y="0px" style="font-family:'Arial-BoldMT', 'Arial';font-weight:700;font-size:24px;">able</text>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                        <g id="table2">
+                            <g id="thead2">
+                                <g id="tr5">
+                                    <g transform="matrix(1,0,0,1,19.8,856.967)">
+                                        <g id="th4">
+                                            <g>
+                                                <text x="0px" y="0px" style="font-family:'Arial-BoldMT', 'Arial';font-weight:700;font-size:16px;">Product</text>
+                                            </g>
+                                        </g>
+                                    </g>
+                                    <g transform="matrix(1,0,0,1,91.8833,856.967)">
+                                        <g id="th5">
+                                            <g>
+                                                <text x="0px" y="0px" style="font-family:'Arial-BoldMT', 'Arial';font-weight:700;font-size:16px;">Category</text>
+                                            </g>
+                                        </g>
+                                    </g>
+                                    <g transform="matrix(1,0,0,1,163.417,856.967)">
+                                        <g id="th6">
+                                            <g>
+                                                <text x="0px" y="0px" style="font-family:'Arial-BoldMT', 'Arial';font-weight:700;font-size:16px;">Quantity</text>
+                                            </g>
+                                        </g>
+                                    </g>
+                                    <g transform="matrix(1,0,0,1,228.783,856.967)">
+                                        <g id="th7">
+                                            <g>
+                                                <text x="0px" y="0px" style="font-family:'Arial-BoldMT', 'Arial';font-weight:700;font-size:16px;">Price (USD)</text>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                            <g id="tbody2">
+                                <g id="tr6">
+                                    <g transform="matrix(1,0,0,1,11,880.167)">
+                                        <g id="td10">
+                                            <g>
+                                                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial';font-size:16px;">Laptop</text>
+                                            </g>
+                                        </g>
+                                    </g>
+                                    <g transform="matrix(1,0,0,1,87.4333,880.167)">
+                                        <g id="td11">
+                                            <g>
+                                                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial';font-size:16px;">Electronics</text>
+                                            </g>
+                                        </g>
+                                    </g>
+                                    <g transform="matrix(1,0,0,1,163.417,880.167)">
+                                        <g id="td12">
+                                            <g>
+                                                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial';font-size:16px;">15</text>
+                                            </g>
+                                        </g>
+                                    </g>
+                                    <g transform="matrix(1,0,0,1,228.783,880.167)">
+                                        <g id="td13">
+                                            <g>
+                                                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial';font-size:16px;">999.99</text>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                                <g id="tr7">
+                                    <g transform="matrix(1,0,0,1,11,903.367)">
+                                        <g id="td14">
+                                            <g>
+                                                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial';font-size:16px;">Notebook</text>
+                                            </g>
+                                        </g>
+                                    </g>
+                                    <g transform="matrix(1,0,0,1,87.4333,903.367)">
+                                        <g id="td15">
+                                            <g>
+                                                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial';font-size:16px;">Stationery</text>
+                                            </g>
+                                        </g>
+                                    </g>
+                                    <g transform="matrix(1,0,0,1,163.417,903.367)">
+                                        <g id="td16">
+                                            <g>
+                                                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial';font-size:16px;">120</text>
+                                            </g>
+                                        </g>
+                                    </g>
+                                    <g transform="matrix(1,0,0,1,228.783,903.367)">
+                                        <g id="td17">
+                                            <g>
+                                                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial';font-size:16px;">2.49</text>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                                <g id="tr8">
+                                    <g transform="matrix(1,0,0,1,11,926.567)">
+                                        <g id="td18">
+                                            <g>
+                                                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial';font-size:16px;">Desk Chair</text>
+                                            </g>
+                                        </g>
+                                    </g>
+                                    <g transform="matrix(1,0,0,1,87.4333,926.567)">
+                                        <g id="td19">
+                                            <g>
+                                                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial';font-size:16px;">Furniture</text>
+                                            </g>
+                                        </g>
+                                    </g>
+                                    <g transform="matrix(1,0,0,1,163.417,926.567)">
+                                        <g id="td20">
+                                            <g>
+                                                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial';font-size:16px;">30</text>
+                                            </g>
+                                        </g>
+                                    </g>
+                                    <g transform="matrix(1,0,0,1,228.783,926.567)">
+                                        <g id="td21">
+                                            <g>
+                                                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial';font-size:16px;">89.95</text>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                            <g id="tfoot1">
+                                <g id="tr9">
+                                    <g transform="matrix(1,0,0,1,11,949.767)">
+                                        <g id="td22">
+                                            <g>
+                                                <g>
+                                                    <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial';font-size:16px;">T</text>
+                                                    <g transform="matrix(1,0,0,1,8,0)">
+                                                        <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial';font-size:16px;">otal Items</text>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                    <g transform="matrix(1,0,0,1,87.4333,949.767)">
+                                        <g id="td23">
+                                            <g>
+                                                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial';font-size:16px;">165</text>
+                                            </g>
+                                        </g>
+                                    </g>
+                                    <g transform="matrix(1,0,0,1,163.417,949.767)">
+                                        <g id="td24">
+                                            <g>
+                                                <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial';font-size:16px;">—</text>
+                                            </g>
                                         </g>
                                     </g>
                                 </g>
@@ -150,181 +333,30 @@
                         </g>
                     </g>
                 </g>
-                <g id="section3">
-                    <g transform="matrix(1,0,0,1,8,814.05)">
-                        <g id="h23">
-                            <g>
-                                <text x="0px" y="0px" style="font-family:'LucidaGrande-Bold', 'Lucida Grande', sans-serif;font-weight:600;font-size:24px;">Product Inventory Table</text>
-                            </g>
-                        </g>
-                    </g>
-                    <g id="table2">
-                        <g id="thead2">
-                            <g id="tr5">
-                                <g transform="matrix(1,0,0,1,19.8,856.967)">
-                                    <g id="th4">
-                                        <g>
-                                            <text x="0px" y="0px" style="font-family:'LucidaGrande-Bold', 'Lucida Grande', sans-serif;font-weight:600;font-size:16px;">Product</text>
-                                        </g>
-                                    </g>
-                                </g>
-                                <g transform="matrix(1,0,0,1,91.8833,856.967)">
-                                    <g id="th5">
-                                        <g>
-                                            <text x="0px" y="0px" style="font-family:'LucidaGrande-Bold', 'Lucida Grande', sans-serif;font-weight:600;font-size:16px;">Category</text>
-                                        </g>
-                                    </g>
-                                </g>
-                                <g transform="matrix(1,0,0,1,163.417,856.967)">
-                                    <g id="th6">
-                                        <g>
-                                            <text x="0px" y="0px" style="font-family:'LucidaGrande-Bold', 'Lucida Grande', sans-serif;font-weight:600;font-size:16px;">Quantity</text>
-                                        </g>
-                                    </g>
-                                </g>
-                                <g transform="matrix(1,0,0,1,228.783,856.967)">
-                                    <g id="th7">
-                                        <g>
-                                            <text x="0px" y="0px" style="font-family:'LucidaGrande-Bold', 'Lucida Grande', sans-serif;font-weight:600;font-size:16px;">Price (USD)</text>
-                                        </g>
-                                    </g>
-                                </g>
-                            </g>
-                        </g>
-                        <g id="tbody2">
-                            <g id="tr6">
-                                <g transform="matrix(1,0,0,1,11,880.167)">
-                                    <g id="td10">
-                                        <g>
-                                            <text x="0px" y="0px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:16px;">Laptop</text>
-                                        </g>
-                                    </g>
-                                </g>
-                                <g transform="matrix(1,0,0,1,87.4333,880.167)">
-                                    <g id="td11">
-                                        <g>
-                                            <text x="0px" y="0px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:16px;">Electronics</text>
-                                        </g>
-                                    </g>
-                                </g>
-                                <g transform="matrix(1,0,0,1,163.417,880.167)">
-                                    <g id="td12">
-                                        <g>
-                                            <text x="0px" y="0px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:16px;">15</text>
-                                        </g>
-                                    </g>
-                                </g>
-                                <g transform="matrix(1,0,0,1,228.783,880.167)">
-                                    <g id="td13">
-                                        <g>
-                                            <text x="0px" y="0px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:16px;">999.99</text>
-                                        </g>
-                                    </g>
-                                </g>
-                            </g>
-                            <g id="tr7">
-                                <g transform="matrix(1,0,0,1,11,903.367)">
-                                    <g id="td14">
-                                        <g>
-                                            <text x="0px" y="0px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:16px;">Notebook</text>
-                                        </g>
-                                    </g>
-                                </g>
-                                <g transform="matrix(1,0,0,1,87.4333,903.367)">
-                                    <g id="td15">
-                                        <g>
-                                            <text x="0px" y="0px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:16px;">Stationery</text>
-                                        </g>
-                                    </g>
-                                </g>
-                                <g transform="matrix(1,0,0,1,163.417,903.367)">
-                                    <g id="td16">
-                                        <g>
-                                            <text x="0px" y="0px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:16px;">120</text>
-                                        </g>
-                                    </g>
-                                </g>
-                                <g transform="matrix(1,0,0,1,228.783,903.367)">
-                                    <g id="td17">
-                                        <g>
-                                            <text x="0px" y="0px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:16px;">2.49</text>
-                                        </g>
-                                    </g>
-                                </g>
-                            </g>
-                            <g id="tr8">
-                                <g transform="matrix(1,0,0,1,11,926.567)">
-                                    <g id="td18">
-                                        <g>
-                                            <text x="0px" y="0px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:16px;">Desk Chair</text>
-                                        </g>
-                                    </g>
-                                </g>
-                                <g transform="matrix(1,0,0,1,87.4333,926.567)">
-                                    <g id="td19">
-                                        <g>
-                                            <text x="0px" y="0px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:16px;">Furniture</text>
-                                        </g>
-                                    </g>
-                                </g>
-                                <g transform="matrix(1,0,0,1,163.417,926.567)">
-                                    <g id="td20">
-                                        <g>
-                                            <text x="0px" y="0px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:16px;">30</text>
-                                        </g>
-                                    </g>
-                                </g>
-                                <g transform="matrix(1,0,0,1,228.783,926.567)">
-                                    <g id="td21">
-                                        <g>
-                                            <text x="0px" y="0px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:16px;">89.95</text>
-                                        </g>
-                                    </g>
-                                </g>
-                            </g>
-                        </g>
-                        <g id="tfoot1">
-                            <g id="tr9">
-                                <g transform="matrix(1,0,0,1,11,949.767)">
-                                    <g id="td22">
-                                        <g>
-                                            <text x="0px" y="0px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:16px;">Total Items</text>
-                                        </g>
-                                    </g>
-                                </g>
-                                <g transform="matrix(1,0,0,1,87.4333,949.767)">
-                                    <g id="td23">
-                                        <g>
-                                            <text x="0px" y="0px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:16px;">165</text>
-                                        </g>
-                                    </g>
-                                </g>
-                                <g transform="matrix(1,0,0,1,163.417,949.767)">
-                                    <g id="td24">
-                                        <g>
-                                            <text x="0px" y="0px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:16px;">—</text>
-                                        </g>
-                                    </g>
-                                </g>
-                            </g>
-                        </g>
-                    </g>
-                </g>
-            </g>
-            <g id="footer1">
                 <g transform="matrix(1,0,0,1,8,987.967)">
-                    <g id="p3">
+                    <g id="footer1">
                         <g>
-                            <text x="0px" y="0px" style="font-family:'LucidaGrande', 'Lucida Grande', sans-serif;font-weight:500;font-size:16px;">© 2025 Generic Company. All rights reserved.</text>
+                            <g id="p3">
+                                <g>
+                                    <g>
+                                        <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial';font-size:16px;">© 2025 Generic Company</text>
+                                        <g transform="matrix(1,0,0,1,184.031,0)">
+                                            <text x="0px" y="0px" style="font-family:'ArialMT', 'Arial';font-size:16px;">. <tspan x="8.008px 18.68px " y="0px 0px ">Al</tspan>l rights reserved.</text>
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
                         </g>
                     </g>
                 </g>
             </g>
-        </g>
-        <g id="_31343C.svg" serif:id="31343C.svg" transform="matrix(1,0,0,1,301.923,340.381)">
-            <g transform="matrix(1,0,0,1,-300,-200)">
-                <rect x="0" y="0" width="1" height="1" style="fill:rgb(238,238,238);"/>
-                <path d="M155.52,171.08L138.36,192.08L136.36,194.56C137.48,194 138.687,193.567 139.98,193.26C141.273,192.953 142.667,192.8 144.16,192.8C146.347,192.8 148.473,193.16 150.54,193.88C152.607,194.6 154.427,195.687 156,197.14C157.573,198.593 158.84,200.4 159.8,202.56C160.76,204.72 161.24,207.24 161.24,210.12C161.24,212.813 160.747,215.34 159.76,217.7C158.773,220.06 157.387,222.12 155.6,223.88C153.813,225.64 151.66,227.027 149.14,228.04C146.62,229.053 143.84,229.56 140.8,229.56C137.707,229.56 134.933,229.067 132.48,228.08C130.027,227.093 127.933,225.713 126.2,223.94C124.467,222.167 123.14,220.033 122.22,217.54C121.3,215.047 120.84,212.28 120.84,209.24C120.84,206.52 121.393,203.727 122.5,200.86C123.607,197.993 125.32,195.013 127.64,191.92L141.44,173.4C141.92,172.76 142.62,172.213 143.54,171.76C144.46,171.307 145.52,171.08 146.72,171.08L155.52,171.08ZM140.6,221.48C142.173,221.48 143.62,221.213 144.94,220.68C146.26,220.147 147.393,219.4 148.34,218.44C149.287,217.48 150.027,216.353 150.56,215.06C151.093,213.767 151.36,212.36 151.36,210.84C151.36,209.187 151.107,207.7 150.6,206.38C150.093,205.06 149.373,203.94 148.44,203.02C147.507,202.1 146.387,201.4 145.08,200.92C143.773,200.44 142.333,200.2 140.76,200.2C139.187,200.2 137.76,200.467 136.48,201C135.2,201.533 134.107,202.273 133.2,203.22C132.293,204.167 131.587,205.287 131.08,206.58C130.573,207.873 130.32,209.267 130.32,210.76C130.32,212.36 130.54,213.82 130.98,215.14C131.42,216.46 132.073,217.587 132.94,218.52C133.807,219.453 134.88,220.18 136.16,220.7C137.44,221.22 138.92,221.48 140.6,221.48M208.28,200C208.28,205.04 207.74,209.42 206.66,213.14C205.58,216.86 204.087,219.933 202.18,222.36C200.273,224.787 198.02,226.593 195.42,227.78C192.82,228.967 190.013,229.56 187,229.56C183.987,229.56 181.193,228.967 178.62,227.78C176.047,226.593 173.813,224.787 171.92,222.36C170.027,219.933 168.547,216.86 167.48,213.14C166.413,209.42 165.88,205.04 165.88,200C165.88,194.933 166.413,190.547 167.48,186.84C168.547,183.133 170.027,180.067 171.92,177.64C173.813,175.213 176.047,173.407 178.62,172.22C181.193,171.033 183.987,170.44 187,170.44C190.013,170.44 192.82,171.033 195.42,172.22C198.02,173.407 200.273,175.213 202.18,177.64C204.087,180.067 205.58,183.133 206.66,186.84C207.74,190.547 208.28,194.933 208.28,200M198.08,200C198.08,195.813 197.773,192.347 197.16,189.6C196.547,186.853 195.727,184.667 194.7,183.04C193.673,181.413 192.493,180.273 191.16,179.62C189.827,178.967 188.44,178.64 187,178.64C185.587,178.64 184.22,178.967 182.9,179.62C181.58,180.273 180.413,181.413 179.4,183.04C178.387,184.667 177.58,186.853 176.98,189.6C176.38,192.347 176.08,195.813 176.08,200C176.08,204.187 176.38,207.653 176.98,210.4C177.58,213.147 178.387,215.333 179.4,216.96C180.413,218.587 181.58,219.727 182.9,220.38C184.22,221.033 185.587,221.36 187,221.36C188.44,221.36 189.827,221.033 191.16,220.38C192.493,219.727 193.673,218.587 194.7,216.96C195.727,215.333 196.547,213.147 197.16,210.4C197.773,207.653 198.08,204.187 198.08,200M254.68,200C254.68,205.04 254.14,209.42 253.06,213.14C251.98,216.86 250.487,219.933 248.58,222.36C246.673,224.787 244.42,226.593 241.82,227.78C239.22,228.967 236.413,229.56 233.4,229.56C230.387,229.56 227.593,228.967 225.02,227.78C222.447,226.593 220.213,224.787 218.32,222.36C216.427,219.933 214.947,216.86 213.88,213.14C212.813,209.42 212.28,205.04 212.28,200C212.28,194.933 212.813,190.547 213.88,186.84C214.947,183.133 216.427,180.067 218.32,177.64C220.213,175.213 222.447,173.407 225.02,172.22C227.593,171.033 230.387,170.44 233.4,170.44C236.413,170.44 239.22,171.033 241.82,172.22C244.42,173.407 246.673,175.213 248.58,177.64C250.487,180.067 251.98,183.133 253.06,186.84C254.14,190.547 254.68,194.933 254.68,200M244.48,200C244.48,195.813 244.173,192.347 243.56,189.6C242.947,186.853 242.127,184.667 241.1,183.04C240.073,181.413 238.893,180.273 237.56,179.62C236.227,178.967 234.84,178.64 233.4,178.64C231.987,178.64 230.62,178.967 229.3,179.62C227.98,180.273 226.813,181.413 225.8,183.04C224.787,184.667 223.98,186.853 223.38,189.6C222.78,192.347 222.48,195.813 222.48,200C222.48,204.187 222.78,207.653 223.38,210.4C223.98,213.147 224.787,215.333 225.8,216.96C226.813,218.587 227.98,219.727 229.3,220.38C230.62,221.033 231.987,221.36 233.4,221.36C234.84,221.36 236.227,221.033 237.56,220.38C238.893,219.727 240.073,218.587 241.1,216.96C242.127,215.333 242.947,213.147 243.56,210.4C244.173,207.653 244.48,204.187 244.48,200M318.2,215.68L312.96,220.84L299.4,207.28L285.72,220.92L280.48,215.76L294.16,202.04L281.12,189L286.32,183.8L299.36,196.84L312.32,183.88L317.6,189.08L304.6,202.08L318.2,215.68ZM352.84,207.12L370.44,207.12L370.44,188.2C370.44,186.413 370.56,184.44 370.8,182.28L352.84,207.12ZM379.04,207.12L386.32,207.12L386.32,212.84C386.32,213.373 386.147,213.833 385.8,214.22C385.453,214.607 384.96,214.8 384.32,214.8L379.04,214.8L379.04,228.92L370.44,228.92L370.44,214.8L346.04,214.8C345.373,214.8 344.787,214.593 344.28,214.18C343.773,213.767 343.453,213.253 343.32,212.64L342.28,207.64L369.68,171.04L379.04,171.04L379.04,207.12ZM432.76,200C432.76,205.04 432.22,209.42 431.14,213.14C430.06,216.86 428.567,219.933 426.66,222.36C424.753,224.787 422.5,226.593 419.9,227.78C417.3,228.967 414.493,229.56 411.48,229.56C408.467,229.56 405.673,228.967 403.1,227.78C400.527,226.593 398.293,224.787 396.4,222.36C394.507,219.933 393.027,216.86 391.96,213.14C390.893,209.42 390.36,205.04 390.36,200C390.36,194.933 390.893,190.547 391.96,186.84C393.027,183.133 394.507,180.067 396.4,177.64C398.293,175.213 400.527,173.407 403.1,172.22C405.673,171.033 408.467,170.44 411.48,170.44C414.493,170.44 417.3,171.033 419.9,172.22C422.5,173.407 424.753,175.213 426.66,177.64C428.567,180.067 430.06,183.133 431.14,186.84C432.22,190.547 432.76,194.933 432.76,200M422.56,200C422.56,195.813 422.253,192.347 421.64,189.6C421.027,186.853 420.207,184.667 419.18,183.04C418.153,181.413 416.973,180.273 415.64,179.62C414.307,178.967 412.92,178.64 411.48,178.64C410.067,178.64 408.7,178.967 407.38,179.62C406.06,180.273 404.893,181.413 403.88,183.04C402.867,184.667 402.06,186.853 401.46,189.6C400.86,192.347 400.56,195.813 400.56,200C400.56,204.187 400.86,207.653 401.46,210.4C402.06,213.147 402.867,215.333 403.88,216.96C404.893,218.587 406.06,219.727 407.38,220.38C408.7,221.033 410.067,221.36 411.48,221.36C412.92,221.36 414.307,221.033 415.64,220.38C416.973,219.727 418.153,218.587 419.18,216.96C420.207,215.333 421.027,213.147 421.64,210.4C422.253,207.653 422.56,204.187 422.56,200M479.16,200C479.16,205.04 478.62,209.42 477.54,213.14C476.46,216.86 474.967,219.933 473.06,222.36C471.153,224.787 468.9,226.593 466.3,227.78C463.7,228.967 460.893,229.56 457.88,229.56C454.867,229.56 452.073,228.967 449.5,227.78C446.927,226.593 444.693,224.787 442.8,222.36C440.907,219.933 439.427,216.86 438.36,213.14C437.293,209.42 436.76,205.04 436.76,200C436.76,194.933 437.293,190.547 438.36,186.84C439.427,183.133 440.907,180.067 442.8,177.64C444.693,175.213 446.927,173.407 449.5,172.22C452.073,171.033 454.867,170.44 457.88,170.44C460.893,170.44 463.7,171.033 466.3,172.22C468.9,173.407 471.153,175.213 473.06,177.64C474.967,180.067 476.46,183.133 477.54,186.84C478.62,190.547 479.16,194.933 479.16,200M468.96,200C468.96,195.813 468.653,192.347 468.04,189.6C467.427,186.853 466.607,184.667 465.58,183.04C464.553,181.413 463.373,180.273 462.04,179.62C460.707,178.967 459.32,178.64 457.88,178.64C456.467,178.64 455.1,178.967 453.78,179.62C452.46,180.273 451.293,181.413 450.28,183.04C449.267,184.667 448.46,186.853 447.86,189.6C447.26,192.347 446.96,195.813 446.96,200C446.96,204.187 447.26,207.653 447.86,210.4C448.46,213.147 449.267,215.333 450.28,216.96C451.293,218.587 452.46,219.727 453.78,220.38C455.1,221.033 456.467,221.36 457.88,221.36C459.32,221.36 460.707,221.033 462.04,220.38C463.373,219.727 464.553,218.587 465.58,216.96C466.607,215.333 467.427,213.147 468.04,210.4C468.653,207.653 468.96,204.187 468.96,200" style="fill:rgb(49,52,60);fill-rule:nonzero;"/>
+            <g transform="matrix(1,0,0,1,1.923,140.381)">
+                <g id="_31343C.svg" serif:id="31343C.svg">
+                    <g>
+                        <rect x="0" y="0" width="1" height="1" style="fill:rgb(238,238,238);"/>
+                        <path d="M155.52,171.08L138.36,192.08L136.36,194.56C137.48,194 138.687,193.567 139.98,193.26C141.273,192.953 142.667,192.8 144.16,192.8C146.347,192.8 148.473,193.16 150.54,193.88C152.607,194.6 154.427,195.687 156,197.14C157.573,198.593 158.84,200.4 159.8,202.56C160.76,204.72 161.24,207.24 161.24,210.12C161.24,212.813 160.747,215.34 159.76,217.7C158.773,220.06 157.387,222.12 155.6,223.88C153.813,225.64 151.66,227.027 149.14,228.04C146.62,229.053 143.84,229.56 140.8,229.56C137.707,229.56 134.933,229.067 132.48,228.08C130.027,227.093 127.933,225.713 126.2,223.94C124.467,222.167 123.14,220.033 122.22,217.54C121.3,215.047 120.84,212.28 120.84,209.24C120.84,206.52 121.393,203.727 122.5,200.86C123.607,197.993 125.32,195.013 127.64,191.92L141.44,173.4C141.92,172.76 142.62,172.213 143.54,171.76C144.46,171.307 145.52,171.08 146.72,171.08L155.52,171.08ZM140.6,221.48C142.173,221.48 143.62,221.213 144.94,220.68C146.26,220.147 147.393,219.4 148.34,218.44C149.287,217.48 150.027,216.353 150.56,215.06C151.093,213.767 151.36,212.36 151.36,210.84C151.36,209.187 151.107,207.7 150.6,206.38C150.093,205.06 149.373,203.94 148.44,203.02C147.507,202.1 146.387,201.4 145.08,200.92C143.773,200.44 142.333,200.2 140.76,200.2C139.187,200.2 137.76,200.467 136.48,201C135.2,201.533 134.107,202.273 133.2,203.22C132.293,204.167 131.587,205.287 131.08,206.58C130.573,207.873 130.32,209.267 130.32,210.76C130.32,212.36 130.54,213.82 130.98,215.14C131.42,216.46 132.073,217.587 132.94,218.52C133.807,219.453 134.88,220.18 136.16,220.7C137.44,221.22 138.92,221.48 140.6,221.48M208.28,200C208.28,205.04 207.74,209.42 206.66,213.14C205.58,216.86 204.087,219.933 202.18,222.36C200.273,224.787 198.02,226.593 195.42,227.78C192.82,228.967 190.013,229.56 187,229.56C183.987,229.56 181.193,228.967 178.62,227.78C176.047,226.593 173.813,224.787 171.92,222.36C170.027,219.933 168.547,216.86 167.48,213.14C166.413,209.42 165.88,205.04 165.88,200C165.88,194.933 166.413,190.547 167.48,186.84C168.547,183.133 170.027,180.067 171.92,177.64C173.813,175.213 176.047,173.407 178.62,172.22C181.193,171.033 183.987,170.44 187,170.44C190.013,170.44 192.82,171.033 195.42,172.22C198.02,173.407 200.273,175.213 202.18,177.64C204.087,180.067 205.58,183.133 206.66,186.84C207.74,190.547 208.28,194.933 208.28,200M198.08,200C198.08,195.813 197.773,192.347 197.16,189.6C196.547,186.853 195.727,184.667 194.7,183.04C193.673,181.413 192.493,180.273 191.16,179.62C189.827,178.967 188.44,178.64 187,178.64C185.587,178.64 184.22,178.967 182.9,179.62C181.58,180.273 180.413,181.413 179.4,183.04C178.387,184.667 177.58,186.853 176.98,189.6C176.38,192.347 176.08,195.813 176.08,200C176.08,204.187 176.38,207.653 176.98,210.4C177.58,213.147 178.387,215.333 179.4,216.96C180.413,218.587 181.58,219.727 182.9,220.38C184.22,221.033 185.587,221.36 187,221.36C188.44,221.36 189.827,221.033 191.16,220.38C192.493,219.727 193.673,218.587 194.7,216.96C195.727,215.333 196.547,213.147 197.16,210.4C197.773,207.653 198.08,204.187 198.08,200M254.68,200C254.68,205.04 254.14,209.42 253.06,213.14C251.98,216.86 250.487,219.933 248.58,222.36C246.673,224.787 244.42,226.593 241.82,227.78C239.22,228.967 236.413,229.56 233.4,229.56C230.387,229.56 227.593,228.967 225.02,227.78C222.447,226.593 220.213,224.787 218.32,222.36C216.427,219.933 214.947,216.86 213.88,213.14C212.813,209.42 212.28,205.04 212.28,200C212.28,194.933 212.813,190.547 213.88,186.84C214.947,183.133 216.427,180.067 218.32,177.64C220.213,175.213 222.447,173.407 225.02,172.22C227.593,171.033 230.387,170.44 233.4,170.44C236.413,170.44 239.22,171.033 241.82,172.22C244.42,173.407 246.673,175.213 248.58,177.64C250.487,180.067 251.98,183.133 253.06,186.84C254.14,190.547 254.68,194.933 254.68,200M244.48,200C244.48,195.813 244.173,192.347 243.56,189.6C242.947,186.853 242.127,184.667 241.1,183.04C240.073,181.413 238.893,180.273 237.56,179.62C236.227,178.967 234.84,178.64 233.4,178.64C231.987,178.64 230.62,178.967 229.3,179.62C227.98,180.273 226.813,181.413 225.8,183.04C224.787,184.667 223.98,186.853 223.38,189.6C222.78,192.347 222.48,195.813 222.48,200C222.48,204.187 222.78,207.653 223.38,210.4C223.98,213.147 224.787,215.333 225.8,216.96C226.813,218.587 227.98,219.727 229.3,220.38C230.62,221.033 231.987,221.36 233.4,221.36C234.84,221.36 236.227,221.033 237.56,220.38C238.893,219.727 240.073,218.587 241.1,216.96C242.127,215.333 242.947,213.147 243.56,210.4C244.173,207.653 244.48,204.187 244.48,200M318.2,215.68L312.96,220.84L299.4,207.28L285.72,220.92L280.48,215.76L294.16,202.04L281.12,189L286.32,183.8L299.36,196.84L312.32,183.88L317.6,189.08L304.6,202.08L318.2,215.68ZM352.84,207.12L370.44,207.12L370.44,188.2C370.44,186.413 370.56,184.44 370.8,182.28L352.84,207.12ZM379.04,207.12L386.32,207.12L386.32,212.84C386.32,213.373 386.147,213.833 385.8,214.22C385.453,214.607 384.96,214.8 384.32,214.8L379.04,214.8L379.04,228.92L370.44,228.92L370.44,214.8L346.04,214.8C345.373,214.8 344.787,214.593 344.28,214.18C343.773,213.767 343.453,213.253 343.32,212.64L342.28,207.64L369.68,171.04L379.04,171.04L379.04,207.12ZM432.76,200C432.76,205.04 432.22,209.42 431.14,213.14C430.06,216.86 428.567,219.933 426.66,222.36C424.753,224.787 422.5,226.593 419.9,227.78C417.3,228.967 414.493,229.56 411.48,229.56C408.467,229.56 405.673,228.967 403.1,227.78C400.527,226.593 398.293,224.787 396.4,222.36C394.507,219.933 393.027,216.86 391.96,213.14C390.893,209.42 390.36,205.04 390.36,200C390.36,194.933 390.893,190.547 391.96,186.84C393.027,183.133 394.507,180.067 396.4,177.64C398.293,175.213 400.527,173.407 403.1,172.22C405.673,171.033 408.467,170.44 411.48,170.44C414.493,170.44 417.3,171.033 419.9,172.22C422.5,173.407 424.753,175.213 426.66,177.64C428.567,180.067 430.06,183.133 431.14,186.84C432.22,190.547 432.76,194.933 432.76,200M422.56,200C422.56,195.813 422.253,192.347 421.64,189.6C421.027,186.853 420.207,184.667 419.18,183.04C418.153,181.413 416.973,180.273 415.64,179.62C414.307,178.967 412.92,178.64 411.48,178.64C410.067,178.64 408.7,178.967 407.38,179.62C406.06,180.273 404.893,181.413 403.88,183.04C402.867,184.667 402.06,186.853 401.46,189.6C400.86,192.347 400.56,195.813 400.56,200C400.56,204.187 400.86,207.653 401.46,210.4C402.06,213.147 402.867,215.333 403.88,216.96C404.893,218.587 406.06,219.727 407.38,220.38C408.7,221.033 410.067,221.36 411.48,221.36C412.92,221.36 414.307,221.033 415.64,220.38C416.973,219.727 418.153,218.587 419.18,216.96C420.207,215.333 421.027,213.147 421.64,210.4C422.253,207.653 422.56,204.187 422.56,200M479.16,200C479.16,205.04 478.62,209.42 477.54,213.14C476.46,216.86 474.967,219.933 473.06,222.36C471.153,224.787 468.9,226.593 466.3,227.78C463.7,228.967 460.893,229.56 457.88,229.56C454.867,229.56 452.073,228.967 449.5,227.78C446.927,226.593 444.693,224.787 442.8,222.36C440.907,219.933 439.427,216.86 438.36,213.14C437.293,209.42 436.76,205.04 436.76,200C436.76,194.933 437.293,190.547 438.36,186.84C439.427,183.133 440.907,180.067 442.8,177.64C444.693,175.213 446.927,173.407 449.5,172.22C452.073,171.033 454.867,170.44 457.88,170.44C460.893,170.44 463.7,171.033 466.3,172.22C468.9,173.407 471.153,175.213 473.06,177.64C474.967,180.067 476.46,183.133 477.54,186.84C478.62,190.547 479.16,194.933 479.16,200M468.96,200C468.96,195.813 468.653,192.347 468.04,189.6C467.427,186.853 466.607,184.667 465.58,183.04C464.553,181.413 463.373,180.273 462.04,179.62C460.707,178.967 459.32,178.64 457.88,178.64C456.467,178.64 455.1,178.967 453.78,179.62C452.46,180.273 451.293,181.413 450.28,183.04C449.267,184.667 448.46,186.853 447.86,189.6C447.26,192.347 446.96,195.813 446.96,200C446.96,204.187 447.26,207.653 447.86,210.4C448.46,213.147 449.267,215.333 450.28,216.96C451.293,218.587 452.46,219.727 453.78,220.38C455.1,221.033 456.467,221.36 457.88,221.36C459.32,221.36 460.707,221.033 462.04,220.38C463.373,219.727 464.553,218.587 465.58,216.96C466.607,215.333 467.427,213.147 468.04,210.4C468.653,207.653 468.96,204.187 468.96,200" style="fill:rgb(49,52,60);fill-rule:nonzero;"/>
+                    </g>
+                </g>
             </g>
         </g>
     </g>
