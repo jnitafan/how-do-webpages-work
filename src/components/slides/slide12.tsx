@@ -84,6 +84,7 @@ const GridRevealCanvasSVG = ({
 
     const animation = animate(progress, totalCells, {
       duration: duration,
+      repeat: Infinity,
       ease: "easeInOut",
     });
 

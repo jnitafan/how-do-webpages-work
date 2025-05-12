@@ -6,18 +6,15 @@
   position: relative;
 
   &__slide {
-    width: 100%;
-    height: 100%;
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0;
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
   &__control {
-    z-index: 140;
+    z-index: 100;
     position: absolute;
     background: #03cbf8;
     border: none;
@@ -35,7 +32,7 @@
   }
 
   &__indicators {
-    z-index: 100;
+    z-index: 140;
     position: absolute;
     bottom: 1rem;
     left: 50%;
@@ -45,7 +42,6 @@
   }
 
   &__indicator {
-    z-index: 100;
     width: 1rem;
     height: 1rem;
     border-radius: 50%;
@@ -61,15 +57,12 @@
 
   &__backdrop {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     backdrop-filter: blur(10px);
     background: rgba(0, 0, 0, 0.1);
     opacity: 0;
     transition: opacity 0.5s ease;
-    z-index: 115;
+    z-index: 145;
     pointer-events: none;
 
     &--active {
@@ -79,21 +72,16 @@
 
   &__spinnerOverlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: transparent;
-    z-index: 120;
+    z-index: 150;
   }
 
   &__spinner {
     width: 50vmin;
     height: 50vmin;
-    box-sizing: border-box;
     border: 16px solid rgba(255, 255, 255, 0.3);
     border-top-color: #03cbf8;
     border-radius: 50%;
@@ -102,44 +90,44 @@
   }
 
   &__modal {
-    display: flex;
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
+    inset: 0;
+    display: flex;
     justify-content: center;
     align-items: center;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
     transition: transform 0.5s ease-in-out;
     z-index: 130;
     border-bottom: 10px solid #03cbf8;
     backdrop-filter: blur(5px);
   }
-
-  &__modal--initial {
-    transform: translateY(-66.6%);
-  }
-  &__modal--open {
-    transform: translateY(0%);
-  }
-  &__modal--closed {
-    transform: translateY(-100%);
-  }
+  &__modal--initial { transform: translateY(-66.6%); }
+  &__modal--open    { transform: translateY(0%);     }
+  &__modal--closed  { transform: translateY(-100%);  }
 
   &__modalContent {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    height: 100%;
-    width: 100%;
-    text-align: center;
+    justify-content: space-around;
     padding: 2rem;
-    font-size: 2rem;
-    max-width: 90%;
-    max-height: 90%;
+    font-size: 1.3rem;
+    width: 90%;
+    height: 90%;
     overflow: auto;
+    text-align: center;
+
+    h3 {
+      font-size: 4rem;
+    }
+  }
+
+  /* click catcher when in initial state */
+  &__initialOverlay {
+    position: fixed;
+    inset: 0;
+    z-index: 135; /* above modal but below upButton */
+    background: transparent;
   }
 
   &__upButton {
@@ -147,35 +135,18 @@
     left: 50%;
     transform: translateX(-50%);
     font-size: 2rem;
-    background-color: #03cbf8;
+    background: #03cbf8;
     color: white;
-    padding: 0.5rem 1rem;
+    padding: 0.6rem 0.6rem 0rem;
     border: none;
     cursor: pointer;
-    transition: all 0.5s ease-in-out;
+    transition: top 0.5s ease-in-out;
     z-index: 140;
   }
-
-  &__upButton--closed {
-    top: 1rem;
-  }
-  &__upButton--open {
-    top: calc(100vh - 5rem);
-  }
-
-  &__initialOverlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 120;
-    background: transparent;
-  }
+  &__upButton--closed { top: 1rem; }
+  &__upButton--open   { top: calc(100vh - 6rem); }
 }
 
 @keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
+  to { transform: rotate(360deg); }
 }

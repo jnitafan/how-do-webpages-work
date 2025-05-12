@@ -184,8 +184,6 @@ const Slide2 = forwardRef((_, ref) => {
         );
       })}
 
-      <div className={styles.s2__line} />
-
       <div
         className={styles.s2__timeline}
         ref={timeline}
@@ -193,6 +191,7 @@ const Slide2 = forwardRef((_, ref) => {
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
       >
+        <div className={styles.s2__line} />
         {timelineData.data.events.map((item, idx) => (
           <div
             key={idx}

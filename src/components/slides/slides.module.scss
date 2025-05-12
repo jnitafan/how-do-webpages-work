@@ -245,12 +245,40 @@
 
   &__line {
     position: absolute;
+    height: 3020%;
     top: 0;
     bottom: 0;
     left: 50%;
     width: 4px;
     background-color: #ccc;
     transform: translateX(-50%);
+  }
+
+  &__line::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    
+    left: -20px;
+    width: 40px;
+    
+    background-image:
+      repeating-linear-gradient(
+        to bottom,
+        transparent 0px,
+        transparent 25px,
+        #ccc 25px,
+        #ccc 10px
+      ),
+      repeating-linear-gradient(
+        to bottom,
+        transparent 0px,
+        transparent 48px,
+        #ccc 48px,
+        #ccc 50px
+      );
+    background-repeat: repeat-y;
   }
 
   &__timeline {
