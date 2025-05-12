@@ -20,7 +20,7 @@ import {
 } from "@/components/slides/slides";
 import styles from "./carousel.module.scss";
 
-const START = 9; // For debugging, start on this slide.
+const START = 11; // For debugging, start on this slide.
 const SLIDES = [
   Slide1,
   Slide2,

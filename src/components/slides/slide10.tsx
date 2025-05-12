@@ -9,7 +9,6 @@ import DiagramGraph from "@/utils/diagram.utils";
 import { LabelNode } from "@/utils/reactflow.utils";
 import placeholderHTML from "@/data/placeholder";
 
-
 let nextId = 1;
 
 function traverse(
