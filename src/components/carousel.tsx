@@ -50,32 +50,52 @@ function usePrevious<T>(value: T): T | undefined {
 const Carousel: React.FC = () => {
   const [idx, setIdx] = useState(START);
   const [loading, setLoading] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);  // For modal state management
+  const [visitedSlides, setVisitedSlides] = useState(new Set<number>()); // Track visited slides
 
   const slideRef = useRef<any>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);
   const prevRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
   const centerRef = useRef<HTMLButtonElement>(null);
+  const modalRef = useRef<HTMLDivElement>(null);
+
+  const modalContent = [
+    "This is slide 1's custom content",
+    "This is slide 2's custom content",
+    "This is slide 3's custom content",
+    "This is slide 4's custom content",
+    "This is slide 5's custom content",
+    "This is slide 6's custom content",
+    "This is slide 7's custom content",
+    "This is slide 8's custom content",
+    "This is slide 9's custom content",
+    "This is slide 10's custom content",
+    "This is slide 11's custom content",
+    "This is slide 12's custom content",
+    "This is slide 13's custom content",
+    "This is slide 14's custom content",
+  ];
 
   // Fade helpers
   const fadeOut = () =>
     new Promise<void>((res) =>
       wrapperRef.current
         ? animate(
-            wrapperRef.current,
-            { opacity: [1, 0] },
-            { duration: 1.0, onComplete: res }
-          )
+          wrapperRef.current,
+          { opacity: [1, 0] },
+          { duration: 1.0, onComplete: res }
+        )
         : res()
     );
   const fadeIn = () =>
     new Promise<void>((res) =>
       wrapperRef.current
         ? animate(
-            wrapperRef.current,
-            { opacity: [0, 1] },
-            { duration: 1.0, onComplete: res }
-          )
+          wrapperRef.current,
+          { opacity: [0, 1] },
+          { duration: 1.0, onComplete: res }
+        )
         : res()
     );
 
@@ -92,6 +112,12 @@ const Carousel: React.FC = () => {
         await fadeOut();
         setIdx(newIdx);
         await fadeIn();
+      }
+
+      // If it's a new slide that hasn't been visited, open the modal
+      if (!visitedSlides.has(newIdx)) {
+        setVisitedSlides(new Set(visitedSlides.add(newIdx)));
+        setModalOpen(true); // Open the modal for this slide
       }
     } finally {
       setLoading(false);
@@ -176,6 +202,10 @@ const Carousel: React.FC = () => {
   const onCenter = () =>
     isFirst ? goTo(1, "next") : isLast ? goTo(0, "fade") : null;
 
+  const toggleModal = () => {
+    setModalOpen(!modalOpen);
+  };
+
   return (
     <div className={styles.carousel}>
       <div ref={wrapperRef} className={styles.carousel__slide}>
@@ -189,9 +219,8 @@ const Carousel: React.FC = () => {
       )}
 
       <div
-        className={`${styles.carousel__backdrop} ${
-          loading ? styles["carousel__backdrop--active"] : ""
-        }`}
+        className={`${styles.carousel__backdrop} ${loading ? styles["carousel__backdrop--active"] : ""
+          }`}
       />
 
       {/* Prev */}
@@ -241,13 +270,30 @@ const Carousel: React.FC = () => {
         {isFirst ? "Start" : isLast ? "Restart" : ""}
       </button>
 
+      {/* Modal */}
+      <div
+        ref={modalRef}
+        className={`${styles.carousel__modal} ${modalOpen ? styles["carousel__modal--open"] : styles["carousel__modal--closed"]}`}
+      >
+        <div className={styles.carousel__modalContent}>
+          {modalContent[idx]}
+        </div>
+      </div>
+
+      {/* Up Button */}
+      <button
+        className={`${styles.carousel__upButton} ${modalOpen ? styles["carousel__upButton--open"] : styles["carousel__upButton--closed"]}`}
+        onClick={toggleModal}
+      >
+        {modalOpen ? "▲" : "▼"}
+      </button>
+
       <div className={styles.carousel__indicators}>
         {SLIDES.map((_, i) => (
           <button
             key={i}
-            className={`${styles.carousel__indicator} ${
-              i === idx ? styles.active : ""
-            }`}
+            className={`${styles.carousel__indicator} ${i === idx ? styles.active : ""
+              }`}
             onClick={() => goTo(i, "fade")}
           />
         ))}
