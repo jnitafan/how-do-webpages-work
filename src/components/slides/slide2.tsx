@@ -1,32 +1,135 @@
+// components/slides/Slide2.tsx
 "use client";
 
-import timelineData from "@/data/timeline-data.json";
+import React, {
+  forwardRef,
+  useImperativeHandle,
+  Suspense,
+  useRef,
+  useEffect,
+} from "react";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
+import { Text } from "@react-three/drei";
+import * as THREE from "three";
 import styles from "./slides.module.scss";
-import { forwardRef, useEffect, useImperativeHandle, useRef } from "react";
-import { motion, useMotionValueEvent, useScroll } from "framer-motion";
-import DOMPurify from "isomorphic-dompurify";
 
-interface ImageData {
-  src: string;
-  alt: string;
-  width: number;
-  layer: number;
-  top: number;
-}
-
-type Layer = {
-  ratio: number;
-  layerRef: React.RefObject<HTMLDivElement>;
-  contentRef: React.RefObject<HTMLDivElement>;
+// suppress context‐lost message (same as Slide1)
+const SuppressContextLost: React.FC = () => {
+  const { gl } = useThree();
+  useEffect(() => {
+    const canvas = gl.domElement;
+    const onLost = (e: Event) => {
+      e.preventDefault();
+      e.stopImmediatePropagation();
+    };
+    canvas.addEventListener("webglcontextlost", onLost, { capture: true });
+    return () => {
+      canvas.removeEventListener("webglcontextlost", onLost, { capture: true });
+    };
+  }, [gl]);
+  return null;
 };
 
-const SafeAttr = ({ htmlString }: { htmlString: string }) => {
-  const cleanHtml = DOMPurify.sanitize(htmlString);
+const FloatingLayers: React.FC = () => {
+  const LABEL_SIZE = 0.3;
+  const group = useRef<THREE.Group>(null!);
+
+  useFrame((state) => {
+    const [px, py] = state.pointer; // [-1 .. 1]
+    const targetY = px * Math.PI * 0.25;
+    const targetX = -py * Math.PI * 0.25;
+    group.current.rotation.y += (targetY - group.current.rotation.y) * 0.1;
+    group.current.rotation.x += (targetX - group.current.rotation.x) * 0.1;
+  });
+
+  type WebPlane = {
+    label: string;
+    color: string;
+    position: [number, number, number];
+  };
+  const webStack: WebPlane[] = [
+    { label: "HTML", color: "#ee284c", position: [0, 0.75, -2] },
+    { label: "CSS", color: "#0e99c7", position: [0, 0.0, -2] },
+    { label: "JavaScript", color: "#f3ce15", position: [0, -0.75, -2] },
+  ];
+
+  type OsiPlane = {
+    label: string;
+    color: string;
+    position: [number, number, number];
+    size: [number, number];
+  };
+  const osiStack: OsiPlane[] = [
+    {
+      label: "Application",
+      color: "#f05572",
+      position: [0, 0, -3.4],
+      size: [3.5, 3.5],
+    },
+    {
+      label: "Transport",
+      color: "#f68f43",
+      position: [0, 0, -4.0],
+      size: [5, 5],
+    },
+    {
+      label: "Network",
+      color: "#fce054",
+      position: [0, 0, -4.6],
+      size: [6.5, 6.5],
+    },
+    {
+      label: "Data Link",
+      color: "#79c35b",
+      position: [0, 0, -5.2],
+      size: [8, 8],
+    },
+    {
+      label: "Physical",
+      color: "#4ccaf5",
+      position: [0, 0, -5.8],
+      size: [9.5, 9.5],
+    },
+  ];
+
   return (
-    <p
-      className={styles.attr}
-      dangerouslySetInnerHTML={{ __html: cleanHtml }}
-    ></p>
+    <group ref={group}>
+      {webStack.map(({ label, color, position }, i) => (
+        <mesh key={`web-${i}`} position={position}>
+          <planeGeometry args={[3, 0.6]} />
+          <meshBasicMaterial color={color} transparent opacity={1.0} />
+          <Text
+            position={[0, 0, 0.01]}
+            fontSize={LABEL_SIZE}
+            anchorX="center"
+            anchorY="middle"
+            color="#ffffff"
+          >
+            {label}
+          </Text>
+        </mesh>
+      ))}
+
+      {osiStack.map(({ label, color, position, size }, i) => {
+        const [, height] = size;
+        const textYOffset = height / 2 - 0.1;
+        return (
+          <mesh key={`osi-${i}`} position={position}>
+            <planeGeometry args={size} />
+            <meshBasicMaterial color={color} transparent opacity={1.0} />
+            <Text
+              position={[0, textYOffset, 0.01]}
+              fontSize={LABEL_SIZE}
+              anchorX="center"
+              anchorY="top"
+              color="#ffffff"
+            >
+              {label}
+            </Text>
+          </mesh>
+        );
+      })}
+    </group>
   );
 };
 
@@ -36,178 +139,22 @@ const Slide2 = forwardRef((_, ref) => {
     exitAnimation: () => Promise.resolve(),
   }));
 
-  const timeline = useRef<HTMLDivElement>(null);
-  const layers: Layer[] = [
-    { ratio: 2, layerRef: useRef(null), contentRef: useRef(null) },
-    { ratio: 4, layerRef: useRef(null), contentRef: useRef(null) },
-    { ratio: 8, layerRef: useRef(null), contentRef: useRef(null) },
-    { ratio: 10, layerRef: useRef(null), contentRef: useRef(null) },
-  ];
-
-  const { scrollYProgress } = useScroll({
-    container: timeline,
-    offset: ["start end", "end start"],
-  });
-
-  useEffect(() => {
-    timeline.current.scrollTo(0, 0);
-  }, []);
-
-  useEffect(() => {
-    const updateSizes = () => {
-      const primary = timeline.current;
-      if (!primary) return;
-
-      const vh = primary.clientHeight;
-      const scrollLen = primary.scrollHeight - vh;
-
-      layers.forEach(({ ratio, layerRef, contentRef }) => {
-        const layerEl = layerRef.current;
-        const contentEl = contentRef.current;
-        if (layerEl && contentEl) {
-          // layer container is exactly viewport-tall
-          layerEl.style.height = `${vh}px`;
-          // inner content is viewport + scaled scroll length
-          contentEl.style.height = `${vh + scrollLen / ratio}px`;
-        }
-      });
-    };
-
-    updateSizes();
-    window.addEventListener("resize", updateSizes);
-    return () => window.removeEventListener("resize", updateSizes);
-  }, [layers]);
-
-  useMotionValueEvent(scrollYProgress, "change", (p) => {
-    layers.forEach(({ layerRef }) => {
-      const layerEl = layerRef.current;
-      if (layerEl) {
-        const maxScroll = layerEl.scrollHeight - layerEl.clientHeight;
-        layerEl.scrollTop = maxScroll * p;
-      }
-    });
-  });
-
-  const handleClickForward = (e: React.MouseEvent<HTMLDivElement>) => {
-    const el = timeline.current;
-    if (!el) return;
-
-    const { clientX, clientY } = e;
-    // 2) “hide” the timeline from hit-testing
-    el.style.pointerEvents = "none";
-    const underneath = document.elementFromPoint(
-      clientX,
-      clientY
-    ) as HTMLElement | null;
-    // 3) restore
-    el.style.pointerEvents = "auto";
-
-    // 4) if it’s a link (or has an onClick), invoke it
-    if (underneath) {
-      if (underneath.tagName.toLowerCase() === "a") {
-        (underneath as HTMLAnchorElement).click();
-      } else {
-        // optionally dispatch a click event if you want to catch React handlers
-        underneath.dispatchEvent(
-          new MouseEvent("click", {
-            bubbles: true,
-            cancelable: true,
-            view: window,
-          })
-        );
-      }
-    }
-  };
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const el = timeline.current;
-    if (!el) return;
-
-    // temporarily “hide” the overlay from hit-testing
-    el.style.pointerEvents = "none";
-    const underneath = document.elementFromPoint(
-      e.clientX,
-      e.clientY
-    ) as HTMLElement | null;
-    // restore
-    el.style.pointerEvents = "auto";
-
-    // if it (or an ancestor) is an <a>, show pointer
-    if (underneath?.closest("a")) {
-      el.style.cursor = "pointer";
-    } else {
-      el.style.cursor = "";
-    }
-  };
-
-  const handleMouseLeave = () => {
-    if (timeline.current) timeline.current.style.cursor = "";
-  };
-
   return (
     <div className={styles.slide}>
-      {layers.map(({ layerRef, contentRef }, i) => {
-        const z = layers.length - 1 - i; // 0→3 becomes 3→0
-        return (
-          <div
-            key={i}
-            className={styles.s2__layer}
-            ref={layerRef}
-            style={{ zIndex: z }}
-          >
-            <div ref={contentRef} className={styles.s2__layerContent}>
-              {timelineData.data.images
-                .filter((img: ImageData) => img.layer === i)
-                .map((img, idx) => (
-                  <div
-                    key={idx}
-                    style={{
-                      position: "absolute",
-                      top: `${img.top}%`,
-                      left: `${img.left}%`,
-                      width: `${img.width}%`,
-                    }}
-                  >
-                    <motion.img
-                      src={img.src}
-                      alt={img.alt}
-                      className={styles.img}
-                    />
-                    <div className={styles.imgContent}>
-                      <p className={styles.alt}>&quot;{img.alt}&quot;</p>
-                      <SafeAttr htmlString={img.attribution} />
-                    </div>
-                  </div>
-                ))}
-            </div>
-          </div>
-        );
-      })}
-
-      <div
-        className={styles.s2__timeline}
-        ref={timeline}
-        onClick={handleClickForward}
-        onMouseMove={handleMouseMove}
-        onMouseLeave={handleMouseLeave}
-      >
-        <div className={styles.s2__line} />
-        {timelineData.data.events.map((item, idx) => (
-          <div
-            key={idx}
-            className={`${styles.item} ${
-              idx % 2 === 0 ? styles.left : styles.right
-            }`}
-          >
-            <div className={styles.content}>
-              <span className={styles.year}>{item.year}</span>
-              <p className={styles.text}>{item.text}</p>
-            </div>
-          </div>
-        ))}
+      <div className={styles.s2__layers}>
+        <Canvas
+          camera={{ position: [0, 0, 6], fov: 50 }}
+          gl={{ logarithmicDepthBuffer: true }}
+        >
+          <SuppressContextLost />
+          <Suspense fallback={null}>
+            <FloatingLayers />
+          </Suspense>
+        </Canvas>
       </div>
     </div>
   );
 });
 
+Slide2.displayName = "Slide2";
 export default Slide2;

@@ -118,6 +118,31 @@ const componentMap: Record<ComponentKey, JSX.Element> = {
   computer: <ComputerIcon />,
 };
 
+export const AutoSizeNode = ({ id, data }) => {
+  return (
+    <div id={id} className={styles.autoSizeNode}>
+      {/* input handle (if you want one) */}
+      <Handle
+        type="target"
+        position={Position.Top}
+        style={{ opacity: 0 }}
+        isConnectable={false}
+      />
+
+      {/* the label text */}
+      {data.label}
+
+      {/* output handle */}
+      <Handle
+        type="source"
+        position={Position.Bottom}
+        style={{ opacity: 0 }}
+        isConnectable={false}
+      />
+    </div>
+  );
+};
+
 export function NetworkNode({ id, data }) {
   const connection = useConnection();
   const isTarget = connection.inProgress && connection.fromNode.id !== id;
@@ -170,43 +195,43 @@ const AnimatedCircle = ({ delay = 0, reverse = false, pathRef }) => {
   const animationRef = useRef(null);
   const delayTimeoutRef = useRef(null);
 
-  const animateMotion = () => {
-    if (animationRef.current) animationRef.current.stop();
-    const current = progress.get();
-    let target, baseDuration;
-    if (reverse) {
-      target = 0;
-      baseDuration = current * 2; // base duration for reverse motion
-    } else {
-      target = 1;
-      baseDuration = (1 - current) * 2; // base duration for forward motion
-    }
-    // Multiply duration by a random speed factor between 0.5 and 2.0.
-    const randomSpeed = 0.5 + Math.random() * 1.5;
-    const duration = baseDuration * randomSpeed;
-
-    const controls = animate(progress, target, {
-      duration,
-      ease: "linear",
-      onComplete: () => {
-        // Hide the circle before resetting its progress.
-        setIsVisible(false);
-        // Use a zero-delay timeout (next tick) to let the hide take effect.
-        setTimeout(() => {
-          progress.set(reverse ? 1 : 0);
-          // Wait a random delay (1-3 seconds) before restarting.
-          const randomDelay = 1 + Math.random() * 2;
-          delayTimeoutRef.current = setTimeout(() => {
-            setIsVisible(true);
-            animateMotion();
-          }, randomDelay * 1000);
-        }, 0);
-      },
-    });
-    animationRef.current = controls;
-  };
-
   React.useEffect(() => {
+    const animateMotion = () => {
+      if (animationRef.current) animationRef.current.stop();
+      const current = progress.get();
+      let target, baseDuration;
+      if (reverse) {
+        target = 0;
+        baseDuration = current * 2; // base duration for reverse motion
+      } else {
+        target = 1;
+        baseDuration = (1 - current) * 2; // base duration for forward motion
+      }
+      // Multiply duration by a random speed factor between 0.5 and 2.0.
+      const randomSpeed = 0.5 + Math.random() * 1.5;
+      const duration = baseDuration * randomSpeed;
+
+      const controls = animate(progress, target, {
+        duration,
+        ease: "linear",
+        onComplete: () => {
+          // Hide the circle before resetting its progress.
+          setIsVisible(false);
+          // Use a zero-delay timeout (next tick) to let the hide take effect.
+          setTimeout(() => {
+            progress.set(reverse ? 1 : 0);
+            // Wait a random delay (1-3 seconds) before restarting.
+            const randomDelay = 1 + Math.random() * 2;
+            delayTimeoutRef.current = setTimeout(() => {
+              setIsVisible(true);
+              animateMotion();
+            }, randomDelay * 1000);
+          }, 0);
+        },
+      });
+      animationRef.current = controls;
+    };
+
     // Add a random initial delay on top of any provided delay.
     const randomInitialDelay = (delay + Math.random() * 4) * 1000;
     const initTimeout = setTimeout(() => {
@@ -231,7 +256,6 @@ export function ThrobbingEdge({ source, target }: EdgeProps) {
   const targetNode = useInternalNode(target);
   // Create a ref for the invisible path element used for measurement.
   const pathRef = useRef(null);
-
 
   if (!sourceNode || !targetNode) {
     return null;

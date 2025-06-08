@@ -2,9 +2,9 @@
 "use client";
 
 import React, { forwardRef, useImperativeHandle } from "react";
+import NetworkCoreData from "@/data/network-core-data.json";
+import NetworkGraph from "@/utils/network.utils";
 import styles from "./slides.module.scss";
-import DiagramGraph from "@/utils/diagram.utils";
-import protocolData from "@/data/protocol-data.json";
 
 const Slide6 = forwardRef((_, ref) => {
   useImperativeHandle(ref, () => ({
@@ -14,7 +14,10 @@ const Slide6 = forwardRef((_, ref) => {
 
   return (
     <div className={styles.slide}>
-      <DiagramGraph nodes={protocolData.nodes} edges={protocolData.edges} />
+      <NetworkGraph
+        nodes={NetworkCoreData.nodes}
+        edges={NetworkCoreData.edges}
+      />
     </div>
   );
 });

@@ -12,3 +12,4 @@ export { default as Slide10 } from "./slide10";
 export { default as Slide11 } from "./slide11";
 export { default as Slide12 } from "./slide12";
 export { default as Slide13 } from "./slide13";
+export { default as Slide14 } from "./slide14";

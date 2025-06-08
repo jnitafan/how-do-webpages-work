@@ -1,203 +1,38 @@
-// components/slides/Slide3.tsx
 "use client";
 
-import React, {
-  forwardRef,
-  useImperativeHandle,
-  FC,
-  useEffect,
-  useState,
-  useMemo,
-  useRef,
-} from "react";
-import Map, { Source, Layer, MapRef } from "react-map-gl/maplibre";
-import maplibregl from "maplibre-gl";
-import "maplibre-gl/dist/maplibre-gl.css";
+import timelineData from "@/data/timeline-data.json";
 import styles from "./slides.module.scss";
+import {
+  forwardRef,
+  useEffect,
+  useImperativeHandle,
+  useRef,
+  createRef,
+} from "react";
+import { motion, useMotionValueEvent, useScroll } from "framer-motion";
+import DOMPurify from "isomorphic-dompurify";
 
-type Location = { name?: string; lat: number; lng: number };
+interface ImageData {
+  src: string;
+  alt: string;
+  width: number;
+  layer: number;
+  top: number;
+}
 
-const MapGL = React.memo(function MapGL({
-  locations,
-  cableUrl,
-}: {
-  locations: Location[];
-  cableUrl: string;
-}) {
-  const COLORS = ["#e6194b", "#3cb44b", "#ffe119", "#4363d8", "#f58231"];
+type Layer = {
+  ratio: number;
+  layerRef: React.RefObject<HTMLDivElement>;
+  contentRef: React.RefObject<HTMLDivElement>;
+};
 
-  // Facilities GeoJSON
-  const facilityGeoJson = useMemo(
-    () => ({
-      type: "FeatureCollection" as const,
-      features: locations.map((loc, idx) => ({
-        type: "Feature" as const,
-        geometry: { type: "Point" as const, coordinates: [loc.lng, loc.lat] },
-        properties: {
-          name: loc.name,
-          color: COLORS[idx % COLORS.length],
-        },
-      })),
-    }),
-    [locations]
-  );
-
-  // Cables GeoJSON
-  const [cableGeoJson, setCableGeoJson] = useState<any>(null);
-  useEffect(() => {
-    fetch(cableUrl)
-      .then((res) => res.json())
-      .then((data) => {
-        const feats = data.features.map((feat: any, idx: number) => ({
-          ...feat,
-          properties: {
-            ...feat.properties,
-            color: COLORS[idx % COLORS.length],
-          },
-        }));
-        setCableGeoJson({ ...data, features: feats });
-      })
-      .catch(console.error);
-  }, [cableUrl]);
-
-  // ref to React-Map-GL Map, use getMap() for MapLibre.Map
-  const mapRef = useRef<MapRef>(null);
-
-  useEffect(() => {
-    const mapInstance = mapRef.current?.getMap();
-    if (!mapInstance || !cableGeoJson) return;
-
-    let facilityPopup: maplibregl.Popup | null = null;
-    let cablePopup: maplibregl.Popup | null = null;
-
-    // FACILITY handlers
-    const onFacilityEnter = (e: maplibregl.MapLayerMouseEvent) => {
-      mapInstance.getCanvas().style.cursor = "pointer";
-      const { lng, lat } = e.lngLat;
-      const props = e.features?.[0]?.properties as any;
-      facilityPopup?.remove();
-      facilityPopup = new maplibregl.Popup({
-        offset: 10,
-        focusAfterOpen: false,
-        closeButton: false,
-        closeOnClick: false,
-      })
-        .setLngLat([lng, lat])
-        .setHTML(
-          `<div class=${styles.s3__info}><strong>Facility:</strong> ${props.name}</div>`
-        )
-        .addTo(mapInstance);
-    };
-    const onFacilityLeave = () => {
-      mapInstance.getCanvas().style.cursor = "";
-      facilityPopup?.remove();
-      facilityPopup = null;
-    };
-
-    // CABLE handlers
-    const onCableEnter = (e: maplibregl.MapLayerMouseEvent) => {
-      mapInstance.getCanvas().style.cursor = "pointer";
-      const { lng, lat } = e.lngLat;
-      const props = e.features?.[0]?.properties as any;
-      cablePopup?.remove();
-      cablePopup = new maplibregl.Popup({
-        offset: 10,
-        focusAfterOpen: false,
-        closeButton: false,
-        closeOnClick: false,
-      })
-        .setLngLat([lng, lat])
-        .setHTML(
-          `<div class=${styles.s3__info}><strong>Cable:</strong> ${
-            props.name ?? props.id
-          }</div>`
-        )
-        .addTo(mapInstance);
-    };
-    const onCableLeave = () => {
-      mapInstance.getCanvas().style.cursor = "";
-      cablePopup?.remove();
-      cablePopup = null;
-    };
-
-    mapInstance.on("mouseenter", "facilities", onFacilityEnter);
-    mapInstance.on("mouseleave", "facilities", onFacilityLeave);
-    mapInstance.on("mouseenter", "cables", onCableEnter);
-    mapInstance.on("mouseleave", "cables", onCableLeave);
-
-    return () => {
-      mapInstance.off("mouseenter", "facilities", onFacilityEnter);
-      mapInstance.off("mouseleave", "facilities", onFacilityLeave);
-      mapInstance.off("mouseenter", "cables", onCableEnter);
-      mapInstance.off("mouseleave", "cables", onCableLeave);
-    };
-  }, [cableGeoJson, facilityGeoJson]);
-
+const SafeAttr = ({ htmlString }: { htmlString: string }) => {
+  const cleanHtml = DOMPurify.sanitize(htmlString);
   return (
-    <Map
-      ref={mapRef}
-      mapLib={maplibregl}
-      mapStyle="/map-style.json"
-      initialViewState={{ longitude: 0, latitude: 0, zoom: 1.3 }}
-      style={{ width: "100%", height: "100%" }}
-      interactiveLayerIds={["cables", "facilities"]}
-    >
-      {cableGeoJson && (
-        <Source id="cables" type="geojson" data={cableGeoJson}>
-          <Layer
-            id="cables"
-            type="line"
-            paint={{
-              "line-color": ["get", "color"],
-              "line-width": 2,
-            }}
-          />
-        </Source>
-      )}
-      <Source id="facilities" type="geojson" data={facilityGeoJson}>
-        <Layer
-          id="facilities"
-          type="circle"
-          paint={{
-            "circle-radius": 4,
-            "circle-color": ["get", "color"],
-            "circle-stroke-color": "#fff",
-            "circle-stroke-width": 1,
-          }}
-        />
-      </Source>
-    </Map>
-  );
-});
-
-const cableUrl = "/cable-geo.json";
-const facilityUrl = "/facilities.json";
-
-const CableMap: FC = () => {
-  const [locations, setLocations] = useState<Location[]>([]);
-
-  useEffect(() => {
-    fetch(facilityUrl)
-      .then((res) => res.json())
-      .then((data) => {
-        setLocations(
-          data.data.map((f: any) => ({
-            name: f.name,
-            lat: f.latitude,
-            lng: f.longitude,
-          }))
-        );
-      })
-      .catch(console.error);
-  }, []);
-
-  return (
-    <div
-      className={styles.worldMap}
-      style={{ position: "relative", width: "100%", height: "100%" }}
-    >
-      <MapGL locations={locations} cableUrl={cableUrl} />
-    </div>
+    <p
+      className={styles.attr}
+      dangerouslySetInnerHTML={{ __html: cleanHtml }}
+    ></p>
   );
 };
 
@@ -207,9 +42,189 @@ const Slide3 = forwardRef((_, ref) => {
     exitAnimation: () => Promise.resolve(),
   }));
 
+  const timeline = useRef<HTMLDivElement>(null);
+  const ratios = [2, 4, 8, 10];
+
+  // only runs once
+  const layers = useRef<Layer[]>(
+    ratios.map((ratio) => ({
+      ratio,
+      layerRef: createRef<HTMLDivElement>(),
+      contentRef: createRef<HTMLDivElement>(),
+    }))
+  ).current;
+
+  useEffect(() => {
+    // layers is stable identity, this effect runs only once
+    layers.forEach(({ layerRef }) => {
+      const el = layerRef.current;
+      if (!el) return;
+      // e.g. attach scroll or mouse handlers here…
+    });
+  }, [layers]);
+
+  const { scrollYProgress } = useScroll({
+    container: timeline,
+    offset: ["start end", "end start"],
+  });
+
+  useEffect(() => {
+    timeline.current.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
+    const updateSizes = () => {
+      const primary = timeline.current;
+      if (!primary) return;
+
+      const vh = primary.clientHeight;
+      const scrollLen = primary.scrollHeight - vh;
+
+      layers.forEach(({ ratio, layerRef, contentRef }) => {
+        const layerEl = layerRef.current;
+        const contentEl = contentRef.current;
+        if (layerEl && contentEl) {
+          // layer container is exactly viewport-tall
+          layerEl.style.height = `${vh}px`;
+          // inner content is viewport + scaled scroll length
+          contentEl.style.height = `${vh + scrollLen / ratio}px`;
+        }
+      });
+    };
+
+    updateSizes();
+    window.addEventListener("resize", updateSizes);
+    return () => window.removeEventListener("resize", updateSizes);
+  }, [layers]);
+
+  useMotionValueEvent(scrollYProgress, "change", (p) => {
+    layers.forEach(({ layerRef }) => {
+      const layerEl = layerRef.current;
+      if (layerEl) {
+        const maxScroll = layerEl.scrollHeight - layerEl.clientHeight;
+        layerEl.scrollTop = maxScroll * p;
+      }
+    });
+  });
+
+  const handleClickForward = (e: React.MouseEvent<HTMLDivElement>) => {
+    const el = timeline.current;
+    if (!el) return;
+
+    const { clientX, clientY } = e;
+    // 2) “hide” the timeline from hit-testing
+    el.style.pointerEvents = "none";
+    const underneath = document.elementFromPoint(
+      clientX,
+      clientY
+    ) as HTMLElement | null;
+    // 3) restore
+    el.style.pointerEvents = "auto";
+
+    // 4) if it’s a link (or has an onClick), invoke it
+    if (underneath) {
+      if (underneath.tagName.toLowerCase() === "a") {
+        (underneath as HTMLAnchorElement).click();
+      } else {
+        // optionally dispatch a click event if you want to catch React handlers
+        underneath.dispatchEvent(
+          new MouseEvent("click", {
+            bubbles: true,
+            cancelable: true,
+            view: window,
+          })
+        );
+      }
+    }
+  };
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const el = timeline.current;
+    if (!el) return;
+
+    // temporarily “hide” the overlay from hit-testing
+    el.style.pointerEvents = "none";
+    const underneath = document.elementFromPoint(
+      e.clientX,
+      e.clientY
+    ) as HTMLElement | null;
+    // restore
+    el.style.pointerEvents = "auto";
+
+    // if it (or an ancestor) is an <a>, show pointer
+    if (underneath?.closest("a")) {
+      el.style.cursor = "pointer";
+    } else {
+      el.style.cursor = "";
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (timeline.current) timeline.current.style.cursor = "";
+  };
+
   return (
-    <div className={styles.slide} style={{ height: "100vh" }}>
-      <CableMap />
+    <div className={styles.slide}>
+      {layers.map(({ layerRef, contentRef }, i) => {
+        const z = layers.length - 1 - i; // 0→3 becomes 3→0
+        return (
+          <div
+            key={i}
+            className={styles.s3__layer}
+            ref={layerRef}
+            style={{ zIndex: z }}
+          >
+            <div ref={contentRef} className={styles.s3__layerContent}>
+              {timelineData.data.images
+                .filter((img: ImageData) => img.layer === i)
+                .map((img, idx) => (
+                  <div
+                    key={idx}
+                    style={{
+                      position: "absolute",
+                      top: `${img.top}%`,
+                      left: `${img.left}%`,
+                      width: `${img.width}%`,
+                    }}
+                  >
+                    <motion.img
+                      src={img.src}
+                      alt={img.alt}
+                      className={styles.img}
+                    />
+                    <div className={styles.imgContent}>
+                      <p className={styles.alt}>&quot;{img.alt}&quot;</p>
+                      <SafeAttr htmlString={img.attribution} />
+                    </div>
+                  </div>
+                ))}
+            </div>
+          </div>
+        );
+      })}
+
+      <div
+        className={styles.s3__timeline}
+        ref={timeline}
+        onClick={handleClickForward}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+      >
+        <div className={styles.s3__line} />
+        {timelineData.data.events.map((item, idx) => (
+          <div
+            key={idx}
+            className={`${styles.item} ${
+              idx % 2 === 0 ? styles.left : styles.right
+            }`}
+          >
+            <div className={styles.content}>
+              <span className={styles.year}>{item.year}</span>
+              <p className={styles.text}>{item.text}</p>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 });

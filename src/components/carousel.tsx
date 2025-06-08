@@ -17,12 +17,13 @@ import {
   Slide11,
   Slide12,
   Slide13,
+  Slide14,
 } from "@/components/slides/slides";
 import styles from "./carousel.module.scss";
 import modalContent from "@/data/carousel-text-data";
 import Image from "next/image";
 
-const START = 0; // For debugging, start on this slide.
+const START = 10; // For debugging, start on this slide.
 const SLIDES = [
   Slide1,
   Slide2,
@@ -37,6 +38,7 @@ const SLIDES = [
   Slide11,
   Slide12,
   Slide13,
+  Slide14,
 ];
 
 // Hook to capture the previous value of any prop/state
@@ -231,14 +233,14 @@ const Carousel: React.FC = () => {
           left: "50%",
           transform: "translate(-50%, -50%)",
           opacity: isFirst || isLast ? 1 : 0,
+          zIndex: 10,
         }}
         onClick={onCenter}
       >
         {isFirst ? "Start" : isLast ? "Restart" : ""}
       </button>
 
-      {/* Only show modal & overlay & toggle when NOT first or last */}
-      {!isFirst && !isLast && (
+      {!isFirst && (
         <>
           {/* Modal panel */}
           <div
@@ -272,7 +274,21 @@ const Carousel: React.FC = () => {
               setModalState((prev) => (prev === "open" ? "closed" : "open"))
             }
           >
-            {modalState === "open" ? <Image width={40} height={40} alt={"eye"} src={"icons/eye-closed.svg"} /> : <Image width={40} height={40} alt={"eye"} src={"icons/eye-open.svg"} />}
+            {modalState === "open" ? (
+              <Image
+                width={40}
+                height={40}
+                alt={"eye"}
+                src={"icons/close.svg"}
+              />
+            ) : (
+              <Image
+                width={40}
+                height={40}
+                alt={"eye"}
+                src={"icons/info.svg"}
+              />
+            )}
           </button>
         </>
       )}

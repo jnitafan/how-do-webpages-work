@@ -2,8 +2,42 @@ import React from "react";
 
 const modalContent = [
   <>
-    <p>This is slide 1&apos;s custom content, you shouldn&apos;t be able to see this.</p>
-    <h3>1: Banana</h3>
+    <p>
+      This is slide 1&apos;s custom content, you shouldn&apos;t be able to see
+      this.
+    </p>
+    <h3>0: Banana</h3>
+  </>,
+  <>
+    <p>
+      At its core, the World Wide Web is a global system of interlinked
+      hypertext documents accessed through the Internet using standard protocols
+      and identifiers. Initiated in the late 1980s by Tim Berners-Lee at CERN,
+      the Web allows browsers to retrieve HTML pages hosted on servers across
+      the world. Each document can contain links, images, and multimedia,
+      enabling users to navigate seamlessly between resources. Over decades, the
+      Web has grown from static pages into a dynamic platform where content can
+      be created, shared, and consumed in real time.
+    </p>
+    <p>
+      The Web operates on a client–server model in which web browsers act as
+      clients, issuing HTTP or HTTPS requests to web servers that host content.
+      Servers respond with HTML, CSS, and JavaScript, which the browser renders
+      into visual pages and interactive applications. URLs uniquely identify
+      resources, while protocols like WebSockets extend functionality to
+      real-time communication. Modern advancements—such as responsive design,
+      progressive web apps, and content delivery networks—have optimized
+      performance and user experience across devices and regions.
+    </p>
+    <p>
+      Beyond simple document retrieval, the Web has evolved into an ecosystem
+      supporting social interaction, commerce, and multimedia streaming. From
+      online marketplaces to collaborative platforms and immersive web
+      applications, it underpins modern life—connecting billions of people and
+      powering innovation in education, entertainment, business, and beyond.
+    </p>
+
+    <h3>1: What is the Web?</h3>
   </>,
   <>
     <div>
@@ -96,8 +130,8 @@ const modalContent = [
         between any two points on the internet is fast, reliable, and efficient.
       </p>
       <p>
-        The core doesn&apos;t directly connect to end-user devices; instead, it links
-        together various edge networks—from homes and offices to mobile
+        The core doesn&apos;t directly connect to end-user devices; instead, it
+        links together various edge networks—from homes and offices to mobile
         towers—through a dense mesh of interconnected paths. These routes are
         optimized for redundancy and performance, allowing data to take the most
         efficient path even during network congestion or outages. This layered
@@ -145,12 +179,12 @@ const modalContent = [
   <>
     <div>
       <p>
-        When data is sent across the internet, it doesn&apos;t travel as a continuous
-        stream but is broken into smaller units called packets. These packets
-        are routed independently across a network of interconnected devices,
-        finding the most efficient path to their destination. Along the way,
-        routers make forwarding decisions based on addressing information within
-        each packet.
+        When data is sent across the internet, it doesn&apos;t travel as a
+        continuous stream but is broken into smaller units called packets. These
+        packets are routed independently across a network of interconnected
+        devices, finding the most efficient path to their destination. Along the
+        way, routers make forwarding decisions based on addressing information
+        within each packet.
       </p>
       <p>
         To prepare data for transmission, each layer of the networking model
@@ -243,8 +277,9 @@ const modalContent = [
         The DOM is not just a passive representation—it is a live interface that
         can be queried, updated, and manipulated by JavaScript in real time.
         When you click a button, open a menu, or animate an element on a
-        webpage, it&apos;s often the DOM being directly modified. Its dynamic nature
-        is a core reason modern web experiences feel responsive and interactive.
+        webpage, it&apos;s often the DOM being directly modified. Its dynamic
+        nature is a core reason modern web experiences feel responsive and
+        interactive.
       </p>
       <p>
         On this page is a visualization of the DOM as a tree graph, showing how
@@ -310,8 +345,31 @@ const modalContent = [
     <h3>12: Paint</h3>
   </>,
   <>
+    <p>
+      The web is a global network of interconnected documents and applications
+      accessed through standard protocols like HTTP and HTTPS. It transforms raw
+      data into human-readable content, allowing browsers to fetch and render
+      text, images, and multimedia from servers around the world. At its core,
+      the web relies on URLs to identify resources and HTML, CSS, and JavaScript
+      to define structure, style, and interactivity.
+    </p>
+    <p>
+      Beyond serving static pages, the web has evolved into a dynamic platform
+      that supports real-time communication, social collaboration, and commerce.
+      From online marketplaces and streaming services to educational portals and
+      virtual meetings, it underpins nearly every aspect of modern life. Its
+      open architecture enables developers to build new applications, integrate
+      services, and share innovations without gatekeepers.
+    </p>
+    <p>
+      The importance of the web lies in its democratization of information and
+      its power to connect people across cultures and geographies. It fosters
+      economic growth by opening global markets to businesses of all sizes,
+      advances education by making knowledge freely available, and strengthens
+      communities by facilitating dialogue and collaboration. Thank you for
+      taking the time to explore this overview of the web and its significance.
+    </p>
     <h3>13: Ending</h3>
-    <p>Tha End</p>
   </>,
 ];
 

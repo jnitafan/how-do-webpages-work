@@ -1,114 +1,120 @@
 "use client";
 
-import React, { forwardRef, useImperativeHandle, useEffect, useState } from "react";
-import Image from "next/image";
+import React, {
+  forwardRef,
+  useImperativeHandle,
+  useRef,
+  useEffect,
+  useState,
+} from "react";
+import { useMotionValue, animate } from "framer-motion";
 import styles from "./slides.module.scss";
 
-const MAX_DEPTH = 12;
-const SCALE_FACTOR = 0.75;
-
-function Droste({ depth, mouseX, mouseY }) {
-  if (depth === 0) return null;
-
-  const translateX = mouseX * (1 - SCALE_FACTOR);
-  const translateY = mouseY * (1 - SCALE_FACTOR);
-
-  return (
-    <div
-      style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        width: '100vw',
-        height: '100vh',
-        pointerEvents: 'none',
-      }}
-    >
-      <div
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-        }}
-      >
-        <Image
-          src="/screenshot.svg"
-          alt="screenshot"
-          width="1024"
-          height="768"
-          style={{ height: "100%", width: "100%", background: "#ebebeb" }}
-        />
-
-      </div>
-
-      <div
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          transform: `translate(${translateX}px, ${translateY}px) scale(${SCALE_FACTOR})`,
-          transformOrigin: 'top left'
-        }}
-      >
-        <Droste depth={depth - 1} mouseX={mouseX} mouseY={mouseY} />
-      </div>
-    </div>
-  );
-}
-
-function DrosteContainer() {
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-  const [mounted, setMounted] = useState(false);
+const GridRevealCanvasSVG = ({
+  width = 1000,
+  height = 1000,
+  rows = 20,
+  cols = 20,
+  duration = 2,
+  svgSrc = "/screenshot.svg",
+}) => {
+  const canvasRef = useRef(null);
+  const progress = useMotionValue(0);
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const imageRef = useRef(null);
 
   useEffect(() => {
-    setMounted(true);
-    // Only access the window object after the component is mounted
-    setMousePos({ x: window.innerWidth / 2, y: window.innerHeight / 2 });
+    const img = new Image();
+    img.src = svgSrc;
+    img.onload = () => {
+      imageRef.current = img;
+      setImageLoaded(true);
+    };
+  }, [svgSrc]);
 
-    const handleMouseMove = (event) => {
-      setMousePos({ x: event.clientX, y: event.clientY });
+  useEffect(() => {
+    if (!imageLoaded) return;
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    canvas.width = width;
+    canvas.height = height;
+    const ctx = canvas.getContext("2d");
+    const cellWidth = width / cols;
+    const cellHeight = height / rows;
+    const totalCells = rows * cols;
+
+    const drawGrid = (currentValue) => {
+      ctx.clearRect(0, 0, width, height);
+      const cellsToShow = Math.floor(currentValue);
+
+      for (let row = 0; row < rows; row++) {
+        for (let col = 0; col < cols; col++) {
+          const cellIndex = row * cols + col;
+          if (cellIndex < cellsToShow) {
+            const srcX = col * (imageRef.current.width / cols);
+            const srcY = row * (imageRef.current.height / rows);
+            const W = imageRef.current.naturalWidth;
+            const H = imageRef.current.naturalHeight;
+            const srcWidth = W / cols;
+            const srcHeight = H / rows;
+
+            const destX = col * cellWidth;
+            const destY = row * cellHeight;
+
+            ctx.drawImage(
+              imageRef.current,
+              srcX,
+              srcY,
+              srcWidth,
+              srcHeight,
+              destX,
+              destY,
+              cellWidth,
+              cellHeight
+            );
+          }
+        }
+      }
     };
 
-    // Add event listener only when mounted
-    if (mounted) {
-      window.addEventListener('mousemove', handleMouseMove);
-    }
+    const unsubscribe = progress.onChange((latestValue) => {
+      drawGrid(latestValue);
+    });
 
-    // Cleanup on unmount
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, [mounted]);
+    const animation = animate(progress, totalCells, {
+      duration: duration,
+      repeat: Infinity,
+      ease: "easeInOut",
+    });
 
-  if (!mounted) return null;
+    return () => {
+      unsubscribe();
+      animation.stop();
+    };
+  }, [imageLoaded, progress, width, height, rows, cols, duration]);
 
   return (
-    <div
+    <canvas
+      ref={canvasRef}
       style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        width: '100vw',
-        height: '100vh',
-        overflow: 'hidden',
+        display: "block",
+        margin: "0 auto",
+        backgroundImage: "url('/framework.svg')",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
       }}
-    >
-      <Droste depth={MAX_DEPTH} mouseX={mousePos.x} mouseY={mousePos.y} />
-    </div>
+    />
   );
-}
+};
 
 const Slide13 = forwardRef((_, ref) => {
   useImperativeHandle(ref, () => ({
-    entryAnimation: () => { },
+    entryAnimation: () => {},
     exitAnimation: () => Promise.resolve(),
   }));
-
   return (
     <div className={styles.slide}>
-      <DrosteContainer />
+      <GridRevealCanvasSVG />
     </div>
   );
 });

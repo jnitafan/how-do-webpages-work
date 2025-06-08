@@ -226,13 +226,35 @@ const Title = ({ text }: { text: string }) => {
   );
 };
 
+const SuppressContextLost = () => {
+  const { gl } = useThree(); // THREE.WebGLRenderer
+
+  useEffect(() => {
+    const canvas = gl.domElement;
+    // Listen in capture phase so we get it before Three.js’s own listener
+    const handleContextLost = (event: Event) => {
+      event.preventDefault();
+      // stop Three.js from logging its warning
+      event.stopImmediatePropagation();
+    };
+
+    canvas.addEventListener("webglcontextlost", handleContextLost, {
+      capture: true,
+    });
+    return () => {
+      canvas.removeEventListener("webglcontextlost", handleContextLost, {
+        capture: true,
+      });
+    };
+  }, [gl]);
+
+  return null;
+};
+
 const Slide1 = forwardRef((_, ref) => {
   useImperativeHandle(ref, () => ({
     entryAnimation: () => {},
-    exitAnimation: () =>
-      new Promise<void>((res) => {
-        res();
-      }),
+    exitAnimation: () => new Promise<void>((res) => res()),
   }));
 
   return (
@@ -242,6 +264,7 @@ const Slide1 = forwardRef((_, ref) => {
           camera={{ position: [0, 0, 100] }}
           gl={{ logarithmicDepthBuffer: true }}
         >
+          <SuppressContextLost />
           <Suspense fallback={null}>
             <fog attach="fog" args={["#141415", 0, 40]} />
             <AnimatedCamera />
