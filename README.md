@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# how-do-webpages-work?
 
-## Getting Started
+A static Next.js and React project that demonstrates the fundamentals of how webpages work, from request to rendering in the browser.
 
-First, run the development server:
+## Introduction
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+This repository hosts a simple, static web application built with [Next.js](https://nextjs.org/) and React. The goal of **how-do-webpages-work?** is to explain the core concepts of web pages, including:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- HTTP requests and responses
+- HTML, CSS, and JavaScript rendering
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Whether you're new to web development or brushing up on the basics, this project provides a hands-on look at how a modern React-based static site is built and deployed.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Installation
 
-## Learn More
+Follow these steps to get the project up and running locally:
 
-To learn more about Next.js, take a look at the following resources:
+1. **Clone the repository**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+   git clone https://github.com/<your-username>/how-do-webpages-work.git
+   cd how-do-webpages-work
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. **Install dependencies**
 
-## Deploy on Vercel
+   Ensure you have [Node.js](https://nodejs.org/) (v14 or later) and [npm](https://npmjs.com/) installed.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   ```bash
+   npm install
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+3. **Start the development server**
+
+   ```bash
+   npm run dev
+   ```
+
+   Open [http://localhost:3000](http://localhost:3000) in your browser to view the app.
+
+4. **Build for production**
+
+   ```bash
+   npm run build
+   ```
+
+5. **Preview the production build**
+
+   ```bash
+   npm run start
+   ```
+
+   The app will run on [http://localhost:3000](http://localhost:3000).
+
+## Contributing
+
+Contributions, issues, and feature requests are welcome! Feel free to open a Pull Request.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
