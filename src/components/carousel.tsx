@@ -23,7 +23,7 @@ import styles from "./carousel.module.scss";
 import modalContent from "@/data/carousel-text-data";
 import Image from "next/image";
 
-const START = 10; // For debugging, start on this slide.
+const START = 0; // For debugging, start on this slide.
 const SLIDES = [
   Slide1,
   Slide2,
