@@ -1,0 +1,19 @@
+$breakpoints: (
+  xs: 320px,
+  sm: 640px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1280px,
+);
+
+// going desktop first breakpoints, because i designed the website desktop first (oops)
+@mixin bp($key) {
+  $value: map-get($breakpoints, $key);
+  @if $value {
+    @media (max-width: $value) {
+      @content;
+    }
+  } @else {
+    @warn "No `#{$key}` in $breakpoints.";
+  }
+}

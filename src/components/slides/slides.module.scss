@@ -1,5 +1,7 @@
 /* components/slides/slides.module.scss */
 
+@import "@/app/variables";
+
 .slide {
   position: relative;
   height: 100vh;
@@ -406,6 +408,14 @@
         /* use the variables for the glitch offset */
         transform: translate(var(--glitch-x), var(--glitch-y));
       }
+    }
+
+    @include bp(md) {
+      font-size: 1.8rem;
+    }
+
+    @include bp(xs) {
+      font-size: 1.5rem;
     }
   }
 }

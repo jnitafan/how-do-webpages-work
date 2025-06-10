@@ -23,7 +23,7 @@ import styles from "./carousel.module.scss";
 import modalContent from "@/data/carousel-text-data";
 import Image from "next/image";
 
-const START = 0; // For debugging, start on this slide.
+const START = 1; // For debugging, start on this slide.
 const SLIDES = [
   Slide1,
   Slide2,
@@ -251,7 +251,8 @@ const Carousel: React.FC = () => {
             onClick={handleModalClick}
           >
             <div className={styles.carousel__modalContent}>
-              {modalContent[idx]}
+              <div className={styles.text}>{modalContent[idx].text}</div>
+              <div className={styles.title}>{modalContent[idx].title}</div>
             </div>
           </div>
 

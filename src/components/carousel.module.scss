@@ -1,4 +1,7 @@
 /* components/carousel.module.scss */
+
+@import "@/app/variables";
+
 .carousel {
   width: 100vw;
   height: 100vh;
@@ -53,6 +56,11 @@
     &.active {
       background: #03cbf8;
     }
+
+    @include bp(sm) {
+      width: 0.5rem;
+      height: 0.5rem;
+    }
   }
 
   &__backdrop {
@@ -102,29 +110,54 @@
     border-bottom: 10px solid #03cbf8;
     backdrop-filter: blur(5px);
   }
-  &__modal--initial { transform: translateY(-70%); }
-  &__modal--open    { transform: translateY(0%);     }
-  &__modal--closed  { transform: translateY(-100%);  }
+  &__modal--initial {
+    transform: translateY(-70%);
+  }
+  &__modal--open {
+    transform: translateY(0%);
+    .text > div p {
+      display: block;
+    }
+  }
+  &__modal--closed {
+    transform: translateY(-100%);
+  }
 
   &__modalContent {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 2rem;
-    font-size: 1.3rem;
     width: 90%;
     height: 90%;
     overflow: auto;
     text-align: center;
 
-    h3 {
-      font-size: 4rem;
+    .text p {
+      font-size: 1.3rem;
+      display: none;
+
+      @include bp(lg) {
+        font-size: 1.15rem;
+      }
+      @include bp(md) {
+        font-size: 1rem;
+      }
     }
 
-    div {
-      display: flex;
-      flex-direction: column;
+    .title {
       gap: 4rem;
+      font-size: 4rem;
+
+      @include bp(lg) {
+        font-size: 3rem;
+      }
+      @include bp(md) {
+        font-size: 2.5rem;
+      }
+      @include bp(sm) {
+        font-size: 1.5rem;
+      }
     }
   }
 
@@ -149,10 +182,16 @@
     transition: top 0.5s ease-in-out;
     z-index: 140;
   }
-  &__upButton--closed { top: 1rem; }
-  &__upButton--open   { top: calc(100vh - 4rem); }
+  &__upButton--closed {
+    top: 1rem;
+  }
+  &__upButton--open {
+    top: calc(100vh - 4rem);
+  }
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
