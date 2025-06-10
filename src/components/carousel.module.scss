@@ -149,14 +149,10 @@
       gap: 4rem;
       font-size: 4rem;
 
-      @include bp(lg) {
-        font-size: 3rem;
-      }
-      @include bp(md) {
-        font-size: 2.5rem;
-      }
-      @include bp(sm) {
-        font-size: 1.5rem;
+      @include bp(xl) {
+        font-size: clamp(16px, 4vw, 48px);
+        white-space: nowrap; /* Never wrap to a second line */
+        overflow: hidden; /* Hide any overflow if it still exceeds */
       }
     }
   }

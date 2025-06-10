@@ -23,7 +23,7 @@ import styles from "./carousel.module.scss";
 import modalContent from "@/data/carousel-text-data";
 import Image from "next/image";
 
-const START = 1; // For debugging, start on this slide.
+const START = 0; // For debugging, start on this slide.
 const SLIDES = [
   Slide1,
   Slide2,
@@ -57,6 +57,7 @@ const Carousel: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [visitedSlides, setVisitedSlides] = useState(new Set<number>());
   const [modalState, setModalState] = useState<ModalState>("initial");
+  const [hasClickedInitial, setHasClickedInitial] = useState(false);
 
   const slideRef = useRef<any>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);
@@ -162,7 +163,10 @@ const Carousel: React.FC = () => {
 
   // Initial‐state click logic
   const handleModalClick = (e: React.MouseEvent) => {
-    if (modalState === "open") {
+    if (modalState === "initial") {
+      setHasClickedInitial(true); // remember they clicked
+      setModalState("closed"); // drop out of initial
+    } else if (modalState === "open") {
       setModalState("closed");
     } else {
       const rect = wrapperRef.current!.getBoundingClientRect();
@@ -263,8 +267,6 @@ const Carousel: React.FC = () => {
               onClick={handleModalClick}
             />
           )}
-
-          {/* Up/Down toggle */}
           <button
             className={`${styles.carousel__upButton} ${
               modalState === "open"
