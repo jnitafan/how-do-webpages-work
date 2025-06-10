@@ -2,7 +2,7 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
-import { slideSlugs } from "@/app/[slug]/page";
+import slideSlugs from "@/data/slugs";
 import { animate } from "framer-motion/dom";
 import {
   Slide1,
