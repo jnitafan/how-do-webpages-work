@@ -133,6 +133,21 @@ const Slide11 = forwardRef((_, ref) => {
 
     traverse(placeholderHTML(), "label-1", rawNodes, rawEdges);
     const laid = applyDagreLayout(rawNodes, rawEdges);
+    const nodesWithLeafFlag = laid.map((n) => ({
+      ...n,
+      data: {
+        ...n.data,
+        isLeaf: !rawEdges.some((e) => e.source === n.id),
+      },
+    }));
+
+    return {
+      fullNodes: nodesWithLeafFlag,
+      fullEdges: rawEdges,
+      nodeTypes: { label: LabelNode, autoSize: AutoSizeNode },
+      edgeTypes: {},
+    };
+
     // overwrite root position
     laid.forEach((n) => {
       if (n.id === "label-1") n.position = { x: 0, y: -200 };

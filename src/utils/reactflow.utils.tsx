@@ -119,20 +119,20 @@ const componentMap: Record<ComponentKey, JSX.Element> = {
 };
 
 export const AutoSizeNode = ({ id, data }) => {
+  const { label, isLeaf } = data as { label: string; isLeaf?: boolean };
+
+  // pick class based on leaf‐status
+  const cls = isLeaf ? styles.leafNode : styles.autoSizeNode;
+
   return (
-    <div id={id} className={styles.autoSizeNode}>
-      {/* input handle (if you want one) */}
+    <div id={id} className={cls}>
       <Handle
         type="target"
         position={Position.Top}
         style={{ opacity: 0 }}
         isConnectable={false}
       />
-
-      {/* the label text */}
-      {data.label}
-
-      {/* output handle */}
+      {label}
       <Handle
         type="source"
         position={Position.Bottom}

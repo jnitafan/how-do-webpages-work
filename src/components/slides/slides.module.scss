@@ -1,6 +1,6 @@
 /* components/slides/slides.module.scss */
 
-@import "@/app/variables";
+@use "@/app/variables" as *;
 
 .slide {
   position: relative;

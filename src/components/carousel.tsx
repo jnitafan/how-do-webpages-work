@@ -2,6 +2,7 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
+import { slideSlugs } from "@/app/[slug]/page";
 import { animate } from "framer-motion/dom";
 import {
   Slide1,
@@ -23,7 +24,10 @@ import styles from "./carousel.module.scss";
 import modalContent from "@/data/carousel-text-data";
 import Image from "next/image";
 
-const START = 0; // For debugging, start on this slide.
+interface CarouselProps {
+  initialIdx?: number;
+}
+
 const SLIDES = [
   Slide1,
   Slide2,
@@ -52,8 +56,8 @@ function usePrevious<T>(value: T): T | undefined {
 
 type ModalState = "initial" | "open" | "closed";
 
-const Carousel: React.FC = () => {
-  const [idx, setIdx] = useState(START);
+const Carousel: React.FC<CarouselProps> = ({ initialIdx = 0 }) => {
+  const [idx, setIdx] = useState(initialIdx);
   const [loading, setLoading] = useState(false);
   const [visitedSlides, setVisitedSlides] = useState(new Set<number>());
   const [modalState, setModalState] = useState<ModalState>("initial");
@@ -88,6 +92,11 @@ const Carousel: React.FC = () => {
         : res()
     );
 
+  useEffect(() => {
+    const path = idx === 0 ? "/" : `/${slideSlugs[idx]}`;
+    window.history.replaceState(null, "", path);
+  }, [idx]);
+
   // Navigation
   const goTo = async (newIdx: number, mode: "next" | "fade") => {
     if (newIdx < 0 || newIdx >= SLIDES.length || newIdx === idx) return;
@@ -101,7 +110,10 @@ const Carousel: React.FC = () => {
         setIdx(newIdx);
         await fadeIn();
       }
-      // On first visit, reset to "initial"
+
+      const path = newIdx === 0 ? "/" : `/${slideSlugs[newIdx]}`;
+      window.history.replaceState(null, "", path);
+
       if (!visitedSlides.has(newIdx)) {
         setVisitedSlides((prev) => new Set(prev).add(newIdx));
         setModalState("initial");
@@ -163,14 +175,14 @@ const Carousel: React.FC = () => {
 
   // Initial‐state click logic
   const handleModalClick = (e: React.MouseEvent) => {
-    if (modalState === "initial") {
-      setHasClickedInitial(true); // remember they clicked
-      setModalState("closed"); // drop out of initial
-    } else if (modalState === "open") {
+    if (modalState === "open") {
       setModalState("closed");
     } else {
       const rect = wrapperRef.current!.getBoundingClientRect();
       const clickY = e.clientY - rect.top;
+      if (modalState === "initial") {
+        setHasClickedInitial(true); // remember they clicked
+      }
       if (clickY <= rect.height / 3) setModalState("open");
       else setModalState("closed");
     }
@@ -246,7 +258,6 @@ const Carousel: React.FC = () => {
 
       {!isFirst && (
         <>
-          {/* Modal panel */}
           <div
             ref={modalRef}
             className={`${styles.carousel__modal} ${
@@ -260,37 +271,34 @@ const Carousel: React.FC = () => {
             </div>
           </div>
 
-          {/* Full-screen click catcher in “initial” */}
-          {modalState === "initial" && (
+          {/* fullscreen diffuser only in initial */}
+          {modalState === "initial" && !hasClickedInitial && (
             <div
               className={styles.carousel__initialOverlay}
               onClick={handleModalClick}
             />
           )}
+
           <button
-            className={`${styles.carousel__upButton} ${
-              modalState === "open"
-                ? styles["carousel__upButton--open"]
-                : styles["carousel__upButton--closed"]
-            }`}
-            onClick={() =>
-              setModalState((prev) => (prev === "open" ? "closed" : "open"))
-            }
+            className={`
+          ${styles.carousel__upButton}
+          ${
+            modalState === "open"
+              ? styles["carousel__upButton--open"]
+              : styles["carousel__upButton--closed"]
+          }
+          ${
+            modalState === "initial" && !hasClickedInitial
+              ? styles["carousel__upButton--initial"]
+              : ""
+          }
+        `}
+            onClick={handleModalClick}
           >
             {modalState === "open" ? (
-              <Image
-                width={40}
-                height={40}
-                alt={"eye"}
-                src={"icons/close.svg"}
-              />
+              <Image width={40} height={40} alt="close" src="icons/close.svg" />
             ) : (
-              <Image
-                width={40}
-                height={40}
-                alt={"eye"}
-                src={"icons/info.svg"}
-              />
+              <Image width={40} height={40} alt="info" src="icons/info.svg" />
             )}
           </button>
         </>
