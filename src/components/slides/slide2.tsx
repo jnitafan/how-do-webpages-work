@@ -34,10 +34,49 @@ const FloatingLayers: React.FC = () => {
   const LABEL_SIZE = 0.3;
   const group = useRef<THREE.Group>(null!);
 
+  // store normalized device orientation
+  const orientation = useRef({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleOrientation = (e: DeviceOrientationEvent) => {
+      if (e.gamma != null && e.beta != null) {
+        // gamma: left/right tilt → x, beta: forward/back tilt → y
+        orientation.current.x = THREE.MathUtils.clamp(e.gamma / 45, -1, 1);
+        orientation.current.y = THREE.MathUtils.clamp(e.beta / 45, -1, 1);
+      }
+    };
+
+    // iOS 13+ permission flow
+    if (
+      typeof DeviceOrientationEvent !== "undefined" &&
+      typeof (DeviceOrientationEvent as any).requestPermission === "function"
+    ) {
+      (DeviceOrientationEvent as any)
+        .requestPermission()
+        .then((perm: string) => {
+          if (perm === "granted") {
+            window.addEventListener("deviceorientation", handleOrientation);
+          }
+        })
+        .catch(console.error);
+    } else {
+      window.addEventListener("deviceorientation", handleOrientation);
+    }
+
+    return () => {
+      window.removeEventListener("deviceorientation", handleOrientation);
+    };
+  }, []);
+
   useFrame((state) => {
-    const [px, py] = state.pointer; // [-1 .. 1]
+    const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+    const [px, py] = isMobile
+      ? [orientation.current.x, orientation.current.y]
+      : state.pointer;
+
     const targetY = px * Math.PI * 0.25;
     const targetX = -py * Math.PI * 0.25;
+
     group.current.rotation.y += (targetY - group.current.rotation.y) * 0.1;
     group.current.rotation.x += (targetX - group.current.rotation.x) * 0.1;
   });
