@@ -1,5 +1,6 @@
 // src/app/layout.tsx
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import { Inter, Roboto_Mono } from "next/font/google";
 import { NextFontWithVariable } from "next/dist/compiled/@next/font";
 import "@/utils/highlight.styling.scss";
@@ -29,6 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${robotoMono.variable}`}>
       <body>{children}</body>
+      <Analytics />
     </html>
   );
 }
